@@ -1,0 +1,11 @@
+{
+  "title": "Actions",
+  "collapsible": false,
+  "pages": [
+    "button",
+    "button-group",
+    "compact-button",
+    "fancy-button",
+    "link-button"
+  ]
+}

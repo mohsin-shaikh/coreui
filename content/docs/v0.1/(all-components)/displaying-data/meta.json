@@ -1,0 +1,19 @@
+{
+  "title": "Displaying Data",
+  "collapsible": false,
+  "pages": [
+    "avatar",
+    "avatar-group",
+    "avatar-group-compact",
+    "badge",
+    "banner",
+    "data-table",
+    "divider",
+    "kbd",
+    "progress-bar",
+    "progress-circle",
+    "rating",
+    "status-badge",
+    "tag"
+  ]
+}
