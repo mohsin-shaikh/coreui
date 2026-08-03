@@ -2,6 +2,5 @@
   "title": "v0.1",
   "description": "CoreUI documentation for v0.1",
   "root": true,
-  "pages": ["introduction"],
-  "pagesIndex": "introduction"
+  "pages": ["(getting-started)"]
 }

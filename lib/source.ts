@@ -2,6 +2,8 @@ import { loader } from 'fumadocs-core/source';
 import { docsContentRoute, docsImageRoute, docsRoute } from './shared';
 import { defineDocs } from 'fumadocs-mdx/macro';
 import { metaSchema, pageSchema } from 'fumadocs-core/source/schema';
+import { icons } from 'lucide-react';
+import { createElement } from 'react';
 
 const docs = defineDocs({
   dir: 'content/docs',
@@ -20,6 +22,11 @@ const docs = defineDocs({
 export const source = loader({
   baseUrl: docsRoute,
   source: docs.toFumadocsSource(),
+  icon(icon) {
+    if (icon in icons) {
+      return createElement(icons[icon as keyof typeof icons]);
+    }
+  },
   plugins: [],
 });
 
