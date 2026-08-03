@@ -1,4 +1,101 @@
 ---
 title: Button
-description: Button component
+description: Renders a button or an element styled to resemble a button.
 ---
+
+<ComponentPreview name="button-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `button.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/button.tsx" title="components/ui/button.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Primary (Default)
+
+<ComponentPreview name="button-primary" />
+
+### Neutral
+
+<ComponentPreview name="button-neutral" />
+
+### Error
+
+<ComponentPreview name="button-error" />
+
+### Size
+
+<ComponentPreview name="button-size" />
+
+### Disabled
+
+<ComponentPreview name="button-disabled" />
+
+### With Icon
+
+<ComponentPreview name="button-with-icon" />
+
+### Full Width
+
+<ComponentPreview name="button-full-width" />
+
+### asChild
+
+<ComponentPreview name="button-as-child" />
+
+## Composition
+
+You can simplify component usage by creating a custom API that abstracts the core functionalities.
+
+<ComponentPreview name="button-composition" />
+
+## API Reference
+
+### Button.Root
+
+This component is based on the `<button>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"primary"` \| `"neutral"` \| `"error"` | `"primary"` |
+| `mode` | `"filled"` \| `"stroke"` \| `"lighter"` \| `"ghost"` | `"filled"` |
+| `size` | `"medium"` \| `"small"` \| `"xsmall"` \| `"xxsmall"` | `"medium"` |
+| `asChild` | `boolean` | |
+
+### Button.Icon
+
+The `Button.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |

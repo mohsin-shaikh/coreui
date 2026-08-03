@@ -23,6 +23,7 @@ export const source = loader({
   baseUrl: docsRoute,
   source: docs.toFumadocsSource(),
   icon(icon) {
+    if (!icon) return;
     if (icon in icons) {
       return createElement(icons[icon as keyof typeof icons]);
     }
