@@ -1,0 +1,19 @@
+{
+  "title": "Form",
+  "collapsible": false,
+  "pages": [
+    "checkbox",
+    "color-picker",
+    "datepicker",
+    "digit-input",
+    "file-upload",
+    "hint",
+    "input",
+    "label",
+    "radio",
+    "select",
+    "slider",
+    "switch",
+    "textarea"
+  ]
+}

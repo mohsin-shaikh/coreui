@@ -1,0 +1,11 @@
+{
+  "title": "Layout",
+  "collapsible": false,
+  "pages": [
+    "accordion",
+    "breadcrumb",
+    "segmented-control",
+    "tab-menu-horizontal",
+    "tab-menu-vertical"
+  ]
+}

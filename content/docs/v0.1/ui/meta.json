@@ -1,5 +1,14 @@
 {
   "title": "All Components",
   "defaultOpen": true,
-  "pages": ["(actions)", "(displaying-data)", "(feedback)"]
+  "pages": [
+    "(actions)",
+    "(displaying-data)",
+    "(feedback)",
+    "(form)",
+    "(layout)",
+    "(navigation)",
+    "(overlays)",
+    "(utils)"
+  ]
 }

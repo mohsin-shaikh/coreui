@@ -1,0 +1,10 @@
+{
+  "title": "Navigation",
+  "collapsible": false,
+  "pages": [
+    "dot-stepper",
+    "horizontal-stepper",
+    "pagination",
+    "vertical-stepper"
+  ]
+}
