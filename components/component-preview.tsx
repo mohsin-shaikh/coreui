@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import * as Tabs from '@radix-ui/react-tabs';
 import {
   RiCheckLine,
   RiCodeSSlashLine,
@@ -10,8 +11,13 @@ import {
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 
 import { Index } from '@/components/demos';
-import * as SegmentedControl from '@/components/ui/segmented-control';
 import { cn } from '@/lib/cn';
+import { CopyIcon } from 'lucide-react';
+
+const tabTriggerClassName = cn(
+  'text-ln-label-sm text-ln-gray-500 flex h-7 items-center gap-1.5 rounded-lg pr-2.5 pl-2 transition',
+  'data-[state=active]:bg-ln-gray-0 data-[state=active]:text-ln-gray-800 data-[state=active]:shadow-docs-button-white',
+);
 
 export function ComponentPreview({
   name,
@@ -22,7 +28,6 @@ export function ComponentPreview({
   className?: string;
   align?: 'center' | 'start';
 }) {
-  const [view, setView] = React.useState('preview');
   const [copied, setCopied] = React.useState(false);
   const demo = Index[name];
 
@@ -47,52 +52,53 @@ export function ComponentPreview({
   }
 
   return (
-    <SegmentedControl.Root
-      value={view}
-      onValueChange={setView}
-      className="component-preview not-prose my-5 flex flex-col gap-4"
-    >
-      <div className="flex items-center justify-between gap-3">
-        <SegmentedControl.List className="w-fit auto-cols-max">
-          <SegmentedControl.Trigger value="preview" className="px-2.5">
-            <RiEyeLine className="size-4" />
-            Preview
-          </SegmentedControl.Trigger>
-          <SegmentedControl.Trigger value="code" className="px-2.5">
-            <RiCodeSSlashLine className="size-4" />
-            Code
-          </SegmentedControl.Trigger>
-        </SegmentedControl.List>
+    <div className="component-preview not-prose mt-5">
+      <Tabs.Root defaultValue="preview">
+        <div className="flex items-center justify-between gap-3 pb-4">
+          <Tabs.List className="flex gap-2">
+            <Tabs.Trigger value="preview" className={tabTriggerClassName}>
+              <RiEyeLine className="size-4.5 text-ln-gray-500" />
+              Preview
+            </Tabs.Trigger>
+            <Tabs.Trigger value="code" className={tabTriggerClassName}>
+              <RiCodeSSlashLine className="size-4.5 text-ln-gray-500" />
+              Code
+            </Tabs.Trigger>
+          </Tabs.List>
 
-        <button
-          type="button"
-          onClick={onCopy}
-          className="bg-bg-weak-25 text-label-sm text-text-sub-600 hover:text-text-strong-950 flex h-7 items-center gap-1 rounded-lg pr-3 pl-1.5 transition"
+          <button
+            type="button"
+            onClick={onCopy}
+            className="bg-bg-weak-25 text-ln-label-sm text-ln-gray-600 flex h-7 items-center gap-1 rounded-lg pr-3 pl-1.5"
+          >
+            {copied ? (
+              <RiCheckLine className="size-5 text-ln-gray-400" />
+            ) : (
+              <RiFileCopyLine className="size-5 text-ln-gray-400" />
+            )}
+            Copy
+          </button>
+        </div>
+
+        <Tabs.Content
+          value="preview"
+          className="bg-gray-0 relative rounded-20 ring-1 ring-gray-100"
         >
-          {copied ? (
-            <RiCheckLine className="size-5" />
-          ) : (
-            <RiFileCopyLine className="size-5" />
-          )}
-          Copy
-        </button>
-      </div>
-
-      <div className="bg-bg-white-0 relative overflow-hidden rounded-20 ring-1 ring-gray-100">
-        <SegmentedControl.Content value="preview" className="outline-none">
           <div
             className={cn(
-              'preview flex min-h-64 w-full flex-wrap gap-4 p-10 md:min-h-64',
-              align === 'center' && 'items-center justify-center',
+              'preview flex min-h-64 w-full justify-center p-10 md:min-h-64',
+              align === 'center' && 'items-center',
               align === 'start' && 'items-start justify-start',
+              'flex-wrap gap-4',
               className,
             )}
           >
             <Preview />
           </div>
-        </SegmentedControl.Content>
-        <SegmentedControl.Content value="code" className="outline-none">
-          <div className="max-h-150 overflow-auto p-1 [&_figure]:m-0 [&_figure]:rounded-[11px] [&_figure]:border-0 [&_figure]:shadow-none">
+        </Tabs.Content>
+
+        <Tabs.Content value="code" className="bg-bg-weak-25 rounded-20 p-3">
+          <div className="no-scrollbar max-h-150 overflow-auto [&_figure]:m-0 [&_figure]:rounded-[11px] [&_figure]:border-0 [&_figure]:shadow-none">
             <DynamicCodeBlock
               lang="tsx"
               code={demo.code}
@@ -102,8 +108,8 @@ export function ComponentPreview({
               }}
             />
           </div>
-        </SegmentedControl.Content>
-      </div>
-    </SegmentedControl.Root>
+        </Tabs.Content>
+      </Tabs.Root>
+    </div>
   );
 }

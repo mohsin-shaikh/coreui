@@ -11,6 +11,25 @@ const typographyConfig = {
   paragraph: ['xl', 'lg', 'md', 'sm', 'xs'],
   subheading: ['md', 'sm', 'xs', '2xs'],
   doc: ['label', 'paragraph'],
+  ln: [
+    'title-h1',
+    'title-h2',
+    'title-h3',
+    'title-h4',
+    'title-h5',
+    'title-h6',
+    'label-lg',
+    'label-md',
+    'label-sm',
+    'label-xs',
+    'paragraph-lg',
+    'paragraph-md',
+    'paragraph-sm',
+    'paragraph-xs',
+    'subheading-xs',
+    'docs-sm',
+    'special-13-desc',
+  ],
 };
 
 const typographyPatterns = Object.entries(typographyConfig).flatMap(

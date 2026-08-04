@@ -2,7 +2,11 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 
-@theme {
+/* static: keep all design tokens available for JS/docs (e.g. var(--color-${token})) */
+@theme static {
+  --font-sans: var(--font-inter-var), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
   /* CoreUI Raw Colors */
   --color-gray-950: #171717;
   --color-gray-900: #1c1c1c;
@@ -19,6 +23,24 @@
   --color-gray-alpha-24: #a3a3a33d;
   --color-gray-alpha-16: #a3a3a329;
   --color-gray-alpha-10: #a3a3a31a;
+
+  /* Docs colors */
+  --color-ln-gray-950: #1c1c1c;
+  --color-ln-gray-925: #262626;
+  --color-ln-gray-900: #2e2e2e;
+  --color-ln-gray-800: #3d3d3d;
+  --color-ln-gray-700: #525252;
+  --color-ln-gray-600: #707070;
+  --color-ln-gray-500: #8f8f8f;
+  --color-ln-gray-450: #a3a3a3;
+  --color-ln-gray-400: #b8b8b8;
+  --color-ln-gray-300: #cccccc;
+  --color-ln-gray-200: #e0e0e0;
+  --color-ln-gray-100: #ebebeb;
+  --color-ln-gray-50: #f2f2f2;
+  --color-ln-gray-25: #f7f7f7;
+  --color-ln-gray-0: #ffffff;
+  --color-ln-orange: #f05023;
 
   --color-slate-950: #0e121b;
   --color-slate-900: #181b25;
@@ -220,6 +242,13 @@
   --color-overlay-slate: #2b303b3d;
   --color-overlay: var(--color-overlay-gray);
 
+  /* CoreUI Illustration Colors */
+  --color-illustration-white-0: var(--color-neutral-0);
+  --color-illustration-weak-100: var(--color-neutral-100);
+  --color-illustration-soft-200: var(--color-neutral-200);
+  --color-illustration-sub-300: var(--color-neutral-300);
+  --color-illustration-strong-400: var(--color-neutral-400);
+
   /* CoreUI Semantic Colors */
   --color-static-black: var(--color-neutral-950);
   --color-static-white: var(--color-neutral-0);
@@ -410,6 +439,92 @@
   --text-doc-paragraph--letter-spacing: -0.015em;
   --text-doc-paragraph--font-weight: 400;
 
+  /* Docs typography */
+  --text-ln-title-h1: 5rem;
+  --text-ln-title-h1--line-height: 5.5rem;
+  --text-ln-title-h1--letter-spacing: -0.035em;
+  --text-ln-title-h1--font-weight: 550;
+
+  --text-ln-title-h2: 4.5rem;
+  --text-ln-title-h2--line-height: 5rem;
+  --text-ln-title-h2--letter-spacing: -0.03em;
+  --text-ln-title-h2--font-weight: 550;
+
+  --text-ln-title-h3: 3.5rem;
+  --text-ln-title-h3--line-height: 4rem;
+  --text-ln-title-h3--letter-spacing: -0.028em;
+  --text-ln-title-h3--font-weight: 550;
+
+  --text-ln-title-h4: 2rem;
+  --text-ln-title-h4--line-height: 2.5rem;
+  --text-ln-title-h4--letter-spacing: -0.02em;
+  --text-ln-title-h4--font-weight: 550;
+
+  --text-ln-title-h5: 1.5rem;
+  --text-ln-title-h5--line-height: 2rem;
+  --text-ln-title-h5--letter-spacing: -0.02em;
+  --text-ln-title-h5--font-weight: 550;
+
+  --text-ln-title-h6: 1.25rem;
+  --text-ln-title-h6--line-height: 1.75rem;
+  --text-ln-title-h6--letter-spacing: -0.02em;
+  --text-ln-title-h6--font-weight: 550;
+
+  --text-ln-label-lg: 1.125rem;
+  --text-ln-label-lg--line-height: 1.75rem;
+  --text-ln-label-lg--letter-spacing: -0.015em;
+  --text-ln-label-lg--font-weight: 500;
+
+  --text-ln-label-md: 1rem;
+  --text-ln-label-md--line-height: 1.5rem;
+  --text-ln-label-md--letter-spacing: -0.01em;
+  --text-ln-label-md--font-weight: 500;
+
+  --text-ln-label-sm: 0.875rem;
+  --text-ln-label-sm--line-height: 1.25rem;
+  --text-ln-label-sm--letter-spacing: -0.006em;
+  --text-ln-label-sm--font-weight: 500;
+
+  --text-ln-label-xs: 0.75rem;
+  --text-ln-label-xs--line-height: 1rem;
+  --text-ln-label-xs--letter-spacing: 0em;
+  --text-ln-label-xs--font-weight: 500;
+
+  --text-ln-paragraph-lg: 1.125rem;
+  --text-ln-paragraph-lg--line-height: 1.75rem;
+  --text-ln-paragraph-lg--letter-spacing: -0.015em;
+  --text-ln-paragraph-lg--font-weight: 400;
+
+  --text-ln-paragraph-md: 1rem;
+  --text-ln-paragraph-md--line-height: 1.5rem;
+  --text-ln-paragraph-md--letter-spacing: -0.01em;
+  --text-ln-paragraph-md--font-weight: 400;
+
+  --text-ln-paragraph-sm: 0.875rem;
+  --text-ln-paragraph-sm--line-height: 1.25rem;
+  --text-ln-paragraph-sm--letter-spacing: -0.006em;
+  --text-ln-paragraph-sm--font-weight: 400;
+
+  --text-ln-paragraph-xs: 0.75rem;
+  --text-ln-paragraph-xs--line-height: 1rem;
+  --text-ln-paragraph-xs--letter-spacing: 0em;
+  --text-ln-paragraph-xs--font-weight: 400;
+
+  --text-ln-subheading-xs: 0.6875rem;
+  --text-ln-subheading-xs--line-height: 0.625rem;
+  --text-ln-subheading-xs--letter-spacing: 0em;
+  --text-ln-subheading-xs--font-weight: 550;
+
+  --text-ln-docs-sm: 0.875rem;
+  --text-ln-docs-sm--line-height: 1.25rem;
+  --text-ln-docs-sm--letter-spacing: -0.006em;
+  --text-ln-docs-sm--font-weight: 500;
+
+  --text-ln-special-13-desc: 0.8125rem;
+  --text-ln-special-13-desc--line-height: 1.25rem;
+  --text-ln-special-13-desc--letter-spacing: -0.006em;
+  --text-ln-special-13-desc--font-weight: 400;
+
   /* CoreUI Shadow System - Dynamic from tokens.ts */
 
   --shadow-regular-xs: 0 1px 2px 0 #0a0d1408;
@@ -573,14 +688,59 @@
   --radius-20: 1.25rem;
 
   /* Docs chrome shadows */
+  --shadow-docs-xs:
+    0 1px 1px 0.5px rgba(41, 41, 41, 0.04),
+    0 3px 3px -1.5px rgba(41, 41, 41, 0.02),
+    0 6px 6px -3px rgba(41, 41, 41, 0.04),
+    0 12px 12px -6px rgba(41, 41, 41, 0.04),
+    0 24px 24px -12px rgba(41, 41, 41, 0.04),
+    0 48px 48px -24px rgba(41, 41, 41, 0.04), 0 0 0 1px rgba(41, 41, 41, 0.04),
+    inset 0 -1px 1px -0.5px rgba(51, 51, 51, 0.06);
+
   --shadow-docs-button-white:
+    0 1px 1px 0.5px rgba(51, 51, 51, 0.04),
+    0 3px 3px -1.5px rgba(51, 51, 51, 0.02),
+    0 6px 6px -3px rgba(51, 51, 51, 0.04),
+    0 12px 12px -6px rgba(51, 51, 51, 0.04),
+    0 24px 24px -12px rgba(51, 51, 51, 0.04),
+    0 48px 48px -24px rgba(51, 51, 51, 0.04), 0 0 0 1px rgba(51, 51, 51, 0.1),
+    inset 0 -1px 1px -0.5px rgba(51, 51, 51, 0.06);
+
+  --shadow-docs-button-orange:
+    0 19px 8px rgba(115, 31, 8, 0.01), 0 11px 6px rgba(115, 31, 8, 0.04),
+    0 5px 5px rgba(115, 31, 8, 0.07), 0 1px 3px rgba(115, 31, 8, 0.08),
+    0 0 0 1px #e53f10, inset 0 0.5px 0.5px hsla(0, 0%, 100%, 0.12);
+
+  --shadow-docs-button-gray:
+    0 16px 8px rgba(31, 31, 31, 0.01), 0 12px 6px rgba(31, 31, 31, 0.04),
+    0 4px 4px rgba(31, 31, 31, 0.07), 0 1.5px 3px rgba(31, 31, 31, 0.08),
+    0 0 0 1px #0f0f0f, inset 0 1px 2px hsla(0, 0%, 100%, 0.12);
+
+  --shadow-docs-badge-gray:
+    0 0 0 1px rgba(61, 61, 61, 0.12),
+    inset 0 0.75px 0.75px hsla(0, 0%, 100%, 0.64);
+
+  --shadow-docs-badge-orange:
+    0 0 0 1px rgba(240, 80, 35, 0.2),
+    inset 0 0.75px 0.75px hsla(0, 0%, 100%, 0.64);
+
+  --shadow-docs-subheading:
+    0 4px 8px rgba(41, 41, 41, 0.06), 0 2px 4px rgba(41, 41, 41, 0.04),
+    0 1px 2px rgba(41, 41, 41, 0.04), 0 0 0 1px rgba(41, 41, 41, 0.08),
+    inset 0 -0.5px 0.5px rgba(41, 41, 41, 0.08);
+
+  --shadow-docs-toggle-active:
     0 4px 8px rgba(41, 41, 41, 0.06), 0 2px 4px rgba(41, 41, 41, 0.04),
     0 1px 2px rgba(41, 41, 41, 0.04), inset 0 -0.5px 0.5px rgba(41, 41, 41, 0.08);
 
-  --shadow-docs-xs:
-    0 0 0 1px rgba(51, 51, 51, 0.04), 0 4px 8px -2px rgba(51, 51, 51, 0.06),
-    0 2px 4px rgba(51, 51, 51, 0.04), 0 1px 2px rgba(51, 51, 51, 0.04),
-    inset 0 -1px 1px -0.5px rgba(51, 51, 51, 0.06);
+  --shadow-docs-customization-button:
+    0 0 0 1px #e0e0e0, inset 0 1px 1px hsla(0, 0%, 100%, 0.64);
+
+  --shadow-docs-branding-neutral:
+    0 19px 8px rgba(31, 31, 31, 0.01), 0 11px 6px rgba(31, 31, 31, 0.04),
+    0 5px 5px rgba(31, 31, 31, 0.07), 0 1px 3px rgba(31, 31, 31, 0.08),
+    0 0 0 1px #292929, inset 0 -0.5px 0.5px hsla(0, 0%, 100%, 0.24),
+    inset 0 -0.5px 0.5px hsla(0, 0%, 100%, 0.24);
 
   /* CoreUI Animation System - Dynamic from tokens.ts */
 
@@ -675,6 +835,12 @@
   --color-social-tidal: #fff;
   --color-social-amazon: #fff;
   --color-social-zendesk: #fff;
+
+  --color-illustration-white-0: var(--color-neutral-950);
+  --color-illustration-weak-100: var(--color-neutral-900);
+  --color-illustration-soft-200: var(--color-neutral-800);
+  --color-illustration-sub-300: var(--color-neutral-700);
+  --color-illustration-strong-400: var(--color-neutral-600);
 
   --shadow-complex-12: 0 80px 80px -40px rgba(23, 23, 23, 0),
     0 48px 48px -24px rgba(23, 23, 23, 0);
@@ -810,6 +976,24 @@
 
 html {
   scrollbar-gutter: stable;
+  font-family: var(--font-inter-var), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: 'calt';
+  font-variation-settings: normal;
+  font-optical-sizing: none;
+}
+
+.font-inter {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: 'calt';
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Docs chrome */
@@ -833,6 +1017,18 @@ html {
   --color-fd-accent: var(--color-bg-weak-50);
   --color-fd-primary: var(--color-orange-400);
   --color-fd-primary-foreground: #ffffff;
+}
+
+.docs-dashed-separator {
+  color: var(--color-gray-200);
+  background: linear-gradient(
+      90deg,
+      transparent 5px,
+      currentcolor 5px,
+      currentcolor 11px,
+      transparent 11px
+    )
+    50% 50% / 11px 1px repeat-x;
 }
 
 /* Installation / fumadocs tabs */

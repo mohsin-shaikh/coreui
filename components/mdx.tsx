@@ -5,6 +5,11 @@ import type { MDXComponents } from 'mdx/types';
 
 import { ComponentPreview } from '@/components/component-preview';
 import { ComponentSource } from '@/components/component-source';
+import { ColorPalette } from '@/components/color-showcase';
+import {
+  TypographySample,
+  TypographySection,
+} from '@/components/typography-showcase';
 
 export function getMDXComponents(components?: MDXComponents) {
   return {
@@ -14,6 +19,9 @@ export function getMDXComponents(components?: MDXComponents) {
     Steps,
     ComponentPreview,
     ComponentSource,
+    ColorPalette,
+    TypographySample,
+    TypographySection,
     ...components,
   } satisfies MDXComponents;
 }

@@ -1,18 +1,18 @@
-import { getPageImageUrl, getPageMarkdownUrl, source } from '@/lib/source';
+import { getPageImageUrl, source } from '@/lib/source';
 import {
   DocsBody,
-  DocsDescription,
   DocsPage,
-  DocsTitle,
-  MarkdownCopyButton,
-  ViewOptionsPopover,
 } from 'fumadocs-ui/layouts/docs/page';
 import { notFound, redirect } from 'next/navigation';
 import { getMDXComponents } from '@/components/mdx';
 import { DocsBreadcrumb } from '@/components/docs-breadcrumb';
+import {
+  DocsDashedSeparator,
+  DocsPageLinks,
+} from '@/components/docs-page-header';
+import { docsPageLinks } from '@/lib/docs-page-links';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
-import { gitConfig } from '@/lib/shared';
 
 const defaultDocsPath = '/docs/v0.1/introduction';
 
@@ -24,26 +24,27 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   if (!page) notFound();
 
   const MDX = page.data.body;
-  const markdownUrl = getPageMarkdownUrl(page).url;
+  const links = docsPageLinks[page.url] ?? [];
 
   return (
     <DocsPage
       toc={page.data.toc}
       full={page.data.full}
+      // Fumadocs defaults to gap-4 between every child.
+      className="text-ln-docs-sm gap-0"
       slots={{ breadcrumb: DocsBreadcrumb }}
     >
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription className="mb-4 text-text-sub-600">
-        {page.data.description}
-      </DocsDescription>
-      <div className="mb-6 flex flex-row items-center gap-2">
-        <MarkdownCopyButton markdownUrl={markdownUrl} />
-        <ViewOptionsPopover
-          markdownUrl={markdownUrl}
-          githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
-        />
-      </div>
-      <DocsBody>
+      <h1 className="text-ln-title-h4 mb-2 text-ln-gray-900">
+        {page.data.title}
+      </h1>
+      {page.data.description ? (
+        <p className="text-ln-paragraph-md md:text-ln-paragraph-lg mb-0 text-ln-gray-600">
+          {page.data.description}
+        </p>
+      ) : null}
+      <DocsPageLinks links={links} />
+      <DocsDashedSeparator />
+      <DocsBody className="pt-0">
         <MDX
           components={getMDXComponents({
             // this allows you to link to other pages with relative file paths
@@ -59,7 +60,9 @@ export async function generateStaticParams() {
   return [{ slug: [] }, ...source.generateParams()];
 }
 
-export async function generateMetadata(props: PageProps<'/docs/[[...slug]]'>): Promise<Metadata> {
+export async function generateMetadata(
+  props: PageProps<'/docs/[[...slug]]'>,
+): Promise<Metadata> {
   const params = await props.params;
   if (!params.slug?.length) return {};
 

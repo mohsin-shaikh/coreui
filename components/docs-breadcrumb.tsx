@@ -26,6 +26,10 @@ export function DocsBreadcrumb({
       return [{ name: 'Base Components' }];
     }
 
+    if (pathname.startsWith('/docs/v0.1/foundation/')) {
+      return [{ name: 'Foundations' }];
+    }
+
     return getBreadcrumbItemsFromPath(root, path, {
       includePage,
       includeSeparator,
@@ -38,19 +42,19 @@ export function DocsBreadcrumb({
   return (
     <div
       {...props}
-      className={cn('flex items-center gap-1.5 text-sm text-fd-muted-foreground', props.className)}
+      className={cn('text-ln-label-sm mb-2 flex items-center gap-1.5 text-ln-orange', props.className)}
     >
       {items.map((item, i) => {
-        const className = cn(
-          'truncate',
-          i === items.length - 1 && 'text-orange-500 font-medium',
-        );
+        const className = 'truncate';
 
         return (
           <Fragment key={i}>
             {i !== 0 && <RiArrowRightSLine className="size-3.5 shrink-0" />}
             {item.url ? (
-              <Link href={item.url} className={cn(className, 'transition-opacity hover:opacity-80')}>
+              <Link
+                href={item.url}
+                className={cn(className, 'transition-opacity hover:opacity-80')}
+              >
                 {item.name}
               </Link>
             ) : (
