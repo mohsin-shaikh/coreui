@@ -1,10 +1,16 @@
 'use client';
 
 import * as React from 'react';
-import { Check, Code2, Copy, Eye } from 'lucide-react';
+import {
+  RiCheckLine,
+  RiCodeSSlashLine,
+  RiEyeLine,
+  RiFileCopyLine,
+} from '@remixicon/react';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 
 import { Index } from '@/components/demos';
+import * as SegmentedControl from '@/components/ui/segmented-control';
 import { cn } from '@/lib/cn';
 
 export function ComponentPreview({
@@ -16,13 +22,13 @@ export function ComponentPreview({
   className?: string;
   align?: 'center' | 'start';
 }) {
-  const [view, setView] = React.useState<'preview' | 'code'>('preview');
+  const [view, setView] = React.useState('preview');
   const [copied, setCopied] = React.useState(false);
   const demo = Index[name];
 
   if (!demo) {
     return (
-      <div className="text-fd-muted-foreground rounded-xl border border-dashed p-6 text-sm">
+      <div className="text-text-sub-600 rounded-xl border border-dashed border-stroke-soft-200 p-6 text-sm">
         Demo <code className="font-mono">{name}</code> not found.
       </div>
     );
@@ -41,52 +47,42 @@ export function ComponentPreview({
   }
 
   return (
-    <div className="not-prose my-4 flex flex-col gap-3">
+    <SegmentedControl.Root
+      value={view}
+      onValueChange={setView}
+      className="component-preview not-prose my-5 flex flex-col gap-4"
+    >
       <div className="flex items-center justify-between gap-3">
-        <div className="bg-bg-weak-50 flex items-center rounded-lg p-0.5">
-          <button
-            type="button"
-            onClick={() => setView('preview')}
-            className={cn(
-              'text-label-sm inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 transition-colors',
-              view === 'preview'
-                ? 'bg-bg-white-0 text-text-strong-950 shadow-regular-xs'
-                : 'text-text-sub-600 hover:text-text-strong-950',
-            )}
-          >
-            <Eye className="size-4" />
+        <SegmentedControl.List className="w-fit auto-cols-max">
+          <SegmentedControl.Trigger value="preview" className="px-2.5">
+            <RiEyeLine className="size-4" />
             Preview
-          </button>
-          <button
-            type="button"
-            onClick={() => setView('code')}
-            className={cn(
-              'text-label-sm inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 transition-colors',
-              view === 'code'
-                ? 'bg-bg-white-0 text-text-strong-950 shadow-regular-xs'
-                : 'text-text-sub-600 hover:text-text-strong-950',
-            )}
-          >
-            <Code2 className="size-4" />
+          </SegmentedControl.Trigger>
+          <SegmentedControl.Trigger value="code" className="px-2.5">
+            <RiCodeSSlashLine className="size-4" />
             Code
-          </button>
-        </div>
+          </SegmentedControl.Trigger>
+        </SegmentedControl.List>
 
         <button
           type="button"
           onClick={onCopy}
-          className="bg-bg-weak-50 text-text-sub-600 hover:text-text-strong-950 text-label-sm inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 transition-colors"
+          className="bg-bg-weak-25 text-label-sm text-text-sub-600 hover:text-text-strong-950 flex h-7 items-center gap-1 rounded-lg pr-3 pl-1.5 transition"
         >
-          {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
+          {copied ? (
+            <RiCheckLine className="size-5" />
+          ) : (
+            <RiFileCopyLine className="size-5" />
+          )}
           Copy
         </button>
       </div>
 
-      <div className="border-stroke-soft-200 overflow-hidden rounded-xl border">
-        {view === 'preview' ? (
+      <div className="bg-bg-white-0 relative overflow-hidden rounded-20 ring-1 ring-gray-100">
+        <SegmentedControl.Content value="preview" className="outline-none">
           <div
             className={cn(
-              'bg-bg-white-0 flex min-h-[200px] w-full flex-wrap gap-4 p-10',
+              'preview flex min-h-64 w-full flex-wrap gap-4 p-10 md:min-h-64',
               align === 'center' && 'items-center justify-center',
               align === 'start' && 'items-start justify-start',
               className,
@@ -94,16 +90,20 @@ export function ComponentPreview({
           >
             <Preview />
           </div>
-        ) : (
-          <div className="bg-bg-white-0 [&_figure]:m-0 [&_figure]:rounded-none [&_figure]:border-0">
+        </SegmentedControl.Content>
+        <SegmentedControl.Content value="code" className="outline-none">
+          <div className="max-h-150 overflow-auto p-1 [&_figure]:m-0 [&_figure]:rounded-[11px] [&_figure]:border-0 [&_figure]:shadow-none">
             <DynamicCodeBlock
               lang="tsx"
               code={demo.code}
-              codeblock={{ allowCopy: false }}
+              codeblock={{
+                allowCopy: false,
+                'data-line-numbers': true,
+              }}
             />
           </div>
-        )}
+        </SegmentedControl.Content>
       </div>
-    </div>
+    </SegmentedControl.Root>
   );
 }

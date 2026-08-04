@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { RiArrowRightLine } from '@remixicon/react';
 
 import * as ButtonPrimitive from '@/components/ui/button';
 import { buttonVariants } from '@/components/ui/button';
@@ -26,11 +26,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = 'Button';
 
 export default function ButtonComposition() {
-  return <Button endIcon={ArrowRight}>Button</Button>;
+  return <Button endIcon={RiArrowRightLine}>Button</Button>;
 }
 
 export const code = `import * as React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { RiArrowRightLine } from '@remixicon/react';
 
 import * as ButtonPrimitive from '@/components/ui/button';
 import type { VariantProps } from '@/utils/tv';
@@ -57,5 +57,5 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = 'Button';
 
 export default function ButtonComposition() {
-  return <Button endIcon={ArrowRight}>Button</Button>;
+  return <Button endIcon={RiArrowRightLine}>Button</Button>;
 }`;

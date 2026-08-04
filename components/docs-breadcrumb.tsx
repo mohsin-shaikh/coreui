@@ -3,7 +3,7 @@
 import { cn } from '@/lib/cn';
 import { useTreeContext, useTreePath } from 'fumadocs-ui/contexts/tree';
 import Link from 'fumadocs-core/link';
-import { ChevronRight } from 'lucide-react';
+import { RiArrowRightSLine } from '@remixicon/react';
 import { Fragment, useMemo, type ComponentProps } from 'react';
 import { getBreadcrumbItemsFromPath } from 'fumadocs-core/breadcrumb';
 import type { BreadcrumbOptions } from 'fumadocs-core/breadcrumb';
@@ -41,11 +41,14 @@ export function DocsBreadcrumb({
       className={cn('flex items-center gap-1.5 text-sm text-fd-muted-foreground', props.className)}
     >
       {items.map((item, i) => {
-        const className = cn('truncate', i === items.length - 1 && 'text-fd-primary font-medium');
+        const className = cn(
+          'truncate',
+          i === items.length - 1 && 'text-orange-500 font-medium',
+        );
 
         return (
           <Fragment key={i}>
-            {i !== 0 && <ChevronRight className="size-3.5 shrink-0" />}
+            {i !== 0 && <RiArrowRightSLine className="size-3.5 shrink-0" />}
             {item.url ? (
               <Link href={item.url} className={cn(className, 'transition-opacity hover:opacity-80')}>
                 {item.name}

@@ -33,8 +33,10 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
       slots={{ breadcrumb: DocsBreadcrumb }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
-      <div className="flex flex-row gap-2 items-center border-b pb-6">
+      <DocsDescription className="mb-4 text-text-sub-600">
+        {page.data.description}
+      </DocsDescription>
+      <div className="mb-6 flex flex-row items-center gap-2">
         <MarkdownCopyButton markdownUrl={markdownUrl} />
         <ViewOptionsPopover
           markdownUrl={markdownUrl}

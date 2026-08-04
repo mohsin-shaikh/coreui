@@ -572,6 +572,16 @@
 
   --radius-20: 1.25rem;
 
+  /* Docs chrome shadows */
+  --shadow-docs-button-white:
+    0 4px 8px rgba(41, 41, 41, 0.06), 0 2px 4px rgba(41, 41, 41, 0.04),
+    0 1px 2px rgba(41, 41, 41, 0.04), inset 0 -0.5px 0.5px rgba(41, 41, 41, 0.08);
+
+  --shadow-docs-xs:
+    0 0 0 1px rgba(51, 51, 51, 0.04), 0 4px 8px -2px rgba(51, 51, 51, 0.06),
+    0 2px 4px rgba(51, 51, 51, 0.04), 0 1px 2px rgba(51, 51, 51, 0.04),
+    inset 0 -1px 1px -0.5px rgba(51, 51, 51, 0.06);
+
   /* CoreUI Animation System - Dynamic from tokens.ts */
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
@@ -802,7 +812,41 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* Docs chrome */
+:root {
+  --color-fd-background: #ffffff;
+  --color-fd-card: #ffffff;
+  --color-fd-secondary: var(--color-bg-weak-25);
+  --color-fd-muted: var(--color-bg-weak-25);
+  --color-fd-border: color-mix(in srgb, var(--color-stroke-soft-200) 70%, transparent);
+  --color-fd-accent: var(--color-bg-weak-25);
+  --color-fd-primary: var(--color-orange-500);
+  --color-fd-primary-foreground: #ffffff;
+}
+
+.dark {
+  --color-fd-background: var(--color-bg-white-0);
+  --color-fd-card: var(--color-bg-white-0);
+  --color-fd-secondary: var(--color-bg-weak-50);
+  --color-fd-muted: var(--color-bg-weak-50);
+  --color-fd-border: color-mix(in srgb, var(--color-stroke-soft-200) 70%, transparent);
+  --color-fd-accent: var(--color-bg-weak-50);
+  --color-fd-primary: var(--color-orange-400);
+  --color-fd-primary-foreground: #ffffff;
+}
+
+/* Installation / fumadocs tabs */
+.fd-steps {
+  --fd-steps-border: var(--color-stroke-soft-200);
+}
+
 html > body[data-scroll-locked] {
   margin-right: 0px !important;
   --removed-body-scroll-bar-size: 0px !important;
+}
+
+/* Remix Icon optical scale (CoreUI starter) */
+.remixicon path {
+  transform: scale(0.8996);
+  transform-origin: center;
 }
