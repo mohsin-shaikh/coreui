@@ -8,4 +8,11 @@ export const docsPageLinks: Record<string, DocsPageLink[]> = {
       href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
     },
   ],
+  '/docs/v0.1/utils/cn': [
+    { label: 'clsx', href: 'https://github.com/lukeed/clsx' },
+    { label: 'tailwind-merge', href: 'https://github.com/dcastil/tailwind-merge' },
+  ],
+  '/docs/v0.1/utils/tv': [
+    { label: 'tailwind-variants', href: 'https://www.tailwind-variants.org' },
+  ],
 };

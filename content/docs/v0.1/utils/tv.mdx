@@ -1,4 +1,96 @@
 ---
 title: tv
-description: tv component
+description: An instance of tailwind-variants wired to CoreUI's class merging.
 ---
+
+CoreUI components describe their variants with [tailwind-variants](https://www.tailwind-variants.org). `tv` is a preconfigured instance of it, so variant styles resolve conflicts the same way [`cn`](/docs/v0.1/utils/cn) does.
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependency:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install tailwind-variants
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add tailwind-variants
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add tailwind-variants
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Set up `cn` first.
+
+    `tv` imports `twMergeConfig` from it, so follow the [cn page](/docs/v0.1/utils/cn) before continuing.
+  </Step>
+  <Step>
+    ### Create a `utils/tv.ts` file and paste the following code into it.
+
+    <ComponentSource src="utils/tv.ts" title="utils/tv.ts" />
+  </Step>
+  <Step>
+    ### Prettier setup (optional)
+
+    If you use `prettier-plugin-tailwindcss`, add `tv` alongside `cn` so its classes get sorted:
+
+    ```js title="prettier.config.mjs"
+    const config = {
+      plugins: ['prettier-plugin-tailwindcss'],
+      tailwindFunctions: ['cn', 'tv'],
+    };
+
+    export default config;
+    ```
+  </Step>
+</Steps>
+
+## Why not import tailwind-variants directly
+
+The package's default export builds its own `tailwind-merge` instance, which doesn't know about CoreUI's typography utilities. A variant that sets `text-label-sm` would then fail to override a base `text-paragraph-md`.
+
+`createTV({ twMergeConfig })` hands it the same group definitions [`cn`](/docs/v0.1/utils/cn) uses, so the two behave identically. Import from `@/utils/tv`, never from the package:
+
+```ts
+import { tv } from '@/utils/tv';
+```
+
+## Examples
+
+Variants, slots and compound variants all work as documented upstream. This is the shape CoreUI components use — a `tv` call defining the variant matrix, then the component reading from it:
+
+```tsx title="example.tsx"
+import { tv, type VariantProps } from '@/utils/tv';
+
+const badgeVariants = tv({
+  base: 'inline-flex items-center rounded-full px-2 text-label-xs',
+  variants: {
+    variant: {
+      filled: 'bg-bg-strong-950 text-text-white-0',
+      light: 'bg-bg-weak-50 text-text-sub-600',
+    },
+  },
+  defaultVariants: {
+    variant: 'filled',
+  },
+});
+
+type BadgeProps = React.HTMLAttributes<HTMLSpanElement> &
+  VariantProps<typeof badgeVariants>;
+
+function Badge({ className, variant, ...rest }: BadgeProps) {
+  return <span className={badgeVariants({ variant, class: className })} {...rest} />;
+}
+```
+
+For the full API — slots, compound variants and responsive variants — see the [tailwind-variants documentation](https://www.tailwind-variants.org/docs/introduction).

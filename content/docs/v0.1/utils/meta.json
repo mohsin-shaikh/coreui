@@ -1,5 +1,5 @@
 {
   "title": "Utils",
-  "collapsible": false,
+  "defaultOpen": true,
   "pages": ["cn", "polymorphic", "recursive-clone-children", "tv"]
 }

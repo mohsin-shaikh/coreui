@@ -28,6 +28,95 @@ function useTabsContext() {
   return ctx;
 }
 
+/** Trigger row with the sliding orange underline, shared by both tab flavours. */
+function TabsNav({ items, className }: { items: string[]; className?: string }) {
+  const [lineStyle, setLineStyle] = React.useState({ width: 0, left: 0 });
+
+  const { mounted, listRef } = useTabObserver({
+    onActiveTabChange: (_, activeTab) => {
+      const { offsetWidth: width, offsetLeft: left } = activeTab;
+      setLineStyle({ width, left });
+    },
+  });
+
+  return (
+    <TabsPrimitive.List
+      ref={listRef}
+      className={cn(
+        'group relative flex items-center gap-5 border-b border-ln-gray-100',
+        className,
+      )}
+    >
+      {items.map((item) => (
+        <TabsPrimitive.Trigger
+          key={item}
+          value={escapeValue(item)}
+          className="text-ln-label-xs text-ln-gray-450 data-[state=active]:text-ln-gray-900 md:text-ln-label-sm outline-none transition-colors"
+        >
+          {item}
+        </TabsPrimitive.Trigger>
+      ))}
+      <div
+        className={cn(
+          'absolute -bottom-px left-0 h-px bg-ln-orange transition-all duration-300',
+          !mounted && 'opacity-0',
+        )}
+        style={{
+          transform: `translate3d(${lineStyle.left}px, 0, 0)`,
+          width: `${lineStyle.width}px`,
+          transitionTimingFunction: 'cubic-bezier(0.65, 0, 0.35, 1)',
+        }}
+        aria-hidden="true"
+      />
+    </TabsPrimitive.List>
+  );
+}
+
+/**
+ * Tabs holding prose rather than a single snippet — CLI vs Manual and the like.
+ *
+ * Deliberately does not provide `CodeFrameContext`, so code blocks inside a
+ * panel still render their own frame.
+ */
+export function ContentTabs({
+  items,
+  defaultIndex = 0,
+  defaultValue,
+  className,
+  children,
+  ...props
+}: Omit<
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root>,
+  'orientation'
+> & {
+  items: string[];
+  defaultIndex?: number;
+}) {
+  const resolvedDefault =
+    defaultValue ?? escapeValue(items[defaultIndex]!);
+  const [value, setValue] = React.useState(resolvedDefault);
+  const collection = React.useMemo(() => [] as string[], []);
+
+  return (
+    <TabsPrimitive.Root
+      dir="ltr"
+      orientation="horizontal"
+      value={value}
+      onValueChange={(next) => {
+        if (!items.some((item) => escapeValue(item) === next)) return;
+        setValue(next);
+      }}
+      className={cn('mt-3 md:mt-4', className)}
+      {...props}
+    >
+      <TabsNav items={items} className="pb-3" />
+      <TabsContext.Provider value={{ items, collection }}>
+        {children}
+      </TabsContext.Provider>
+    </TabsPrimitive.Root>
+  );
+}
+
 export function Tabs({
   items,
   label = 'terminal',
@@ -50,14 +139,6 @@ export function Tabs({
   const collection = React.useMemo(() => [] as string[], []);
   const contentRef = React.useRef<HTMLDivElement>(null);
   const [copied, setCopied] = React.useState(false);
-  const [lineStyle, setLineStyle] = React.useState({ width: 0, left: 0 });
-
-  const { mounted, listRef } = useTabObserver({
-    onActiveTabChange: (_, activeTab) => {
-      const { offsetWidth: width, offsetLeft: left } = activeTab;
-      setLineStyle({ width, left });
-    },
-  });
 
   async function onCopy() {
     const panel = contentRef.current?.querySelector(
@@ -91,32 +172,7 @@ export function Tabs({
       {...props}
     >
       {items ? (
-        <TabsPrimitive.List
-          ref={listRef}
-          className="group relative flex h-12 items-center gap-5 border-b border-ln-gray-100 px-5 md:h-[52px]"
-        >
-          {items.map((item) => (
-            <TabsPrimitive.Trigger
-              key={item}
-              value={escapeValue(item)}
-              className="text-ln-label-xs text-ln-gray-450 data-[state=active]:text-ln-gray-900 md:text-ln-label-sm outline-none transition-colors"
-            >
-              {item}
-            </TabsPrimitive.Trigger>
-          ))}
-          <div
-            className={cn(
-              'absolute -bottom-px left-0 h-px bg-ln-orange transition-all duration-300',
-              !mounted && 'opacity-0',
-            )}
-            style={{
-              transform: `translate3d(${lineStyle.left}px, 0, 0)`,
-              width: `${lineStyle.width}px`,
-              transitionTimingFunction: 'cubic-bezier(0.65, 0, 0.35, 1)',
-            }}
-            aria-hidden="true"
-          />
-        </TabsPrimitive.List>
+        <TabsNav items={items} className="h-12 px-5 md:h-[52px]" />
       ) : null}
 
       <div className="flex flex-col gap-3 p-3">

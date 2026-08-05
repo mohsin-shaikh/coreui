@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/cn';
+import { isInsideFlattenedFolder } from '@/lib/docs-nav';
 import { useTreeContext, useTreePath } from 'fumadocs-ui/contexts/tree';
 import Link from 'fumadocs-core/link';
 import { RiArrowRightSLine } from '@remixicon/react';
@@ -22,6 +23,13 @@ export function DocsBreadcrumb({
   const { root } = useTreeContext();
 
   const items = useMemo(() => {
+    // Pages under a flattened folder are absent from the sidebar, so their
+    // two-level trail would point at somewhere the reader can't navigate back
+    // to. The folder's own index keeps the normal "Getting Started" crumb.
+    if (isInsideFlattenedFolder(pathname)) {
+      return [];
+    }
+
     if (pathname.startsWith('/docs/v0.1/ui/')) {
       return [{ name: 'Base Components' }];
     }

@@ -7,6 +7,7 @@ import { useTreePath } from 'fumadocs-ui/contexts/tree';
 import { usePathname } from 'fumadocs-core/framework';
 
 import { cn } from '@/lib/cn';
+import { isFlattenedFolder } from '@/lib/docs-nav';
 
 /**
  * Fumadocs DocsLayout FolderTrigger passes `className` as a function (Base UI).
@@ -46,9 +47,15 @@ export function DocsSidebarFolder({
   const path = useTreePath();
   const pathname = usePathname();
 
+  // fumadocs keys the chevron off `collapsible`, not off whether anything is
+  // actually rendered below, so a folder with nothing to show has to opt out.
+  const hasChildren =
+    !isFlattenedFolder(item.index?.url) && item.children.length > 0;
+  const collapsible = hasChildren ? item.collapsible : false;
+
   return (
     <Base.SidebarFolder
-      collapsible={item.collapsible}
+      collapsible={collapsible}
       active={path.includes(item)}
       defaultOpen={item.defaultOpen}
     >
@@ -60,7 +67,7 @@ export function DocsSidebarFolder({
           {item.name}
         </FolderTitle>
       )}
-      <FolderBody>{children}</FolderBody>
+      {hasChildren ? <FolderBody>{children}</FolderBody> : null}
     </Base.SidebarFolder>
   );
 }
@@ -100,7 +107,9 @@ function FolderIndexLink({
     <Base.SidebarFolderLink
       href={index.url}
       external={index.external}
-      active={isActive(index.url, pathname)}
+      // A flattened folder stands in for its children, so it stays highlighted
+      // while the reader is on one of them.
+      active={isActive(index.url, pathname, isFlattenedFolder(index.url))}
       className={cn(
         itemBaseClassName,
         'w-full transition-colors hover:bg-fd-accent/50 hover:text-fd-accent-foreground/80 hover:transition-none',

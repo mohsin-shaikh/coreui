@@ -6,9 +6,13 @@ import { ComponentPreview } from '@/components/component-preview';
 import { ComponentSource } from '@/components/component-source';
 import { ColorPalette } from '@/components/color-showcase';
 import { DocsFigure, DocsPre } from '@/components/docs-code-frame';
+import {
+  FrameworkCard,
+  FrameworkCards,
+} from '@/components/docs-framework-card';
 import { DocsH2, DocsH3 } from '@/components/docs-heading';
 import { DocsLink, DocsOl, DocsP, DocsUl } from '@/components/docs-prose';
-import { Tab, Tabs } from '@/components/docs-tabs';
+import { ContentTabs, Tab, Tabs } from '@/components/docs-tabs';
 import {
   TypographySample,
   TypographySection,
@@ -27,6 +31,9 @@ export function getMDXComponents(components?: MDXComponents) {
     a: DocsLink,
     Tabs,
     Tab,
+    ContentTabs,
+    FrameworkCard,
+    FrameworkCards,
     Step,
     Steps,
     ComponentPreview,

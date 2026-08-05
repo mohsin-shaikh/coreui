@@ -1,4 +1,114 @@
 ---
 title: cn
-description: cn component
+description: Combines classNames with Tailwind v4's class conflict resolution.
 ---
+
+Every CoreUI component passes its classes through `cn`, which is what lets a `className` you pass in override the component's own styles instead of racing them in the cascade.
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install clsx tailwind-merge
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add clsx tailwind-merge
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add clsx tailwind-merge
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `utils/cn.ts` file and paste the following code into it.
+
+    <ComponentSource src="utils/cn.ts" title="utils/cn.ts" />
+  </Step>
+  <Step>
+    ### IntelliSense setup (optional)
+
+    For class name completion inside `cn` and `tv`, add this to your `.vscode/settings.json`:
+
+    ```json title=".vscode/settings.json"
+    {
+      "tailwindCSS.experimental.classRegex": [
+        ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+      ]
+    }
+    ```
+  </Step>
+  <Step>
+    ### Prettier setup (optional)
+
+    If you use `prettier-plugin-tailwindcss`, list `cn` so its classes get sorted too:
+
+    ```js title="prettier.config.mjs"
+    const config = {
+      plugins: ['prettier-plugin-tailwindcss'],
+      tailwindFunctions: ['cn'],
+    };
+
+    export default config;
+    ```
+  </Step>
+</Steps>
+
+## Why the custom merge config
+
+`tailwind-merge` resolves conflicts by knowing which classes belong to the same group — it drops `px-2` when it sees a later `px-4`. It can't know that about CoreUI's typography scale, because `text-label-sm` and `text-paragraph-md` are custom utilities, not stock Tailwind ones.
+
+Without the config, both would survive a merge and the winner would come down to source order. `twMergeConfig` registers every `title-*`, `label-*`, `paragraph-*`, `subheading-*` and `doc-*` name as a single `font-size` group, so the last one wins as you'd expect:
+
+```ts
+cn('text-label-sm', 'text-paragraph-md'); // → 'text-paragraph-md'
+```
+
+`twMergeConfig` is exported rather than kept private because [`tv`](/docs/v0.1/utils/tv) needs the same group definitions.
+
+<Callout title="The ln-* entries are documentation-only">
+  The `ln` category in the config covers the tokens this documentation site uses
+  for its own prose. They're harmless to keep, but nothing in
+  `components/ui` references them — drop that block if you want the file to
+  carry only what your app uses.
+</Callout>
+
+## Examples
+
+`cn` takes anything [clsx](https://github.com/lukeed/clsx) accepts, so conditional objects and arrays work alongside plain strings:
+
+```tsx title="example.tsx"
+import { cn } from '@/utils/cn';
+
+function MyComponent({
+  className,
+  isActive,
+  ...rest
+}: React.HTMLAttributes<HTMLDivElement> & {
+  isActive?: boolean;
+}) {
+  return (
+    <div
+      className={cn(
+        'size-3 bg-bg-white-0 text-text-strong-950',
+        {
+          'bg-bg-strong-950 text-text-white-0': isActive,
+        },
+        className,
+      )}
+      {...rest}
+    />
+  );
+}
+```
+
+Passing `className` last is the important part — that's the position that lets a caller override the defaults.

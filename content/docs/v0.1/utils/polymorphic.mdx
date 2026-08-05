@@ -1,4 +1,108 @@
 ---
 title: Polymorphic
-description: Polymorphic component
+description: Utility types for strongly typed polymorphic components.
 ---
+
+Types for components that render a different element depending on an `as` prop. CoreUI uses them for icon slots, where `asChild` would mean cloning an element just to swap a tag:
+
+```tsx
+<FancyButton.Icon as={RiArrowRightLine} />
+```
+
+The types give `as` autocomplete and then type the remaining props against whatever component you passed. They're only needed if you use TypeScript.
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Create a `utils/polymorphic.ts` file and paste the following code into it.
+
+    <ComponentSource src="utils/polymorphic.ts" title="utils/polymorphic.ts" />
+  </Step>
+</Steps>
+
+## Examples
+
+### Without forwardRef
+
+`PolymorphicComponentProps<T, OwnProps>` merges your own props with the props of `T`, minus the ones you've already claimed. This is how every CoreUI icon slot is written — here is the real one from `fancy-button.tsx`:
+
+```tsx title="components/ui/fancy-button.tsx"
+import { PolymorphicComponentProps } from '@/utils/polymorphic';
+
+function FancyButtonIcon<T extends React.ElementType>({
+  className,
+  variant,
+  size,
+  as,
+  ...rest
+}: PolymorphicComponentProps<T, FancyButtonSharedProps>) {
+  const Component = as || 'div';
+  const { icon } = fancyButtonVariants({ variant, size });
+
+  return <Component className={icon({ class: className })} {...rest} />;
+}
+```
+
+Because `as` defaults to `div`, both of these type-check, and the second one accepts every prop a Remix icon takes:
+
+```tsx
+<FancyButton.Icon />
+<FancyButton.Icon as={RiArrowRightLine} />
+```
+
+### With forwardRef
+
+No CoreUI component needs this, since `ref` is a plain prop in React 19. If you're supporting an older major, the generic has to be threaded through by hand:
+
+```tsx title="example.tsx"
+import * as React from 'react';
+
+import { cn } from '@/utils/cn';
+import {
+  PolymorphicComponent,
+  PolymorphicComponentPropsWithRef,
+  PolymorphicRef,
+} from '@/utils/polymorphic';
+
+type ButtonOwnProps = {
+  size?: 'large' | 'medium';
+};
+
+const Button: PolymorphicComponent<ButtonOwnProps> = React.forwardRef(
+  <T extends React.ElementType = 'button'>(
+    {
+      as,
+      className,
+      size = 'large',
+      ...rest
+    }: PolymorphicComponentPropsWithRef<T, ButtonOwnProps>,
+    forwardedRef?: PolymorphicRef<T>,
+  ) => {
+    const Component = as || 'button';
+
+    return (
+      <Component
+        ref={forwardedRef}
+        className={cn(
+          {
+            'h-12 px-4': size === 'large',
+            'h-9 px-3': size === 'medium',
+          },
+          className,
+        )}
+        {...rest}
+      />
+    );
+  },
+);
+```
+
+## API Reference
+
+| Type | Use |
+| --- | --- |
+| `PolymorphicComponentProps<T, P>` | Props for a polymorphic component without a ref |
+| `PolymorphicComponentPropsWithRef<T, P>` | The same, plus a correctly typed `ref` |
+| `PolymorphicRef<T>` | The ref type of `T`, for a `forwardRef` parameter |
+| `PolymorphicComponent<P>` | Annotates the component itself so the generic survives `forwardRef` |

@@ -112,20 +112,42 @@ export function DocsCodeFrame({
   );
 }
 
-/** Bare style pre — no fumadocs CodeBlock chrome */
+/**
+ * MDX code fences. Bare inside a frame, wrapped when standalone.
+ *
+ * fumadocs hands its `pre` the fence's `title` and an `icon` markup string,
+ * expecting its own CodeBlock to consume them; `icon` is dropped here so it
+ * doesn't land on the DOM node.
+ */
 export function DocsPre({
   className,
+  title,
+  icon: _icon,
+  children,
   ...props
-}: React.ComponentPropsWithoutRef<'pre'>) {
-  return (
+}: React.ComponentPropsWithoutRef<'pre'> & { icon?: unknown }) {
+  const inFrame = React.useContext(CodeFrameContext);
+
+  const pre = (
     <pre
       className={cn(
         'm-0 bg-transparent p-0 text-inherit font-medium tracking-normal',
         className,
       )}
       {...props}
-    />
+    >
+      {children}
+    </pre>
   );
+
+  if (inFrame) {
+    return pre;
+  }
+
+  // No `title` means an illustrative snippet rather than a file, and the
+  // language isn't available here — so the label slot is left empty instead of
+  // captioning JSX as a terminal.
+  return <DocsCodeFrame label={title}>{pre}</DocsCodeFrame>;
 }
 
 /**

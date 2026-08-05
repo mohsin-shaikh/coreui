@@ -10,8 +10,7 @@
  * from the CoreUI design tokens in `styles/coreui.css`.
  * ========================================================================= */
 
-/* Shiki css-variables theme
-   https://alignui.com/_next/static/css/213dd5112c6288ca.css */
+/* Shiki css-variables theme */
 :root {
   --shiki-token-function: #e561b0;
   --shiki-token-keyword: #8461e5;
@@ -352,9 +351,33 @@
   margin-top: 0.75rem; /* mt-3 */
 }
 
+/* Framework guides number their sections: an `h2` sitting directly inside a
+   steps container carries the counter itself, so it drops the section rule and
+   shrinks to the same label as a step title. Leaving it statically positioned
+   is deliberate — the marker then resolves against `.fd-steps`, which is what
+   centres it on the rail. */
+.fd-steps > h2 {
+  @apply fd-step;
+
+  margin-top: 2rem; /* mt-8 */
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+  font-size: var(--text-ln-label-sm);
+  line-height: var(--text-ln-label-sm--line-height);
+  letter-spacing: var(--text-ln-label-sm--letter-spacing);
+  font-weight: var(--text-ln-label-sm--font-weight);
+  color: var(--color-ln-gray-800);
+}
+
+.fd-steps > h2 + p {
+  margin-top: 0.75rem; /* mt-3 */
+}
+
 @media (width >= 768px) {
   .fd-step > .step-title,
-  .fd-step > h3 {
+  .fd-step > h3,
+  .fd-steps > h2 {
     margin-top: 42px; /* md:mt-[42px] */
     font-size: var(--text-ln-label-md);
     line-height: var(--text-ln-label-md--line-height);

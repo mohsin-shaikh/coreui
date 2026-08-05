@@ -1,4 +1,153 @@
 ---
-title: Recursive Clone Children
-description: Recursive Clone Children component
+title: recursiveCloneChildren
+description: Clones children recursively, passing props down to components matched by display name.
 ---
+
+Compound components need to share state with their parts. `Root` knows the `size` and `variant`; `Icon` needs them but sits somewhere below in the tree, possibly nested inside other elements.
+
+`recursiveCloneChildren` walks the whole subtree and injects props into the children whose `displayName` matches — so the parts stay writable as plain JSX, with no context provider and no requirement that they be direct children:
+
+```tsx
+<FancyButton.Root variant="primary" size="small">
+  Continue
+  <FancyButton.Icon as={RiArrowRightLine} /> {/* receives variant and size */}
+</FancyButton.Root>
+```
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Create a `utils/recursive-clone-children.tsx` file and paste the following code into it.
+
+    <ComponentSource src="utils/recursive-clone-children.tsx" title="utils/recursive-clone-children.tsx" />
+  </Step>
+</Steps>
+
+## Parameters
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `children` | `React.ReactNode` | The subtree to clone |
+| `additionalProps` | `any` | Props injected into matched components |
+| `displayNames` | `string[]` | Display names to match against |
+| `uniqueId` | `string` | Key prefix, usually from `React.useId()` |
+| `asChild` | `boolean` | Whether the parent renders through `Slot` |
+
+## Examples
+
+### Without asChild
+
+Each part sets a `displayName`, and the root lists the ones that should receive the shared props. Anything unmatched is cloned through untouched:
+
+```tsx title="components/ui/box.tsx"
+import * as React from 'react';
+
+import { cn } from '@/utils/cn';
+import { recursiveCloneChildren } from '@/utils/recursive-clone-children';
+
+const BOX_ROOT_NAME = 'BoxRoot';
+const BOX_ICON_NAME = 'BoxIcon';
+
+type BoxProps = {
+  size?: 'large' | 'medium';
+} & React.HTMLAttributes<HTMLDivElement>;
+
+type SharedProps = Pick<BoxProps, 'size'>;
+
+function Box({ children, className, size = 'large', ...rest }: BoxProps) {
+  const uniqueId = React.useId();
+  const sharedProps: SharedProps = { size };
+
+  const extendedChildren = recursiveCloneChildren(
+    children as React.ReactElement[],
+    sharedProps,
+    [BOX_ICON_NAME],
+    uniqueId,
+  );
+
+  return (
+    <div
+      className={cn(
+        {
+          'px-4 py-3': size === 'large',
+          'px-3 py-2': size === 'medium',
+        },
+        className,
+      )}
+      {...rest}
+    >
+      {extendedChildren}
+    </div>
+  );
+}
+Box.displayName = BOX_ROOT_NAME;
+
+function BoxIcon({
+  size,
+  className,
+  ...rest
+}: SharedProps & React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <RiInformationLine
+      className={cn(
+        {
+          'size-5': size === 'large',
+          'size-4': size === 'medium',
+        },
+        className,
+      )}
+      {...rest}
+    />
+  );
+}
+BoxIcon.displayName = BOX_ICON_NAME;
+
+export { Box as Root, BoxIcon as Icon };
+```
+
+`size` reaches the icon without being passed explicitly:
+
+```tsx
+import * as Box from '@/components/ui/box';
+
+<Box.Root size="medium">
+  Some content
+  <Box.Icon />
+</Box.Root>;
+```
+
+### With asChild
+
+When the root renders through Radix's `Slot`, it must return a single element rather than an array — otherwise `Slot` has nothing to merge onto. Pass `asChild` through as the last argument and the helper unwraps to the first child:
+
+```tsx title="components/ui/box.tsx"
+import { Slot } from '@radix-ui/react-slot';
+
+type BoxProps = {
+  size?: 'large' | 'medium';
+  asChild?: boolean;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+function Box({ children, className, size = 'large', asChild, ...rest }: BoxProps) {
+  const uniqueId = React.useId();
+  const Component = asChild ? Slot : 'div';
+
+  const extendedChildren = recursiveCloneChildren(
+    children as React.ReactElement[],
+    { size },
+    [BOX_ICON_NAME],
+    uniqueId,
+    asChild,
+  );
+
+  return <Component {...rest}>{extendedChildren}</Component>;
+}
+```
+
+<Callout title="Give every part a displayName">
+  Matching is by `displayName`, so a part that doesn't set one silently receives
+  nothing. Minifiers rewrite function names but leave the explicit assignment
+  alone, which is why CoreUI declares the names as constants and assigns them
+  after the definition.
+</Callout>
