@@ -1,4 +1,111 @@
 ---
 title: Link Button
-description: Link Button component
+description: Buttons that seamlessly integrate with text content.
 ---
+
+<ComponentPreview name="link-button-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `link-button.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/link-button.tsx" title="components/ui/link-button.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Gray (Default)
+
+<ComponentPreview name="link-button-gray" />
+
+### Black
+
+<ComponentPreview name="link-button-black" />
+
+### Primary
+
+<ComponentPreview name="link-button-primary" />
+
+### Error
+
+<ComponentPreview name="link-button-error" />
+
+### Modifiable
+
+Text color inherits from the parent by default. No default color is applied, allowing for full customization.
+
+Here's an example with custom colors specified:
+
+<ComponentPreview name="link-button-modifiable" />
+
+### Size
+
+<ComponentPreview name="link-button-size" />
+
+### Underline
+
+<ComponentPreview name="link-button-underline" />
+
+### With Icon
+
+<ComponentPreview name="link-button-with-icon" />
+
+### Disabled
+
+<ComponentPreview name="link-button-disabled" />
+
+### asChild
+
+<ComponentPreview name="link-button-as-child" />
+
+## Composition
+
+<ComponentPreview name="link-button-composition" />
+
+## API Reference
+
+### LinkButton.Root
+
+This component is based on the `<button>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"gray"` \| `"black"` \| `"primary"` \| `"error"` \| `"modifiable"` | `"gray"` |
+| `size` | `"medium"` \| `"small"` | `"medium"` |
+| `underline` | `boolean` | `false` |
+| `asChild` | `boolean` | |
+
+### LinkButton.Icon
+
+The `LinkButton.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |

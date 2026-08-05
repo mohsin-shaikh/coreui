@@ -1,4 +1,77 @@
 ---
 title: Button Group
-description: Button Group component
+description: Button groups are a set of buttons sticked together in a horizontal line.
 ---
+
+<ComponentPreview name="button-group-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `button-group.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/button-group.tsx" title="components/ui/button-group.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Size
+
+<ComponentPreview name="button-group-size" />
+
+### Radix Toggle Group
+
+An example demonstrating how to use Button Group with `@radix-ui/react-toggle-group` primitives.
+
+<ComponentPreview name="button-group-toggle-group" />
+
+## API Reference
+
+### ButtonGroup.Root
+
+This component is based on the `<div>` element.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `size` | `"small"` \| `"xsmall"` \| `"xxsmall"` | `"small"` |
+| `asChild` | `boolean` | |
+
+### ButtonGroup.Item
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |
+
+### ButtonGroup.Icon
+
+The `ButtonGroup.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |

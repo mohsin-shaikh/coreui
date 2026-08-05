@@ -1,4 +1,98 @@
 ---
 title: Fancy Button
-description: Fancy Button component
+description: Regular buttons with a fancy appearance.
 ---
+
+<ComponentPreview name="fancy-button-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `fancy-button.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/fancy-button.tsx" title="components/ui/fancy-button.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Neutral (Default)
+
+<ComponentPreview name="fancy-button-neutral" />
+
+### Primary
+
+<ComponentPreview name="fancy-button-primary" />
+
+### Destructive
+
+<ComponentPreview name="fancy-button-destructive" />
+
+### Basic
+
+<ComponentPreview name="fancy-button-basic" />
+
+### With Icon
+
+<ComponentPreview name="fancy-button-with-icon" />
+
+### Size
+
+<ComponentPreview name="fancy-button-size" />
+
+### Disabled
+
+<ComponentPreview name="fancy-button-disabled" />
+
+### asChild
+
+<ComponentPreview name="fancy-button-as-child" />
+
+## Composition
+
+<ComponentPreview name="fancy-button-composition" />
+
+## API Reference
+
+### FancyButton.Root
+
+This component is based on the `<button>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"neutral"` \| `"primary"` \| `"destructive"` \| `"basic"` | `"neutral"` |
+| `size` | `"medium"` \| `"small"` \| `"xsmall"` | `"medium"` |
+| `asChild` | `boolean` | |
+
+### FancyButton.Icon
+
+The `FancyButton.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |

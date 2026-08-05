@@ -1,4 +1,107 @@
 ---
 title: Compact Button
-description: Compact Button component
+description: Buttons that are ideal for when space is limited.
 ---
+
+<ComponentPreview name="compact-button-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `compact-button.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/compact-button.tsx" title="components/ui/compact-button.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Stroke (Default)
+
+<ComponentPreview name="compact-button-stroke" />
+
+### Ghost
+
+<ComponentPreview name="compact-button-ghost" />
+
+### White
+
+<ComponentPreview name="compact-button-white" />
+
+### Modifiable
+
+Text color inherits from the parent by default. No default color, background or hover colors are applied, allowing for full customization.
+
+Here's an example with custom colors specified:
+
+<ComponentPreview name="compact-button-modifiable" />
+
+### Size
+
+<ComponentPreview name="compact-button-size" />
+
+### Full Radius
+
+<ComponentPreview name="compact-button-full-radius" />
+
+### Disabled
+
+<ComponentPreview name="compact-button-disabled" />
+
+### asChild
+
+<ComponentPreview name="compact-button-as-child" />
+
+## Composition
+
+You can simplify component usage by creating a custom API that abstracts the core functionalities.
+
+An example with a required `icon` prop:
+
+<ComponentPreview name="compact-button-composition" />
+
+## API Reference
+
+### CompactButton.Root
+
+This component is based on the `<button>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"stroke"` \| `"ghost"` \| `"white"` \| `"modifiable"` | `"stroke"` |
+| `size` | `"large"` \| `"medium"` | `"large"` |
+| `fullRadius` | `boolean` | `false` |
+| `asChild` | `boolean` | |
+
+### CompactButton.Icon
+
+The `CompactButton.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |
