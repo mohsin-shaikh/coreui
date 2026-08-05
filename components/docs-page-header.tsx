@@ -32,7 +32,7 @@ export function DocsDashedSeparator({ className }: { className?: string }) {
       <div
         role="separator"
         aria-hidden
-        className="docs-dashed-separator -mt-px h-px w-full"
+        className="docs-dashed-separator -mt-px h-px w-full text-ln-gray-200"
       />
     </div>
   );

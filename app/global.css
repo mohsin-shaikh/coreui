@@ -2,6 +2,67 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 
+/* Shiki css-variables theme
+   https://alignui.com/_next/static/css/213dd5112c6288ca.css */
+:root {
+  --shiki-token-function: #e561b0;
+  --shiki-token-keyword: #8461e5;
+  --shiki-token-string: #8461e5;
+  --shiki-token-comment: #b1b1b1;
+  --shiki-token-constant: #67a300;
+  --shiki-token-string-expression: #4777d6;
+  --shiki-ansi-black: #000;
+  --shiki-ansi-black-dim: #00000080;
+  --shiki-ansi-red: #b00;
+  --shiki-ansi-red-dim: #bb000080;
+  --shiki-ansi-green: #0b0;
+  --shiki-ansi-green-dim: #00bb0080;
+  --shiki-ansi-yellow: #bb0;
+  --shiki-ansi-yellow-dim: #bbbb0080;
+  --shiki-ansi-blue: #00b;
+  --shiki-ansi-blue-dim: #0000bb80;
+  --shiki-ansi-magenta: #f0f;
+  --shiki-ansi-magenta-dim: #ff00ff80;
+  --shiki-ansi-cyan: #0bb;
+  --shiki-ansi-cyan-dim: #00bbbb80;
+  --shiki-ansi-white: #eee;
+  --shiki-ansi-white-dim: #eeeeee80;
+  --shiki-ansi-bright-black: #555;
+  --shiki-ansi-bright-black-dim: #55555580;
+  --shiki-ansi-bright-red: #f55;
+  --shiki-ansi-bright-red-dim: #ff555580;
+  --shiki-ansi-bright-green: #0f0;
+  --shiki-ansi-bright-green-dim: #00ff0080;
+  --shiki-ansi-bright-yellow: #ff5;
+  --shiki-ansi-bright-yellow-dim: #ffff5580;
+  --shiki-ansi-bright-blue: #55f;
+  --shiki-ansi-bright-blue-dim: #5555ff80;
+  --shiki-ansi-bright-magenta: #f5f;
+  --shiki-ansi-bright-magenta-dim: #ff55ff80;
+  --shiki-ansi-bright-cyan: #5ff;
+  --shiki-ansi-bright-cyan-dim: #55ffff80;
+  --shiki-ansi-bright-white: #fff;
+  --shiki-ansi-bright-white-dim: #ffffff80;
+
+  /* Defaults referenced by the css-variables theme (sets foreground on ansi) */
+  --shiki-foreground: #3d3d3d;
+  --shiki-background: transparent;
+  --shiki-token-punctuation: var(--shiki-foreground);
+  --shiki-token-parameter: var(--shiki-foreground);
+  --shiki-token-link: var(--shiki-token-string-expression);
+  --shiki-token-deleted: #b00;
+  --shiki-token-inserted: #0b0;
+  --shiki-token-changed: #bb0;
+}
+
+[data-language='ansi'] {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.006em;
+  font-weight: 400;
+  --shiki-foreground: #3d3d3d;
+}
+
 /* static: keep all design tokens available for JS/docs (e.g. var(--color-${token})) */
 @theme static {
   --font-sans: var(--font-inter-var), ui-sans-serif, system-ui, sans-serif;
@@ -1020,20 +1081,109 @@ html {
 }
 
 .docs-dashed-separator {
-  color: var(--color-gray-200);
   background: linear-gradient(
       90deg,
       transparent 5px,
-      currentcolor 5px,
-      currentcolor 11px,
+      currentColor 5px 11px,
       transparent 11px
     )
-    50% 50% / 11px 1px repeat-x;
+    50% 50% / 11px 1px repeat no-repeat;
 }
 
-/* Installation / fumadocs tabs */
+/* Space Getting Started / Foundations / UI as top-level sidebar groups */
+#nd-sidebar .overscroll-contain > .flex.flex-col {
+  gap: calc(var(--spacing) * 6);
+}
+
+/* Sidebar icons - 20×20 */
+#nd-sidebar svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* sticky line numbers for source code preview */
+.component-source code,
+.component-preview code {
+  counter-reset: line;
+  display: grid !important;
+  width: max-content;
+  min-width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.component-source,
+.component-preview .component-source {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* Kill fumadocs .shiki .line horizontal padding (uses --padding-left/right) */
+.component-source .shiki,
+.component-preview .shiki {
+  --padding-left: 0;
+  --padding-right: 0;
+}
+
+.component-source code > [data-line],
+.component-source code > .line,
+.component-preview code > [data-line],
+.component-preview code > .line {
+  white-space: pre;
+  width: max-content;
+  min-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.component-source code > [data-line]::before,
+.component-source code > .line::before,
+.component-preview code > [data-line]::before,
+.component-preview code > .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: 52px;
+  padding-right: 14px;
+  padding-left: 12px;
+  text-align: right;
+  color: var(--color-ln-gray-400);
+  background-color: var(--color-ln-gray-0);
+}
+
+/* Installation / fumadocs steps — step titles */
 .fd-steps {
   --fd-steps-border: var(--color-stroke-soft-200);
+}
+
+.fd-step > .step-title,
+.fd-step > h3 {
+  margin-top: 2rem; /* mt-8 */
+  margin-bottom: 0;
+  font-size: var(--text-ln-label-sm);
+  line-height: var(--text-ln-label-sm--line-height);
+  letter-spacing: var(--text-ln-label-sm--letter-spacing);
+  font-weight: var(--text-ln-label-sm--font-weight);
+  color: var(--color-ln-gray-800);
+}
+
+.fd-step > .step-title + p,
+.fd-step > h3 + p {
+  margin-top: 0.75rem; /* mt-3 */
+}
+
+@media (width >= 768px) {
+  .fd-step > .step-title,
+  .fd-step > h3 {
+    margin-top: 42px; /* md:mt-[42px] */
+    font-size: var(--text-ln-label-md);
+    line-height: var(--text-ln-label-md--line-height);
+    letter-spacing: var(--text-ln-label-md--letter-spacing);
+    font-weight: var(--text-ln-label-md--font-weight);
+  }
 }
 
 html > body[data-scroll-locked] {

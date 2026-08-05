@@ -206,9 +206,7 @@ export function ColorScale({
 
   return (
     <div>
-      <div className="text-ln-label-sm border-l-2 border-ln-gray-100 pl-3 capitalize text-ln-gray-600">
-        {title}
-      </div>
+      <div className="text-ln-title-h5 capitalize text-ln-gray-900">{title}</div>
       <div className="mt-6 grid grid-cols-[repeat(auto-fill,minmax(174px,1fr))] gap-x-4 gap-y-[22px]">
         {tokens.map((token) => (
           <ColorSwatch key={token.name} {...token} />

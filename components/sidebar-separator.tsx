@@ -1,23 +1,23 @@
 'use client';
 
-import { cn } from '@/lib/cn';
-import * as Base from 'fumadocs-ui/components/sidebar/base';
 import type * as PageTree from 'fumadocs-core/page-tree';
 
+/** dashed sidebar divider for page-tree `---` separators */
 export function SidebarSeparator({ item }: { item: PageTree.Separator }) {
-  const depth = Base.useFolderDepth();
+  if (item.name) {
+    return (
+      <div className="mb-2 mt-6 px-2 text-xs font-medium tracking-wide text-fd-muted-foreground first:mt-0 [&_svg]:size-5 [&_svg]:shrink-0">
+        {item.icon}
+        {item.name}
+      </div>
+    );
+  }
 
   return (
-    <Base.SidebarSeparator
-      className={cn(
-        'mb-2 mt-6 px-2 text-xs font-medium tracking-wide text-fd-muted-foreground first:mt-0 [&_svg]:size-4 [&_svg]:shrink-0',
-      )}
-      style={{
-        paddingInlineStart: `calc(${2 + 3 * depth} * var(--spacing))`,
-      }}
-    >
-      {item.icon}
-      {item.name}
-    </Base.SidebarSeparator>
+    <div
+      role="separator"
+      aria-hidden
+      className="docs-dashed-separator -mt-px h-px w-full text-ln-gray-200"
+    />
   );
 }

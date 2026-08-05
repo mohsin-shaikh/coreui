@@ -6,13 +6,14 @@ import {
   RiCheckLine,
   RiCodeSSlashLine,
   RiEyeLine,
-  RiFileCopyLine,
 } from '@remixicon/react';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 
 import { Index } from '@/components/demos';
+import { docsSourceSurfaceClassName } from '@/components/docs-code-frame';
 import { cn } from '@/lib/cn';
-import { CopyIcon } from 'lucide-react';
+import { cssVariablesThemeForShiki } from '@/lib/shiki-theme';
+import { Icons } from './icons';
 
 const tabTriggerClassName = cn(
   'text-ln-label-sm text-ln-gray-500 flex h-7 items-center gap-1.5 rounded-lg pr-2.5 pl-2 transition',
@@ -74,7 +75,7 @@ export function ComponentPreview({
             {copied ? (
               <RiCheckLine className="size-5 text-ln-gray-400" />
             ) : (
-              <RiFileCopyLine className="size-5 text-ln-gray-400" />
+              <Icons.Copy className="size-5 text-ln-gray-400" />
             )}
             Copy
           </button>
@@ -82,7 +83,7 @@ export function ComponentPreview({
 
         <Tabs.Content
           value="preview"
-          className="bg-gray-0 relative rounded-20 ring-1 ring-gray-100"
+          className="relative rounded-20 ring-1 ring-ln-gray-100 bg-ln-gray-0"
         >
           <div
             className={cn(
@@ -97,16 +98,18 @@ export function ComponentPreview({
           </div>
         </Tabs.Content>
 
-        <Tabs.Content value="code" className="bg-bg-weak-25 rounded-20 p-3">
-          <div className="no-scrollbar max-h-150 overflow-auto [&_figure]:m-0 [&_figure]:rounded-[11px] [&_figure]:border-0 [&_figure]:shadow-none">
-            <DynamicCodeBlock
-              lang="tsx"
-              code={demo.code}
-              codeblock={{
-                allowCopy: false,
-                'data-line-numbers': true,
-              }}
-            />
+        <Tabs.Content value="code" className="rounded-20 bg-ln-gray-25 p-3">
+          <div className={docsSourceSurfaceClassName}>
+            <div className="no-scrollbar h-full w-full overflow-auto overscroll-contain [&_code]:py-4 [&_code]:pr-4">
+              <DynamicCodeBlock
+                lang="tsx"
+                code={demo.code}
+                options={{ theme: cssVariablesThemeForShiki }}
+                codeblock={{
+                  allowCopy: false,
+                }}
+              />
+            </div>
           </div>
         </Tabs.Content>
       </Tabs.Root>

@@ -10,6 +10,7 @@ import {
   DocsDashedSeparator,
   DocsPageLinks,
 } from '@/components/docs-page-header';
+import { DocsLink } from '@/components/docs-prose';
 import { docsPageLinks } from '@/lib/docs-page-links';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
@@ -33,6 +34,7 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
       // Fumadocs defaults to gap-4 between every child.
       className="text-ln-docs-sm gap-0"
       slots={{ breadcrumb: DocsBreadcrumb }}
+      footer={{ className: 'mt-10 md:mt-12' }}
     >
       <h1 className="text-ln-title-h4 mb-2 text-ln-gray-900">
         {page.data.title}
@@ -44,11 +46,11 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
       ) : null}
       <DocsPageLinks links={links} />
       <DocsDashedSeparator />
-      <DocsBody className="pt-0">
+      <DocsBody className="pt-0 md:pt-5">
         <MDX
           components={getMDXComponents({
             // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
+            a: createRelativeLink(source, page, DocsLink),
           })}
         />
       </DocsBody>
