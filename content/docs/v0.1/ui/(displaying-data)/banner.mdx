@@ -1,4 +1,91 @@
 ---
 title: Banner
-description: Banner component
+description: Delivering crucial alerts and information prominently at the top of the screen.
 ---
+
+<ComponentPreview name="banner-demo" align="start" className="!p-0 !gap-0 w-full max-w-none flex-col !items-stretch" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `banner.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/banner.tsx" title="components/ui/banner.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### variant="error"
+
+<ComponentPreview name="banner-error" align="start" className="!p-0 !gap-0 w-full max-w-none flex-col !items-stretch" />
+
+### variant="warning"
+
+<ComponentPreview name="banner-warning" align="start" className="!p-0 !gap-0 w-full max-w-none flex-col !items-stretch" />
+
+### variant="success"
+
+<ComponentPreview name="banner-success" align="start" className="!p-0 !gap-0 w-full max-w-none flex-col !items-stretch" />
+
+### variant="information"
+
+<ComponentPreview name="banner-information" align="start" className="!p-0 !gap-0 w-full max-w-none flex-col !items-stretch" />
+
+### variant="feature"
+
+<ComponentPreview name="banner-feature" align="start" className="!p-0 !gap-0 w-full max-w-none flex-col !items-stretch" />
+
+## API Reference
+
+### Banner.Root
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"filled"` \| `"light"` \| `"lighter"` \| `"stroke"` | `"filled"` |
+| `status` | `"error"` \| `"warning"` \| `"success"` \| `"information"` \| `"feature"` | `"feature"` |
+
+### Banner.Content
+
+The content section of the banner. This component is based on the `<div>` element and supports all of its props.
+
+### Banner.Icon
+
+The `Banner.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |
+
+### Banner.CloseButton
+
+This component is based on the `<button>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |

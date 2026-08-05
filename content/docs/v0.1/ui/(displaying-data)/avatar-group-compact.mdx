@@ -1,4 +1,51 @@
 ---
 title: Avatar Group Compact
-description: Avatar Group Compact component
+description: More compact version of AvatarGroup.
 ---
+
+<ComponentPreview name="avatar-group-compact-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### This component is intended to be used with the Avatar component. Refer to the [Avatar](/docs/v0.1/ui/avatar) documentation for setup instructions before using this component.
+  </Step>
+  <Step>
+    ### Create an `avatar-group-compact.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/avatar-group-compact.tsx" title="components/ui/avatar-group-compact.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Stroke
+
+<ComponentPreview name="avatar-group-compact-stroke" />
+
+### Size
+
+<ComponentPreview name="avatar-group-compact-size" />
+
+## API Reference
+
+### AvatarGroupCompact.Root
+
+This component is based on the `<div>` element and supports all of its props and adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `size` | `"40"` \| `"32"` \| `"24"` | `"40"` |
+| `variant` | `"default"` \| `"stroke"` | `"default"` |
+
+### AvatarGroupCompact.Stack
+
+Arranges a compact stack of avatar components, showing them with slight overlap. Use within `<AvatarGroupCompact.Root>` to manage the display of multiple avatars in a compact space. This component is based on the `<div>` element and supports all of its props.
+
+### AvatarGroupCompact.Overflow
+
+Displays an overflow indicator when the number of avatars exceeds the visible space. Typically shows a count of extra avatars not displayed. This component is based on the `<div>` element and supports all of its props.

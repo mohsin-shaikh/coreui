@@ -14,10 +14,10 @@ const BANNER_CLOSE_BUTTON_NAME = 'BannerCloseButton';
 
 export const bannerVariants = tv({
   slots: {
-    root: 'relative grid h-11 w-full grid-cols-[1fr,auto,1fr] items-center justify-center gap-3 px-3',
+    root: 'relative grid h-11 w-full grid-cols-[1fr_auto_1fr] items-center justify-center gap-3 px-3',
     content: 'col-start-2 flex items-center justify-center gap-3',
     icon: 'size-5 shrink-0',
-    closeButton: 'ml-auto size-5',
+    closeButton: 'size-5',
   },
   variants: {
     variant: {
@@ -306,13 +306,15 @@ const BannerCloseButton = React.forwardRef<
     const { closeButton } = bannerVariants({ variant, status });
 
     return (
-      <Component
-        ref={forwardedRef}
-        className={closeButton({ class: className })}
-        {...rest}
-      >
-        {children}
-      </Component>
+      <div className="col-start-3 flex items-center justify-end self-center">
+        <Component
+          ref={forwardedRef}
+          className={closeButton({ class: className })}
+          {...rest}
+        >
+          {children}
+        </Component>
+      </div>
     );
   },
 );

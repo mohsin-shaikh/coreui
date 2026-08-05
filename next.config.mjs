@@ -12,6 +12,15 @@ const config = {
   output: 'export',
   reactStrictMode: true,
   basePath,
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
 };
 
 export default withMDX(config);

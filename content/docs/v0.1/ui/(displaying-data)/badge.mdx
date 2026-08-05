@@ -1,4 +1,114 @@
 ---
 title: Badge
-description: Badge component
+description: A badge is a piece of text that is visually stylized to differentiate it as contextual metadata. It can be used to add a status, category, or other metadata to a design.
 ---
+
+<ComponentPreview name="badge-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `badge.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/badge.tsx" title="components/ui/badge.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Filled (Default)
+
+<ComponentPreview name="badge-filled" />
+
+### Light
+
+<ComponentPreview name="badge-light" />
+
+### Lighter
+
+<ComponentPreview name="badge-lighter" />
+
+### Stroke
+
+<ComponentPreview name="badge-stroke" />
+
+### Colors
+
+<ComponentPreview name="badge-colors" />
+
+### Size
+
+<ComponentPreview name="badge-size" />
+
+### Square
+
+Suitable to display numbers.
+
+<ComponentPreview name="badge-square" />
+
+### With Icon
+
+<ComponentPreview name="badge-with-icon" />
+
+### With Dot
+
+<ComponentPreview name="badge-with-dot" />
+
+### Disabled
+
+<ComponentPreview name="badge-disabled" />
+
+### asChild
+
+<ComponentPreview name="badge-as-child" />
+
+## API Reference
+
+### Badge.Root
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"filled"` \| `"light"` \| `"lighter"` \| `"stroke"` | `"filled"` |
+| `size` | `"small"` \| `"medium"` | `"small"` |
+| `color` | `"gray"` \| `"blue"` \| `"orange"` \| `"red"` \| `"green"` \| `"yellow"` \| `"purple"` \| `"sky"` \| `"pink"` \| `"teal"` | `"gray"` |
+| `square` | `boolean` | |
+| `asChild` | `boolean` | |
+
+### Badge.Icon
+
+The `Badge.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |
+
+### Badge.Dot
+
+This component is based on the `<div>` element and supports all of its props. It provides a styled dot appearance and does not have any extra props.

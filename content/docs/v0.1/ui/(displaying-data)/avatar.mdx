@@ -1,4 +1,144 @@
 ---
 title: Avatar
-description: Avatar component
+description: Avatar is an image that represents a user or organization.
 ---
+
+<ComponentPreview name="avatar-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create an `avatar.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/avatar.tsx" title="components/ui/avatar.tsx" />
+  </Step>
+  <Step>
+    ### Create an `avatar-empty-icons.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/avatar-empty-icons.tsx" title="components/ui/avatar-empty-icons.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Color
+
+<ComponentPreview name="avatar-color" />
+
+### Size
+
+<ComponentPreview name="avatar-size" />
+
+### Text Content
+
+<ComponentPreview name="avatar-text-content" />
+
+### Placeholder
+
+Displays a placeholder icon if no children provided for `<Avatar.Root>`.
+
+<ComponentPreview name="avatar-placeholder" />
+
+### Status
+
+<ComponentPreview name="avatar-status" />
+
+### Notification
+
+<ComponentPreview name="avatar-notification" />
+
+### With Brand Logo
+
+<ComponentPreview name="avatar-brand-logo" />
+
+### Indicator With Custom SVG
+
+<ComponentPreview name="avatar-indicator-custom-svg" />
+
+### As Link
+
+<ComponentPreview name="avatar-as-link" />
+
+### As "next/image"
+
+<ComponentPreview name="avatar-as-next-image" />
+
+## Composition
+
+You can simplify component usage by creating a custom API that abstracts the core functionalities.
+
+<ComponentPreview name="avatar-composition" />
+
+## API Reference
+
+### Avatar.Root
+
+The main wrapper for the avatar component. This component is based on the `<div>` element and supports all of its props and adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `size` | `"80"` \| `"72"` \| `"64"` \| `"56"` \| `"48"` \| `"40"` \| `"32"` \| `"24"` \| `"20"` | `"80"` |
+| `color` | `"gray"` \| `"yellow"` \| `"blue"` \| `"sky"` \| `"purple"` \| `"red"` | |
+| `placeholderType` | `"user"` \| `"company"` | `"user"` |
+| `asChild` | `boolean` | |
+
+### Avatar.Image
+
+This component is based on the `<img>` element and supports all of its props and adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |
+
+### Avatar.BrandLogo
+
+This component is based on the `<img>` element and supports all of its props and adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |
+
+### Avatar.Indicator
+
+A wrapper for absolutely positioned indicators, often used to show status or notifications. This component is based on the `<div>` element and supports all of its props and adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `position` | `"top"` \| `"bottom"` | |
+
+### Avatar.Status
+
+Displays a status indicator, like online or offline status. This component is based on the `<div>` element and supports all of its props and adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `status` | `"online"` \| `"offline"` \| `"busy"` \| `"away"` | |
+
+### Avatar.Notification
+
+Displays a notification badge on the avatar. This component is based on the `<div>` element and supports all of its props.
