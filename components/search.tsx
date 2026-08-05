@@ -14,10 +14,15 @@ import { useDocsSearch } from 'fumadocs-core/search/client';
 import { staticClient } from 'fumadocs-core/search/client/orama-static';
 import { useI18n } from 'fumadocs-ui/contexts/i18n';
 
+import { basePath } from '@/lib/shared';
+
 export default function DefaultSearchDialog(props: SharedProps) {
   const { locale } = useI18n(); // (optional) for i18n
   const { search, setSearch, query } = useDocsSearch({
     client: staticClient({
+      // fumadocs derives its default from `import.meta.env.BASE_URL`, which is
+      // never set under Next, so the prefix has to be applied here.
+      from: `${basePath}/api/search`,
       locale,
     }),
   });

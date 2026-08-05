@@ -49,6 +49,11 @@ jobs:
 
       - name: Build with Next.js
         run: pnpm build
+        env:
+          # Project sites are served from https://<user>.github.io/<repo>.
+          # Derived from the repo name so renaming it can't silently break the
+          # deployed asset URLs.
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
