@@ -1,4 +1,58 @@
 ---
 title: Checkbox
-description: Checkbox component
+description: Checkbox is a form control for single and multiple selections.
 ---
+
+<ComponentPreview name="checkbox-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-checkbox
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-checkbox
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-checkbox
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `checkbox.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/checkbox.tsx" title="components/ui/checkbox.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Disabled
+
+<ComponentPreview name="checkbox-disabled" />
+
+### With Label
+
+<ComponentPreview name="checkbox-with-label" className="w-full max-w-none" />
+
+### With Advanced Label
+
+<ComponentPreview name="checkbox-with-advanced-label" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the Radix UI Checkbox primitives. Refer to their [documentation](https://www.radix-ui.com/primitives/docs/components/checkbox) for the API reference.

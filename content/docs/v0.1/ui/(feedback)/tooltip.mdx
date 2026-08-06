@@ -1,4 +1,80 @@
 ---
 title: Tooltip
-description: Tooltip component
+description: Tooltips add additional context to interactive UI elements and appear on mouse hover or keyboard focus.
 ---
+
+<ComponentPreview name="tooltip-demo" className="w-full max-w-none" />
+
+## Coming from Figma
+
+In Figma the Tooltip uses **Type** (8 position variants), **Size** (2X-Small / Small / Large), **Dark Mode**, and **Tail**. In code:
+
+- **Position**: not a variant; use Radix's `side` (`top` / `right` / `bottom` / `left`) and `align` props on `Tooltip.Content`. See the Position example below.
+- **Dark Mode**: the `variant` prop (`dark` | `light`).
+- **Size**: the `size` prop (`xsmall` | `small` | `medium`). The naming differs from Figma (Figma's 2X-Small ≈ `xsmall`).
+- **Tail**: the arrow is always rendered by `Tooltip.Content`.
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-tooltip
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-tooltip
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-tooltip
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `tooltip.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/tooltip.tsx" title="components/ui/tooltip.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Light
+
+<ComponentPreview name="tooltip-light" className="w-full max-w-none" />
+
+### Size
+
+<ComponentPreview name="tooltip-size" className="w-full max-w-none" />
+
+### Position
+
+<ComponentPreview name="tooltip-position" className="w-full max-w-none" />
+
+### HTML Content
+
+<ComponentPreview name="tooltip-html-content" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the Radix UI Tooltip primitives. Refer to their [documentation](https://www.radix-ui.com/primitives/docs/components/tooltip) for the API reference.
+
+### Tooltip.Content
+
+Supports all of Radix Tooltip Content props and adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"dark"` \| `"light"` | `"dark"` |
+| `size` | `"medium"` \| `"small"` \| `"xsmall"` | `"small"` |

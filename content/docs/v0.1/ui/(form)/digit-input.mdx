@@ -1,4 +1,65 @@
 ---
 title: Digit Input
-description: Digit Input component
+description: A component for entering one-time passwords (OTPs) in a digit-by-digit manner. Ideal for secure authentication flows where users need to input short numeric codes.
 ---
+
+<ComponentPreview name="digit-input-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install react-otp-input
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add react-otp-input
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add react-otp-input
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `digit-input.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/digit-input.tsx" title="components/ui/digit-input.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Has Error
+
+<ComponentPreview name="digit-input-has-error" className="w-full max-w-none" />
+
+### Disabled
+
+<ComponentPreview name="digit-input-disabled" className="w-full max-w-none" />
+
+### Square Inputs
+
+<ComponentPreview name="digit-input-square" className="w-full max-w-none" />
+
+## API Reference
+
+### DigitInput.Root
+
+This component is based on the [react-otp-input](https://github.com/devfolioco/react-otp-input) package. Refer to their documentation for the API reference.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `hasError` | `boolean` | |
+| `disabled` | `boolean` | |

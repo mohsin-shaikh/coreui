@@ -319,6 +319,55 @@ import ToastNonDismissable, {
 import ToastSonnerOptions, {
   code as toastSonnerOptionsCode,
 } from './toast/toast-sonner-options';
+import TooltipDemo, { code as tooltipDemoCode } from './tooltip/tooltip-demo';
+import TooltipLight, { code as tooltipLightCode } from './tooltip/tooltip-light';
+import TooltipSize, { code as tooltipSizeCode } from './tooltip/tooltip-size';
+import TooltipPosition, {
+  code as tooltipPositionCode,
+} from './tooltip/tooltip-position';
+import TooltipHtmlContent, {
+  code as tooltipHtmlContentCode,
+} from './tooltip/tooltip-html-content';
+import CheckboxDemo, { code as checkboxDemoCode } from './checkbox/checkbox-demo';
+import CheckboxDisabled, {
+  code as checkboxDisabledCode,
+} from './checkbox/checkbox-disabled';
+import CheckboxWithLabel, {
+  code as checkboxWithLabelCode,
+} from './checkbox/checkbox-with-label';
+import CheckboxWithAdvancedLabel, {
+  code as checkboxWithAdvancedLabelCode,
+} from './checkbox/checkbox-with-advanced-label';
+import ColorPickerDemo, {
+  code as colorPickerDemoCode,
+} from './color-picker/color-picker-demo';
+import ColorPickerWithPopover, {
+  code as colorPickerWithPopoverCode,
+} from './color-picker/color-picker-with-popover';
+import DatepickerDemo, {
+  code as datepickerDemoCode,
+} from './datepicker/datepicker-demo';
+import DatepickerPopover, {
+  code as datepickerPopoverCode,
+} from './datepicker/datepicker-popover';
+import DatepickerApproval, {
+  code as datepickerApprovalCode,
+} from './datepicker/datepicker-approval';
+import DatepickerRange, {
+  code as datepickerRangeCode,
+} from './datepicker/datepicker-range';
+import DigitInputDemo, {
+  code as digitInputDemoCode,
+} from './digit-input/digit-input-demo';
+import DigitInputHasError, {
+  code as digitInputHasErrorCode,
+} from './digit-input/digit-input-has-error';
+import DigitInputDisabled, {
+  code as digitInputDisabledCode,
+} from './digit-input/digit-input-disabled';
+import DigitInputSquare, {
+  code as digitInputSquareCode,
+} from './digit-input/digit-input-square';
 
 export const Index: Record<
   string,
@@ -850,5 +899,81 @@ export const Index: Record<
   'toast-sonner-options': {
     component: ToastSonnerOptions,
     code: toastSonnerOptionsCode,
+  },
+  'tooltip-demo': {
+    component: TooltipDemo,
+    code: tooltipDemoCode,
+  },
+  'tooltip-light': {
+    component: TooltipLight,
+    code: tooltipLightCode,
+  },
+  'tooltip-size': {
+    component: TooltipSize,
+    code: tooltipSizeCode,
+  },
+  'tooltip-position': {
+    component: TooltipPosition,
+    code: tooltipPositionCode,
+  },
+  'tooltip-html-content': {
+    component: TooltipHtmlContent,
+    code: tooltipHtmlContentCode,
+  },
+  'checkbox-demo': {
+    component: CheckboxDemo,
+    code: checkboxDemoCode,
+  },
+  'checkbox-disabled': {
+    component: CheckboxDisabled,
+    code: checkboxDisabledCode,
+  },
+  'checkbox-with-label': {
+    component: CheckboxWithLabel,
+    code: checkboxWithLabelCode,
+  },
+  'checkbox-with-advanced-label': {
+    component: CheckboxWithAdvancedLabel,
+    code: checkboxWithAdvancedLabelCode,
+  },
+  'color-picker-demo': {
+    component: ColorPickerDemo,
+    code: colorPickerDemoCode,
+  },
+  'color-picker-with-popover': {
+    component: ColorPickerWithPopover,
+    code: colorPickerWithPopoverCode,
+  },
+  'datepicker-demo': {
+    component: DatepickerDemo,
+    code: datepickerDemoCode,
+  },
+  'datepicker-popover': {
+    component: DatepickerPopover,
+    code: datepickerPopoverCode,
+  },
+  'datepicker-approval': {
+    component: DatepickerApproval,
+    code: datepickerApprovalCode,
+  },
+  'datepicker-range': {
+    component: DatepickerRange,
+    code: datepickerRangeCode,
+  },
+  'digit-input-demo': {
+    component: DigitInputDemo,
+    code: digitInputDemoCode,
+  },
+  'digit-input-has-error': {
+    component: DigitInputHasError,
+    code: digitInputHasErrorCode,
+  },
+  'digit-input-disabled': {
+    component: DigitInputDisabled,
+    code: digitInputDisabledCode,
+  },
+  'digit-input-square': {
+    component: DigitInputSquare,
+    code: digitInputSquareCode,
   },
 };

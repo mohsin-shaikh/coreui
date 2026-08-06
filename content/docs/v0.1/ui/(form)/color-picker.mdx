@@ -1,4 +1,50 @@
 ---
 title: Color Picker
-description: Color Picker component
+description: Choose or create specific colors with this versatile tool for various design needs.
 ---
+
+<ComponentPreview name="color-picker-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install react-aria-components
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add react-aria-components
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add react-aria-components
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `color-picker.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/color-picker.tsx" title="components/ui/color-picker.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### With Popover
+
+<ComponentPreview name="color-picker-with-popover" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the React Aria Color primitives. Refer to their [documentation](https://react-spectrum.adobe.com/react-aria/ColorPicker.html) for the API reference.

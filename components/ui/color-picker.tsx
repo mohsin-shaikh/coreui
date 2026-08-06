@@ -138,10 +138,15 @@ const EyeDropperButton = React.forwardRef<
   React.HTMLAttributes<HTMLButtonElement>
 >(({ ...rest }, forwardedRef) => {
   const state = React.useContext(ColorPickerStateContext)!;
+  const [supported, setSupported] = React.useState(false);
 
-  // eslint-disable-next-line
-  // @ts-ignore
-  if (typeof EyeDropper === 'undefined') {
+  React.useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore EyeDropper is a browser-only API
+    setSupported(typeof EyeDropper !== 'undefined');
+  }, []);
+
+  if (!supported) {
     return null;
   }
 
@@ -150,8 +155,8 @@ const EyeDropperButton = React.forwardRef<
       ref={forwardedRef}
       aria-label='Eye dropper'
       onClick={() => {
-        // eslint-disable-next-line
-        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore EyeDropper is a browser-only API
         new EyeDropper()
           .open()
           .then((result: { sRGBHex: string }) =>
