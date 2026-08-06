@@ -1,4 +1,38 @@
 ---
 title: Progress Circle
-description: Progress Circle component
+description: A progress circle is a simple chart that can be used to show how complete something is.
 ---
+
+<ComponentPreview name="progress-circle-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Create a `progress-circle.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/progress-circle.tsx" title="components/ui/progress-circle.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Size
+
+<ComponentPreview name="progress-circle-size" />
+
+## API Reference
+
+### ProgressCircle.Root
+
+The main component of the ProgressCircle. It displays a circular progress indicator with a customizable size and color. This component is based on the `<svg>` element and supports all of its props and adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `size` | `"80"` \| `"72"` \| `"64"` \| `"56"` \| `"48"` \| `"44"` | `"80"` |
+| `value` | `number` | |
+| `max` | `number` | `100` |
+| `children` | `React.ReactNode` | `undefined` |

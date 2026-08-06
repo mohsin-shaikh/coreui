@@ -200,6 +200,43 @@ import BannerInformation, {
 import BannerFeature, {
   code as bannerFeatureCode,
 } from './banner/banner-feature';
+import DataTableRowSelection, {
+  code as dataTableRowSelectionCode,
+} from './data-table/data-table-row-selection';
+import DividerDemo, { code as dividerDemoCode } from './divider/divider-demo';
+import DividerLine, { code as dividerLineCode } from './divider/divider-line';
+import DividerLineSpacing, {
+  code as dividerLineSpacingCode,
+} from './divider/divider-line-spacing';
+import DividerLineText, {
+  code as dividerLineTextCode,
+} from './divider/divider-line-text';
+import DividerText, { code as dividerTextCode } from './divider/divider-text';
+import DividerSolidText, {
+  code as dividerSolidTextCode,
+} from './divider/divider-solid-text';
+import DividerContent, {
+  code as dividerContentCode,
+} from './divider/divider-content';
+import KbdDemo, { code as kbdDemoCode } from './kbd/kbd-demo';
+import ProgressBarDemo, {
+  code as progressBarDemoCode,
+} from './progress-bar/progress-bar-demo';
+import ProgressBarColor, {
+  code as progressBarColorCode,
+} from './progress-bar/progress-bar-color';
+import ProgressBarWithLabel, {
+  code as progressBarWithLabelCode,
+} from './progress-bar/progress-bar-with-label';
+import ProgressBarAdvanced, {
+  code as progressBarAdvancedCode,
+} from './progress-bar/progress-bar-advanced';
+import ProgressCircleDemo, {
+  code as progressCircleDemoCode,
+} from './progress-circle/progress-circle-demo';
+import ProgressCircleSize, {
+  code as progressCircleSizeCode,
+} from './progress-circle/progress-circle-size';
 
 export const Index: Record<
   string,
@@ -527,5 +564,65 @@ export const Index: Record<
   'banner-feature': {
     component: BannerFeature,
     code: bannerFeatureCode,
+  },
+  'data-table-row-selection': {
+    component: DataTableRowSelection,
+    code: dataTableRowSelectionCode,
+  },
+  'divider-demo': {
+    component: DividerDemo,
+    code: dividerDemoCode,
+  },
+  'divider-line': {
+    component: DividerLine,
+    code: dividerLineCode,
+  },
+  'divider-line-spacing': {
+    component: DividerLineSpacing,
+    code: dividerLineSpacingCode,
+  },
+  'divider-line-text': {
+    component: DividerLineText,
+    code: dividerLineTextCode,
+  },
+  'divider-text': {
+    component: DividerText,
+    code: dividerTextCode,
+  },
+  'divider-solid-text': {
+    component: DividerSolidText,
+    code: dividerSolidTextCode,
+  },
+  'divider-content': {
+    component: DividerContent,
+    code: dividerContentCode,
+  },
+  'kbd-demo': {
+    component: KbdDemo,
+    code: kbdDemoCode,
+  },
+  'progress-bar-demo': {
+    component: ProgressBarDemo,
+    code: progressBarDemoCode,
+  },
+  'progress-bar-color': {
+    component: ProgressBarColor,
+    code: progressBarColorCode,
+  },
+  'progress-bar-with-label': {
+    component: ProgressBarWithLabel,
+    code: progressBarWithLabelCode,
+  },
+  'progress-bar-advanced': {
+    component: ProgressBarAdvanced,
+    code: progressBarAdvancedCode,
+  },
+  'progress-circle-demo': {
+    component: ProgressCircleDemo,
+    code: progressCircleDemoCode,
+  },
+  'progress-circle-size': {
+    component: ProgressCircleSize,
+    code: progressCircleSizeCode,
   },
 };

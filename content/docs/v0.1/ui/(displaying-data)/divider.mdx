@@ -1,4 +1,67 @@
 ---
 title: Divider
-description: Divider component
+description: A versatile divider component used to create visual separation between content.
 ---
+
+<ComponentPreview name="divider-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Create a `divider.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/divider.tsx" title="components/ui/divider.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Line (Default)
+
+A simple horizontal line.
+
+<ComponentPreview name="divider-line" className="w-full max-w-none" />
+
+### Line Spacing
+
+A line with spacing.
+
+<ComponentPreview name="divider-line-spacing" className="w-full max-w-none" />
+
+### Line Text
+
+A line with text in between.
+
+<ComponentPreview name="divider-line-text" className="w-full max-w-none" />
+
+### Text
+
+Text only divider.
+
+<ComponentPreview name="divider-text" className="w-full max-w-none" />
+
+### Solid Text
+
+A solid background with text. Often used in modals.
+
+<ComponentPreview name="divider-solid-text" className="w-full max-w-none" />
+
+### Content
+
+A line with content on center.
+
+<ComponentPreview name="divider-content" className="w-full max-w-none" />
+
+## API Reference
+
+### Divider.Root
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"line"` \| `"line-spacing"` \| `"line-text"` \| `"content"` \| `"text"` \| `"solid-text"` | `"line"` |

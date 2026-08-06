@@ -1,4 +1,45 @@
 ---
 title: Progress Bar
-description: Progress Bar component
+description: A progress bar is a simple chart that can be used to show how complete something is.
 ---
+
+<ComponentPreview name="progress-bar-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Create a `progress-bar.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/progress-bar.tsx" title="components/ui/progress-bar.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Color
+
+<ComponentPreview name="progress-bar-color" className="w-full max-w-none" />
+
+### With Label
+
+<ComponentPreview name="progress-bar-with-label" className="w-full max-w-none" />
+
+### Advanced
+
+<ComponentPreview name="progress-bar-advanced" className="w-full max-w-none" />
+
+## API Reference
+
+### ProgressBar.Root
+
+The main component of the ProgressBar. It displays the progress with a colored bar inside a container. This component is based on the `<div>` element and supports all of its props and adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `color` | `"blue"` \| `"red"` \| `"orange"` \| `"green"` | `"blue"` |
+| `value` | `number` | |
+| `max` | `number` | |

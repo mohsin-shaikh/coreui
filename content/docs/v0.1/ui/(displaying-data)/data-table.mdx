@@ -1,4 +1,47 @@
 ---
 title: Data Table
-description: Data Table component
+description: Data table is a 2-dimensional data structure where each row is an item, and each column is a data point about the item.
 ---
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Create a `table.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/table.tsx" title="components/ui/table.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+We will give you examples on how to create complex Data Tables with `@tanstack/react-table` using our Table primitives. Let's start by installing the package:
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+  <Tab value="npm">
+    ```bash
+    npm install @tanstack/react-table
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```bash
+    pnpm add @tanstack/react-table
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn add @tanstack/react-table
+    ```
+  </Tab>
+</Tabs>
+
+### Row Selection
+
+<ComponentPreview name="data-table-row-selection" align="start" className="w-full max-w-none !items-stretch" />
+
+## API Reference
+
+These examples are based on the [Tanstack Table](https://tanstack.com/table) package. Refer to their documentation for the API reference.
