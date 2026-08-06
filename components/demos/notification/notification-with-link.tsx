@@ -1,63 +1,73 @@
 'use client';
 
+import * as Button from '@/components/ui/button';
 import * as LinkButton from '@/components/ui/link-button';
-import * as Notification from '@/components/ui/notification';
-
-import { NotificationPreview } from './notification-preview';
+import { useNotification } from '@/hooks/use-notification';
 
 export default function NotificationWithLink() {
+  const { notification } = useNotification();
+
   return (
-    <NotificationPreview>
-      <Notification.Root
-        open
-        duration={Infinity}
-        status="information"
-        variant="filled"
-        title="Notification"
-        description="Insert the notification description here."
-        action={
-          <LinkButton.Root
-            variant="modifiable"
-            size="small"
-            underline
-            className="text-static-white"
-          >
-            Upgrade
-          </LinkButton.Root>
-        }
-      />
-    </NotificationPreview>
+    <Button.Root
+      variant="neutral"
+      mode="stroke"
+      onClick={() =>
+        notification({
+          status: 'information',
+          variant: 'filled',
+          title: 'Notification',
+          description: 'Insert the notification description here.',
+          action: (
+            <LinkButton.Root
+              variant="modifiable"
+              size="small"
+              underline
+              className="text-static-white"
+            >
+              Upgrade
+            </LinkButton.Root>
+          ),
+        })
+      }
+    >
+      Notification
+    </Button.Root>
   );
 }
 
 export const code = `'use client';
 
+import * as Button from '@/components/ui/button';
 import * as LinkButton from '@/components/ui/link-button';
-import * as Notification from '@/components/ui/notification';
+import { useNotification } from '@/hooks/use-notification';
 
-import { NotificationPreview } from '@/components/demos/notification/notification-preview';
+export function NotificationWithLink() {
+  const { notification } = useNotification();
 
-export default function NotificationWithLink() {
   return (
-    <NotificationPreview>
-      <Notification.Root
-        open
-        duration={Infinity}
-        status="information"
-        variant="filled"
-        title="Notification"
-        description="Insert the notification description here."
-        action={
-          <LinkButton.Root
-            variant="modifiable"
-            size="small"
-            underline
-            className="text-static-white"
-          >
-            Upgrade
-          </LinkButton.Root>
-        }
-      />
-    </NotificationPreview>
+    <Button.Root
+      variant='neutral'
+      mode='stroke'
+      onClick={() =>
+        notification({
+          status: 'information',
+          variant: 'filled',
+          title: 'Notification',
+          description: 'Insert the notification description here.',
+          action: (
+            <LinkButton.Root
+              variant='modifiable'
+              size='small'
+              underline
+              className='text-static-white'
+            >
+              Upgrade
+            </LinkButton.Root>
+          ),
+        })
+      }
+    >
+      Notification
+    </Button.Root>
   );
 }`;

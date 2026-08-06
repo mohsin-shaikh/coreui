@@ -1,63 +1,71 @@
 'use client';
 
 import * as Button from '@/components/ui/button';
-import * as Notification from '@/components/ui/notification';
-
-import { NotificationPreview } from './notification-preview';
+import { useNotification } from '@/hooks/use-notification';
 
 export default function NotificationWithAction() {
+  const { notification } = useNotification();
+
   return (
-    <NotificationPreview>
-      <Notification.Root
-        open
-        duration={Infinity}
-        status="information"
-        variant="filled"
-        title="Notification"
-        description="Insert the notification description here."
-        action={
-          <Button.Root
-            variant="neutral"
-            mode="ghost"
-            size="xxsmall"
-            className="text-static-white"
-          >
-            Upgrade
-          </Button.Root>
-        }
-      />
-    </NotificationPreview>
+    <Button.Root
+      variant="neutral"
+      mode="stroke"
+      onClick={() =>
+        notification({
+          status: 'information',
+          variant: 'filled',
+          title: 'Notification',
+          description: 'Insert the notification description here.',
+          action: (
+            <Button.Root
+              variant="neutral"
+              mode="ghost"
+              size="xxsmall"
+              className="text-static-white"
+            >
+              Upgrade
+            </Button.Root>
+          ),
+        })
+      }
+    >
+      Notification
+    </Button.Root>
   );
 }
 
 export const code = `'use client';
 
 import * as Button from '@/components/ui/button';
-import * as Notification from '@/components/ui/notification';
+import { useNotification } from '@/hooks/use-notification';
 
-import { NotificationPreview } from '@/components/demos/notification/notification-preview';
+export function NotificationWithAction() {
+  const { notification } = useNotification();
 
-export default function NotificationWithAction() {
   return (
-    <NotificationPreview>
-      <Notification.Root
-        open
-        duration={Infinity}
-        status="information"
-        variant="filled"
-        title="Notification"
-        description="Insert the notification description here."
-        action={
-          <Button.Root
-            variant="neutral"
-            mode="ghost"
-            size="xxsmall"
-            className="text-static-white"
-          >
-            Upgrade
-          </Button.Root>
-        }
-      />
-    </NotificationPreview>
+    <Button.Root
+      variant='neutral'
+      mode='stroke'
+      onClick={() =>
+        notification({
+          status: 'information',
+          variant: 'filled',
+          title: 'Notification',
+          description: 'Insert the notification description here.',
+          action: (
+            <Button.Root
+              variant='neutral'
+              mode='ghost'
+              size='xxsmall'
+              className='text-static-white'
+            >
+              Upgrade
+            </Button.Root>
+          ),
+        })
+      }
+    >
+      Notification
+    </Button.Root>
   );
 }`;

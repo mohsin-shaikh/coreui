@@ -1,41 +1,49 @@
 'use client';
 
-import * as Notification from '@/components/ui/notification';
-
-import { NotificationPreview } from './notification-preview';
+import * as Button from '@/components/ui/button';
+import { useNotification } from '@/hooks/use-notification';
 
 export default function NotificationDemo() {
+  const { notification } = useNotification();
+
   return (
-    <NotificationPreview>
-      <Notification.Root
-        open
-        duration={Infinity}
-        status="information"
-        variant="filled"
-        title="Notification"
-        description="Insert the notification description here."
-      />
-    </NotificationPreview>
+    <Button.Root
+      variant="neutral"
+      mode="stroke"
+      onClick={() =>
+        notification({
+          title: 'Insert your alert title here!',
+          description:
+            'Insert the alert description here. It would look better as two lines of text.',
+        })
+      }
+    >
+      Notification
+    </Button.Root>
   );
 }
 
 export const code = `'use client';
 
-import * as Notification from '@/components/ui/notification';
+import * as Button from '@/components/ui/button';
+import { useNotification } from '@/hooks/use-notification';
 
-import { NotificationPreview } from '@/components/demos/notification/notification-preview';
+export function NotificationDemo() {
+  const { notification } = useNotification();
 
-export default function NotificationDemo() {
   return (
-    <NotificationPreview>
-      <Notification.Root
-        open
-        duration={Infinity}
-        status="information"
-        variant="filled"
-        title="Notification"
-        description="Insert the notification description here."
-      />
-    </NotificationPreview>
+    <Button.Root
+      variant='neutral'
+      mode='stroke'
+      onClick={() =>
+        notification({
+          title: 'Insert your alert title here!',
+          description:
+            'Insert the alert description here. It would look better as two lines of text.',
+        })
+      }
+    >
+      Notification
+    </Button.Root>
   );
 }`;
