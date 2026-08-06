@@ -2,6 +2,49 @@ import * as React from 'react';
 
 import { cn } from '@/lib/cn';
 
+function hasNestedLink(children: React.ReactNode): boolean {
+  let found = false;
+
+  React.Children.forEach(children, (child) => {
+    if (found || !React.isValidElement<{ children?: React.ReactNode; href?: string }>(child)) {
+      return;
+    }
+
+    if (child.type === 'a' || child.props.href) {
+      found = true;
+      return;
+    }
+
+    if (child.props.children) {
+      found = hasNestedLink(child.props.children);
+    }
+  });
+
+  return found;
+}
+
+function DocsHeadingAnchor({
+  id,
+  children,
+}: {
+  id: string;
+  children: React.ReactNode;
+}) {
+  if (hasNestedLink(children)) {
+    return children;
+  }
+
+  return (
+    <a
+      className="subheading-anchor text-inherit no-underline"
+      aria-label="Link to section"
+      href={`#${id}`}
+    >
+      {children}
+    </a>
+  );
+}
+
 /** bordered section title with in-heading anchor */
 export function DocsH2({
   className,
@@ -20,17 +63,7 @@ export function DocsH2({
       )}
       {...props}
     >
-      {id ? (
-        <a
-          className="subheading-anchor text-inherit no-underline"
-          aria-label="Link to section"
-          href={`#${id}`}
-        >
-          {children}
-        </a>
-      ) : (
-        children
-      )}
+      {id ? <DocsHeadingAnchor id={id}>{children}</DocsHeadingAnchor> : children}
     </h2>
   );
 }
@@ -53,17 +86,7 @@ export function DocsH3({
       )}
       {...props}
     >
-      {id ? (
-        <a
-          className="subheading-anchor text-inherit no-underline"
-          aria-label="Link to section"
-          href={`#${id}`}
-        >
-          {children}
-        </a>
-      ) : (
-        children
-      )}
+      {id ? <DocsHeadingAnchor id={id}>{children}</DocsHeadingAnchor> : children}
     </h3>
   );
 }
