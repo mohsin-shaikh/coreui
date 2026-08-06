@@ -1,4 +1,102 @@
 ---
 title: Tag
-description: Tag component
+description: Efficient tool for categorizing and labeling content within your application.
 ---
+
+<ComponentPreview name="tag-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `tag.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/tag.tsx" title="components/ui/tag.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Stroke (Default)
+
+<ComponentPreview name="tag-stroke" />
+
+### Gray
+
+<ComponentPreview name="tag-gray" />
+
+### Disabled
+
+<ComponentPreview name="tag-disabled" />
+
+### With Image
+
+<ComponentPreview name="tag-with-image" />
+
+### With Avatar
+
+<ComponentPreview name="tag-with-avatar" />
+
+### Dismissable
+
+<ComponentPreview name="tag-dismissable" />
+
+## API Reference
+
+### Tag.Root
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"stroke"` \| `"gray"` | `"stroke"` |
+| `disabled` | `boolean` | |
+| `asChild` | `boolean` | |
+
+### Tag.Icon
+
+The `Tag.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |
+
+### Tag.DismissButton
+
+This component is based on the `<button>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |
+
+### Tag.DismissIcon
+
+The `Tag.DismissIcon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |

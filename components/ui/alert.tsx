@@ -19,7 +19,7 @@ export const alertVariants = tv({
   slots: {
     root: 'w-full',
     wrapper: [
-      'grid w-full auto-cols-auto grid-flow-col grid-cols-1 items-start has-[>svg:first-child]:grid-cols-[auto,minmax(0,1fr)]',
+      'grid w-full auto-cols-auto grid-flow-col grid-cols-1 items-start has-[>svg:first-child]:grid-cols-[auto_minmax(0,1fr)]',
       'transition duration-200 ease-out group-data-[expanded=false]/toast:group-data-[front=false]/toast:opacity-0',
     ],
     icon: 'shrink-0',
@@ -54,13 +54,13 @@ export const alertVariants = tv({
     size: {
       xsmall: {
         root: 'rounded-lg p-2 text-paragraph-xs',
-        wrapper: 'gap-2',
+        wrapper: 'items-center gap-2',
         icon: 'size-4',
         closeIcon: 'size-4',
       },
       small: {
         root: 'rounded-lg px-2.5 py-2 text-paragraph-sm',
-        wrapper: 'gap-2',
+        wrapper: 'items-center gap-2',
         icon: 'size-5',
         closeIcon: 'size-5',
       },

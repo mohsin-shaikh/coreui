@@ -112,3 +112,21 @@ export function SVGHeartLine(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function HeartRating({ rating }: { rating: number }) {
+  const getHeartIcon = (i: number) => {
+    if (rating >= i + 1) {
+      return <SVGHeartFill className='size-5 text-error-base' key={i} />;
+    }
+    if (rating >= i + 0.5) {
+      return <SVGHeartHalf className='size-5 text-error-base' key={i} />;
+    }
+    return <SVGHeartLine className='size-5 text-stroke-sub-300' key={i} />;
+  };
+
+  return (
+    <div className='flex gap-0.5'>
+      {Array.from({ length: 5 }, (_, i) => getHeartIcon(i))}
+    </div>
+  );
+}

@@ -1,4 +1,82 @@
 ---
 title: Alert
-description: Alert component
+description: Alerts often appear between inputs or around important UI elements to convey critical information, such as an incorrect password during login attempts.
 ---
+
+<ComponentPreview name="alert-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Create an `alert.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/alert.tsx" title="components/ui/alert.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Variants
+
+#### filled (Default)
+
+<ComponentPreview name="alert-filled" className="w-full max-w-none" />
+
+#### light
+
+<ComponentPreview name="alert-light" className="w-full max-w-none" />
+
+#### lighter
+
+<ComponentPreview name="alert-lighter" className="w-full max-w-none" />
+
+#### stroke
+
+<ComponentPreview name="alert-stroke" className="w-full max-w-none" />
+
+### Size
+
+#### xsmall
+
+<ComponentPreview name="alert-size-xsmall" className="w-full max-w-none" />
+
+#### small (Default)
+
+<ComponentPreview name="alert-size-small" className="w-full max-w-none" />
+
+#### large
+
+<ComponentPreview name="alert-size-large" className="w-full max-w-none" />
+
+## API Reference
+
+### Alert.Root
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"filled"` \| `"light"` \| `"lighter"` \| `"stroke"` | `"filled"` |
+| `size` | `"xsmall"` \| `"small"` \| `"large"` | `"small"` |
+| `status` | `"error"` \| `"warning"` \| `"success"` \| `"information"` \| `"feature"` | `"information"` |
+| `wrapperClassName` | `string` | |
+
+### Alert.Icon
+
+The `Alert.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |
+
+### Alert.CloseIcon
+
+The `Alert.CloseIcon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `RiCloseLine` |

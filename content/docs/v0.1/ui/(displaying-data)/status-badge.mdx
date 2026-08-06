@@ -1,4 +1,86 @@
 ---
 title: Status Badge
-description: Status Badge component
+description: Allows you to visually highlight statuses or conditions within a confined screen space.
 ---
+
+<ComponentPreview name="status-badge-demo" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `status-badge.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/status-badge.tsx" title="components/ui/status-badge.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Disabled (Default)
+
+<ComponentPreview name="status-badge-disabled" />
+
+### Completed
+
+<ComponentPreview name="status-badge-completed" />
+
+### Failed
+
+<ComponentPreview name="status-badge-failed" />
+
+### Pending
+
+<ComponentPreview name="status-badge-pending" />
+
+### asChild
+
+<ComponentPreview name="status-badge-as-child" />
+
+## API Reference
+
+### StatusBadge.Root
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"stroke"` \| `"light"` | `"stroke"` |
+| `status` | `"completed"` \| `"pending"` \| `"failed"` \| `"disabled"` | `"disabled"` |
+| `asChild` | `boolean` | |
+
+### StatusBadge.Icon
+
+The `StatusBadge.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |
+
+### StatusBadge.Dot
+
+This component is based on the `<div>` element and supports all of its props. It provides a styled dot appearance and does not have any extra props.

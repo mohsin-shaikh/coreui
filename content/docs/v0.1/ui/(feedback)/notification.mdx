@@ -1,4 +1,93 @@
 ---
 title: Notification
-description: Notification component
+description: Notifications typically appear temporarily in corners, conveying information like payment and update notifications.
 ---
+
+<ComponentPreview name="notification-demo" align="start" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### This component is intended to be used with the Alert component. Refer to the [Alert](/docs/v0.1/ui/alert) documentation for setup instructions before using this component.
+  </Step>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-toast
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-toast
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-toast
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `notification.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/notification.tsx" title="components/ui/notification.tsx" />
+  </Step>
+  <Step>
+    ### Create a `notification-provider.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/notification-provider.tsx" title="components/ui/notification-provider.tsx" />
+  </Step>
+  <Step>
+    ### Create a `use-notification.ts` file and paste the following code into it.
+
+    <ComponentSource src="hooks/use-notification.ts" title="hooks/use-notification.ts" />
+  </Step>
+  <Step>
+    ### Add the `NotificationProvider` component in your root layout.
+
+    ```tsx title="app/layout.tsx"
+    import { NotificationProvider } from '@/components/ui/notification-provider';
+
+    export default function RootLayout({ children }) {
+      return (
+        <html lang="en">
+          <body>
+            <main>{children}</main>
+            <NotificationProvider />
+          </body>
+        </html>
+      );
+    }
+    ```
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Variants
+
+<ComponentPreview name="notification-variants" align="start" className="w-full max-w-none" />
+
+### With Action
+
+<ComponentPreview name="notification-with-action" align="start" className="w-full max-w-none" />
+
+### With Link
+
+<ComponentPreview name="notification-with-link" align="start" className="w-full max-w-none" />
+
+### With Secondary Action
+
+<ComponentPreview name="notification-with-secondary-action" align="start" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the Radix UI Toast primitives. Refer to their [documentation](https://www.radix-ui.com/primitives/docs/components/toast) for the API reference.

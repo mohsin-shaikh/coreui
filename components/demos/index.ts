@@ -237,6 +237,81 @@ import ProgressCircleDemo, {
 import ProgressCircleSize, {
   code as progressCircleSizeCode,
 } from './progress-circle/progress-circle-size';
+import RatingReview, { code as ratingReviewCode } from './rating/rating-review';
+import RatingReviewWithLabel, {
+  code as ratingReviewWithLabelCode,
+} from './rating/rating-review-with-label';
+import RatingCell, { code as ratingCellCode } from './rating/rating-cell';
+import RatingBarStar, {
+  code as ratingBarStarCode,
+} from './rating/rating-bar-star';
+import RatingBarHeart, {
+  code as ratingBarHeartCode,
+} from './rating/rating-bar-heart';
+import RatingBarSingleSelectable, {
+  code as ratingBarSingleSelectableCode,
+} from './rating/rating-bar-single-selectable';
+import RatingBarWithTextarea, {
+  code as ratingBarWithTextareaCode,
+} from './rating/rating-bar-with-textarea';
+import StatusBadgeDemo, {
+  code as statusBadgeDemoCode,
+} from './status-badge/status-badge-demo';
+import StatusBadgeDisabled, {
+  code as statusBadgeDisabledCode,
+} from './status-badge/status-badge-disabled';
+import StatusBadgeCompleted, {
+  code as statusBadgeCompletedCode,
+} from './status-badge/status-badge-completed';
+import StatusBadgeFailed, {
+  code as statusBadgeFailedCode,
+} from './status-badge/status-badge-failed';
+import StatusBadgePending, {
+  code as statusBadgePendingCode,
+} from './status-badge/status-badge-pending';
+import StatusBadgeAsChild, {
+  code as statusBadgeAsChildCode,
+} from './status-badge/status-badge-as-child';
+import TagDemo, { code as tagDemoCode } from './tag/tag-demo';
+import TagStroke, { code as tagStrokeCode } from './tag/tag-stroke';
+import TagGray, { code as tagGrayCode } from './tag/tag-gray';
+import TagDisabled, { code as tagDisabledCode } from './tag/tag-disabled';
+import TagWithImage, { code as tagWithImageCode } from './tag/tag-with-image';
+import TagWithAvatar, {
+  code as tagWithAvatarCode,
+} from './tag/tag-with-avatar';
+import TagDismissable, {
+  code as tagDismissableCode,
+} from './tag/tag-dismissable';
+import AlertDemo, { code as alertDemoCode } from './alert/alert-demo';
+import AlertFilled, { code as alertFilledCode } from './alert/alert-filled';
+import AlertLight, { code as alertLightCode } from './alert/alert-light';
+import AlertLighter, { code as alertLighterCode } from './alert/alert-lighter';
+import AlertStroke, { code as alertStrokeCode } from './alert/alert-stroke';
+import AlertSizeXsmall, {
+  code as alertSizeXsmallCode,
+} from './alert/alert-size-xsmall';
+import AlertSizeSmall, {
+  code as alertSizeSmallCode,
+} from './alert/alert-size-small';
+import AlertSizeLarge, {
+  code as alertSizeLargeCode,
+} from './alert/alert-size-large';
+import NotificationDemo, {
+  code as notificationDemoCode,
+} from './notification/notification-demo';
+import NotificationVariants, {
+  code as notificationVariantsCode,
+} from './notification/notification-variants';
+import NotificationWithAction, {
+  code as notificationWithActionCode,
+} from './notification/notification-with-action';
+import NotificationWithLink, {
+  code as notificationWithLinkCode,
+} from './notification/notification-with-link';
+import NotificationWithSecondaryAction, {
+  code as notificationWithSecondaryActionCode,
+} from './notification/notification-with-secondary-action';
 
 export const Index: Record<
   string,
@@ -624,5 +699,137 @@ export const Index: Record<
   'progress-circle-size': {
     component: ProgressCircleSize,
     code: progressCircleSizeCode,
+  },
+  'rating-review': {
+    component: RatingReview,
+    code: ratingReviewCode,
+  },
+  'rating-review-with-label': {
+    component: RatingReviewWithLabel,
+    code: ratingReviewWithLabelCode,
+  },
+  'rating-cell': {
+    component: RatingCell,
+    code: ratingCellCode,
+  },
+  'rating-bar-star': {
+    component: RatingBarStar,
+    code: ratingBarStarCode,
+  },
+  'rating-bar-heart': {
+    component: RatingBarHeart,
+    code: ratingBarHeartCode,
+  },
+  'rating-bar-single-selectable': {
+    component: RatingBarSingleSelectable,
+    code: ratingBarSingleSelectableCode,
+  },
+  'rating-bar-with-textarea': {
+    component: RatingBarWithTextarea,
+    code: ratingBarWithTextareaCode,
+  },
+  'status-badge-demo': {
+    component: StatusBadgeDemo,
+    code: statusBadgeDemoCode,
+  },
+  'status-badge-disabled': {
+    component: StatusBadgeDisabled,
+    code: statusBadgeDisabledCode,
+  },
+  'status-badge-completed': {
+    component: StatusBadgeCompleted,
+    code: statusBadgeCompletedCode,
+  },
+  'status-badge-failed': {
+    component: StatusBadgeFailed,
+    code: statusBadgeFailedCode,
+  },
+  'status-badge-pending': {
+    component: StatusBadgePending,
+    code: statusBadgePendingCode,
+  },
+  'status-badge-as-child': {
+    component: StatusBadgeAsChild,
+    code: statusBadgeAsChildCode,
+  },
+  'tag-demo': {
+    component: TagDemo,
+    code: tagDemoCode,
+  },
+  'tag-stroke': {
+    component: TagStroke,
+    code: tagStrokeCode,
+  },
+  'tag-gray': {
+    component: TagGray,
+    code: tagGrayCode,
+  },
+  'tag-disabled': {
+    component: TagDisabled,
+    code: tagDisabledCode,
+  },
+  'tag-with-image': {
+    component: TagWithImage,
+    code: tagWithImageCode,
+  },
+  'tag-with-avatar': {
+    component: TagWithAvatar,
+    code: tagWithAvatarCode,
+  },
+  'tag-dismissable': {
+    component: TagDismissable,
+    code: tagDismissableCode,
+  },
+  'alert-demo': {
+    component: AlertDemo,
+    code: alertDemoCode,
+  },
+  'alert-filled': {
+    component: AlertFilled,
+    code: alertFilledCode,
+  },
+  'alert-light': {
+    component: AlertLight,
+    code: alertLightCode,
+  },
+  'alert-lighter': {
+    component: AlertLighter,
+    code: alertLighterCode,
+  },
+  'alert-stroke': {
+    component: AlertStroke,
+    code: alertStrokeCode,
+  },
+  'alert-size-xsmall': {
+    component: AlertSizeXsmall,
+    code: alertSizeXsmallCode,
+  },
+  'alert-size-small': {
+    component: AlertSizeSmall,
+    code: alertSizeSmallCode,
+  },
+  'alert-size-large': {
+    component: AlertSizeLarge,
+    code: alertSizeLargeCode,
+  },
+  'notification-demo': {
+    component: NotificationDemo,
+    code: notificationDemoCode,
+  },
+  'notification-variants': {
+    component: NotificationVariants,
+    code: notificationVariantsCode,
+  },
+  'notification-with-action': {
+    component: NotificationWithAction,
+    code: notificationWithActionCode,
+  },
+  'notification-with-link': {
+    component: NotificationWithLink,
+    code: notificationWithLinkCode,
+  },
+  'notification-with-secondary-action': {
+    component: NotificationWithSecondaryAction,
+    code: notificationWithSecondaryActionCode,
   },
 };

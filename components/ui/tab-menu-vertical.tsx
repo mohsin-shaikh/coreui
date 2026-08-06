@@ -48,7 +48,7 @@ const TabMenuVerticalTrigger = React.forwardRef<
       className={cn(
         // base
         'group/tab-item w-full rounded-lg p-2 text-left text-label-sm text-text-sub-600 outline-none',
-        'grid auto-cols-auto grid-flow-col grid-cols-[auto,minmax(0,1fr)] items-center gap-1.5',
+        'grid auto-cols-auto grid-flow-col grid-cols-[auto_minmax(0,1fr)] items-center gap-1.5',
         'transition duration-200 ease-out',
         // hover
         'hover:bg-bg-weak-50',
