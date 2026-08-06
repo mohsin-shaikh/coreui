@@ -1,4 +1,48 @@
 ---
 title: Hint
-description: Hint component
+description: Hint components provide contextual information or guidance beneath inputs, selects, and textareas, enhancing usability and user experience.
 ---
+
+<ComponentPreview name="hint-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Create a `hint.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/hint.tsx" title="components/ui/hint.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Disabled
+
+<ComponentPreview name="hint-disabled" className="w-full max-w-none" />
+
+### Has Error
+
+<ComponentPreview name="hint-has-error" className="w-full max-w-none" />
+
+## API Reference
+
+### Hint.Root
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `hasError` | `boolean` | |
+| `disabled` | `boolean` | |
+
+### Hint.Icon
+
+The `Hint.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |

@@ -1,4 +1,120 @@
 ---
 title: Select
-description: Select component
+description: Select is an input for selecting a single option from a menu.
 ---
+
+<ComponentPreview name="select-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-select @radix-ui/react-scroll-area @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-select @radix-ui/react-scroll-area @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-select @radix-ui/react-scroll-area @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `select.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/select.tsx" title="components/ui/select.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### variant="default"
+
+#### With Label & Hint
+
+<ComponentPreview name="select-with-label-and-hint" className="w-full max-w-none" />
+
+#### Icons
+
+<ComponentPreview name="select-icons" className="w-full max-w-none" />
+
+#### Size
+
+<ComponentPreview name="select-size" className="w-full max-w-none" />
+
+#### Country
+
+<ComponentPreview name="select-country" className="w-full max-w-none" />
+
+#### Payment Method
+
+<ComponentPreview name="select-payment-method" className="w-full max-w-none" />
+
+#### User
+
+<ComponentPreview name="select-user" className="w-full max-w-none" />
+
+#### Disabled
+
+<ComponentPreview name="select-disabled" className="w-full max-w-none" />
+
+### variant="compact"
+
+#### Paging
+
+<ComponentPreview name="select-compact-paging" className="w-full max-w-none" />
+
+#### Country
+
+<ComponentPreview name="select-compact-country" className="w-full max-w-none" />
+
+#### Size
+
+<ComponentPreview name="select-compact-size" className="w-full max-w-none" />
+
+### variant="inline"
+
+#### Country
+
+<ComponentPreview name="select-inline-country" className="w-full max-w-none" />
+
+#### With Input
+
+<ComponentPreview name="select-inline-with-input" className="w-full max-w-none" />
+
+### variant="compactForInput"
+
+#### With Input
+
+<ComponentPreview name="select-compact-for-input-with-input" className="w-full max-w-none" />
+
+#### Size
+
+<ComponentPreview name="select-compact-for-input-size" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the [Radix UI Select](https://www.radix-ui.com/primitives/docs/components/select) primitives. Refer to their documentation for the API reference.
+
+### Select.Root
+
+Supports all of Radix Select Root props and adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"default"` \| `"compact"` \| `"compactForInput"` \| `"inline"` | `"default"` |
+| `size` | `"medium"` \| `"small"` \| `"xsmall"` | `"medium"` |
+| `hasError` | `boolean` | |

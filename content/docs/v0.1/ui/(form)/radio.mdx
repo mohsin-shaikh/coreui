@@ -1,4 +1,58 @@
 ---
 title: Radio
-description: Radio component
+description: Radio button is a form control for making a single selection from a short list of options.
 ---
+
+<ComponentPreview name="radio-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-radio-group
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-radio-group
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-radio-group
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `radio.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/radio.tsx" title="components/ui/radio.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Disabled
+
+<ComponentPreview name="radio-disabled" className="w-full max-w-none" />
+
+### With Label
+
+<ComponentPreview name="radio-with-label" className="w-full max-w-none" />
+
+### With Advanced Label
+
+<ComponentPreview name="radio-with-advanced-label" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the Radix UI Radio Group primitives. Refer to their [documentation](https://www.radix-ui.com/primitives/docs/components/radio-group) for the API reference.

@@ -1,4 +1,58 @@
 ---
 title: Label
-description: Label component
+description: Labels provide context for user inputs.
 ---
+
+<ComponentPreview name="label-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-label
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-label
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-label
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `label.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/label.tsx" title="components/ui/label.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## API Reference
+
+### Label.Root
+
+This component is based on the [Label.Root](https://www.radix-ui.com/primitives/docs/components/label) primitive. Also includes:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `disabled` | `boolean` | |
+
+### Label.Asterisk
+
+Displays an asterisk (*) symbol, typically used to indicate required fields. This component is based on the `<span>` element and supports all of its props.
+
+### Label.Sub
+
+Used to display supplementary text associated with the label, such as instructions or additional information. This component is based on the `<span>` element and supports all of its props.

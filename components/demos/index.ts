@@ -368,6 +368,98 @@ import DigitInputDisabled, {
 import DigitInputSquare, {
   code as digitInputSquareCode,
 } from './digit-input/digit-input-square';
+import FileUploadDemo, {
+  code as fileUploadDemoCode,
+} from './file-upload/file-upload-demo';
+import FileFormatIconDemo, {
+  code as fileFormatIconDemoCode,
+} from './file-upload/file-format-icon-demo';
+import HintDemo, { code as hintDemoCode } from './hint/hint-demo';
+import HintDisabled, { code as hintDisabledCode } from './hint/hint-disabled';
+import HintHasError, { code as hintHasErrorCode } from './hint/hint-has-error';
+import InputDemo, { code as inputDemoCode } from './input/input-demo';
+import InputIcon, { code as inputIconCode } from './input/input-icon';
+import InputSize, { code as inputSizeCode } from './input/input-size';
+import InputAffix, { code as inputAffixCode } from './input/input-affix';
+import InputInlineAffix, {
+  code as inputInlineAffixCode,
+} from './input/input-inline-affix';
+import InputWithLabelAndHint, {
+  code as inputWithLabelAndHintCode,
+} from './input/input-with-label-and-hint';
+import InputWithKbd, { code as inputWithKbdCode } from './input/input-with-kbd';
+import InputPassword, { code as inputPasswordCode } from './input/input-password';
+import InputPasswordWithLevels, {
+  code as inputPasswordWithLevelsCode,
+} from './input/input-password-with-levels';
+import InputDisabled, { code as inputDisabledCode } from './input/input-disabled';
+import InputHasError, { code as inputHasErrorCode } from './input/input-has-error';
+import InputWithButton, {
+  code as inputWithButtonCode,
+} from './input/input-with-button';
+import InputPayment, { code as inputPaymentCode } from './input/input-payment';
+import InputWithSelect, {
+  code as inputWithSelectCode,
+} from './input/input-with-select';
+import InputWithInlineSelect, {
+  code as inputWithInlineSelectCode,
+} from './input/input-with-inline-select';
+import InputWithTags, { code as inputWithTagsCode } from './input/input-with-tags';
+import InputDateReactAria, {
+  code as inputDateReactAriaCode,
+} from './input/input-date-react-aria';
+import InputCounterReactAria, {
+  code as inputCounterReactAriaCode,
+} from './input/input-counter-react-aria';
+import InputComposition, {
+  code as inputCompositionCode,
+} from './input/input-composition';
+import LabelDemo, { code as labelDemoCode } from './label/label-demo';
+import RadioDemo, { code as radioDemoCode } from './radio/radio-demo';
+import RadioDisabled, { code as radioDisabledCode } from './radio/radio-disabled';
+import RadioWithLabel, {
+  code as radioWithLabelCode,
+} from './radio/radio-with-label';
+import RadioWithAdvancedLabel, {
+  code as radioWithAdvancedLabelCode,
+} from './radio/radio-with-advanced-label';
+import SelectDemo, { code as selectDemoCode } from './select/select-demo';
+import SelectWithLabelAndHint, {
+  code as selectWithLabelAndHintCode,
+} from './select/select-with-label-and-hint';
+import SelectIcons, { code as selectIconsCode } from './select/select-icons';
+import SelectSize, { code as selectSizeCode } from './select/select-size';
+import SelectCountry, {
+  code as selectCountryCode,
+} from './select/select-country';
+import SelectPaymentMethod, {
+  code as selectPaymentMethodCode,
+} from './select/select-payment-method';
+import SelectUser, { code as selectUserCode } from './select/select-user';
+import SelectDisabled, {
+  code as selectDisabledCode,
+} from './select/select-disabled';
+import SelectCompactPaging, {
+  code as selectCompactPagingCode,
+} from './select/select-compact-paging';
+import SelectCompactCountry, {
+  code as selectCompactCountryCode,
+} from './select/select-compact-country';
+import SelectCompactSize, {
+  code as selectCompactSizeCode,
+} from './select/select-compact-size';
+import SelectInlineCountry, {
+  code as selectInlineCountryCode,
+} from './select/select-inline-country';
+import SelectInlineWithInput, {
+  code as selectInlineWithInputCode,
+} from './select/select-inline-with-input';
+import SelectCompactForInputWithInput, {
+  code as selectCompactForInputWithInputCode,
+} from './select/select-compact-for-input-with-input';
+import SelectCompactForInputSize, {
+  code as selectCompactForInputSizeCode,
+} from './select/select-compact-for-input-size';
 
 export const Index: Record<
   string,
@@ -975,5 +1067,181 @@ export const Index: Record<
   'digit-input-square': {
     component: DigitInputSquare,
     code: digitInputSquareCode,
+  },
+  'file-upload-demo': {
+    component: FileUploadDemo,
+    code: fileUploadDemoCode,
+  },
+  'file-format-icon-demo': {
+    component: FileFormatIconDemo,
+    code: fileFormatIconDemoCode,
+  },
+  'hint-demo': {
+    component: HintDemo,
+    code: hintDemoCode,
+  },
+  'hint-disabled': {
+    component: HintDisabled,
+    code: hintDisabledCode,
+  },
+  'hint-has-error': {
+    component: HintHasError,
+    code: hintHasErrorCode,
+  },
+  'input-demo': {
+    component: InputDemo,
+    code: inputDemoCode,
+  },
+  'input-icon': {
+    component: InputIcon,
+    code: inputIconCode,
+  },
+  'input-size': {
+    component: InputSize,
+    code: inputSizeCode,
+  },
+  'input-affix': {
+    component: InputAffix,
+    code: inputAffixCode,
+  },
+  'input-inline-affix': {
+    component: InputInlineAffix,
+    code: inputInlineAffixCode,
+  },
+  'input-with-label-and-hint': {
+    component: InputWithLabelAndHint,
+    code: inputWithLabelAndHintCode,
+  },
+  'input-with-kbd': {
+    component: InputWithKbd,
+    code: inputWithKbdCode,
+  },
+  'input-password': {
+    component: InputPassword,
+    code: inputPasswordCode,
+  },
+  'input-password-with-levels': {
+    component: InputPasswordWithLevels,
+    code: inputPasswordWithLevelsCode,
+  },
+  'input-disabled': {
+    component: InputDisabled,
+    code: inputDisabledCode,
+  },
+  'input-has-error': {
+    component: InputHasError,
+    code: inputHasErrorCode,
+  },
+  'input-with-button': {
+    component: InputWithButton,
+    code: inputWithButtonCode,
+  },
+  'input-payment': {
+    component: InputPayment,
+    code: inputPaymentCode,
+  },
+  'input-with-select': {
+    component: InputWithSelect,
+    code: inputWithSelectCode,
+  },
+  'input-with-inline-select': {
+    component: InputWithInlineSelect,
+    code: inputWithInlineSelectCode,
+  },
+  'input-with-tags': {
+    component: InputWithTags,
+    code: inputWithTagsCode,
+  },
+  'input-date-react-aria': {
+    component: InputDateReactAria,
+    code: inputDateReactAriaCode,
+  },
+  'input-counter-react-aria': {
+    component: InputCounterReactAria,
+    code: inputCounterReactAriaCode,
+  },
+  'input-composition': {
+    component: InputComposition,
+    code: inputCompositionCode,
+  },
+  'label-demo': {
+    component: LabelDemo,
+    code: labelDemoCode,
+  },
+  'radio-demo': {
+    component: RadioDemo,
+    code: radioDemoCode,
+  },
+  'radio-disabled': {
+    component: RadioDisabled,
+    code: radioDisabledCode,
+  },
+  'radio-with-label': {
+    component: RadioWithLabel,
+    code: radioWithLabelCode,
+  },
+  'radio-with-advanced-label': {
+    component: RadioWithAdvancedLabel,
+    code: radioWithAdvancedLabelCode,
+  },
+  'select-demo': {
+    component: SelectDemo,
+    code: selectDemoCode,
+  },
+  'select-with-label-and-hint': {
+    component: SelectWithLabelAndHint,
+    code: selectWithLabelAndHintCode,
+  },
+  'select-icons': {
+    component: SelectIcons,
+    code: selectIconsCode,
+  },
+  'select-size': {
+    component: SelectSize,
+    code: selectSizeCode,
+  },
+  'select-country': {
+    component: SelectCountry,
+    code: selectCountryCode,
+  },
+  'select-payment-method': {
+    component: SelectPaymentMethod,
+    code: selectPaymentMethodCode,
+  },
+  'select-user': {
+    component: SelectUser,
+    code: selectUserCode,
+  },
+  'select-disabled': {
+    component: SelectDisabled,
+    code: selectDisabledCode,
+  },
+  'select-compact-paging': {
+    component: SelectCompactPaging,
+    code: selectCompactPagingCode,
+  },
+  'select-compact-country': {
+    component: SelectCompactCountry,
+    code: selectCompactCountryCode,
+  },
+  'select-compact-size': {
+    component: SelectCompactSize,
+    code: selectCompactSizeCode,
+  },
+  'select-inline-country': {
+    component: SelectInlineCountry,
+    code: selectInlineCountryCode,
+  },
+  'select-inline-with-input': {
+    component: SelectInlineWithInput,
+    code: selectInlineWithInputCode,
+  },
+  'select-compact-for-input-with-input': {
+    component: SelectCompactForInputWithInput,
+    code: selectCompactForInputWithInputCode,
+  },
+  'select-compact-for-input-size': {
+    component: SelectCompactForInputSize,
+    code: selectCompactForInputSizeCode,
   },
 };

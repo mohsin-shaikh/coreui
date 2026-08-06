@@ -1,4 +1,175 @@
 ---
 title: Input
-description: Input component
+description: Text input is used to set a value that is a single line of text.
 ---
+
+<ComponentPreview name="input-demo" className="w-full max-w-none" />
+
+## Coming from Figma
+
+In Figma the Input exposes **Type** (Search / Phone / Dropdown / Emoji …), **Label**, **Hint Text**, **Left / Right Icon**, and **Size**. In code these come from composition rather than a single prop:
+
+- **Label / Hint Text**: use the separate [Label](/docs/v0.1/ui/label) and [Hint](/docs/v0.1/ui/hint) components above and below the input.
+- **Left / Right Icon**: add `Input.Icon`, `Input.Affix`, or `Input.InlineAffix` inside `Input.Wrapper`.
+- **Type**: pass the native `type` (`search`, `tel`, …) to `Input.Input`, and compose icons/affixes for the richer variants (see the Examples below).
+- **Size**: the `size` prop on `Input.Root` (`medium` | `small` | `xsmall`).
+
+The `hasError` prop styles the error state; it has no Figma variant because it is a runtime state, not a design variant.
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `input.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/input.tsx" title="components/ui/input.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Icon
+
+<ComponentPreview name="input-icon" className="w-full max-w-none" />
+
+### Size
+
+<ComponentPreview name="input-size" className="w-full max-w-none" />
+
+### Affix
+
+<ComponentPreview name="input-affix" className="w-full max-w-none" />
+
+### Inline Affix
+
+<ComponentPreview name="input-inline-affix" className="w-full max-w-none" />
+
+### With Label and Hint
+
+<ComponentPreview name="input-with-label-and-hint" className="w-full max-w-none" />
+
+### With Kbd
+
+<ComponentPreview name="input-with-kbd" className="w-full max-w-none" />
+
+### Password
+
+<ComponentPreview name="input-password" className="w-full max-w-none" />
+
+### Password With Levels
+
+<ComponentPreview name="input-password-with-levels" className="w-full max-w-none" />
+
+### Disabled
+
+<ComponentPreview name="input-disabled" className="w-full max-w-none" />
+
+### Has Error
+
+<ComponentPreview name="input-has-error" className="w-full max-w-none" />
+
+### With Button
+
+<ComponentPreview name="input-with-button" className="w-full max-w-none" />
+
+### Payment Input
+
+<ComponentPreview name="input-payment" className="w-full max-w-none" />
+
+### With Select
+
+<ComponentPreview name="input-with-select" className="w-full max-w-none" />
+
+### With Inline Select
+
+<ComponentPreview name="input-with-inline-select" className="w-full max-w-none" />
+
+### With Tags
+
+<ComponentPreview name="input-with-tags" className="w-full max-w-none" />
+
+### Date Input With React Aria
+
+<ComponentPreview name="input-date-react-aria" className="w-full max-w-none" />
+
+### Counter Input With React Aria
+
+<ComponentPreview name="input-counter-react-aria" className="w-full max-w-none" />
+
+## Composition
+
+You can simplify component usage by creating a custom API that abstracts the core functionalities.
+
+<ComponentPreview name="input-composition" className="w-full max-w-none" />
+
+## API Reference
+
+### Input.Root
+
+The outer container that must contain `<Input.Wrapper>`. It's also the container for `<Input.Affix>` and other separate components like `Select` and `Button`. Provides border and shadow styles.
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `size` | `"medium"` \| `"small"` \| `"xsmall"` | `"medium"` |
+| `hasError` | `boolean` | |
+| `asChild` | `boolean` | |
+
+### Input.Wrapper
+
+The outer container that must contain `<Input.Input>`. You can also include components like `<Input.Icon>` and `<Input.InlineAffix>` inside it. When a user clicks on elements inside `<Input.Wrapper>`, they don't trigger any actions and instead focus on the input element itself.
+
+This component is based on the `<label>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |
+
+### Input.Input
+
+This component is based on the `<input>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |
+
+### Input.Icon
+
+The `Input.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |
+
+### Input.Affix
+
+This component is based on the `<div>` element and supports all of its props.
+
+### Input.InlineAffix
+
+This component is based on the `<div>` element and supports all of its props.
