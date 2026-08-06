@@ -1,8 +1,10 @@
 import * as Badge from '@/components/ui/badge';
 
+import { BadgeDemoGrid } from './badge-demo-grid';
+
 export default function BadgeLighter() {
   return (
-    <>
+    <BadgeDemoGrid>
       <Badge.Root variant="lighter" color="gray">
         Badge
       </Badge.Root>
@@ -18,15 +20,17 @@ export default function BadgeLighter() {
       <Badge.Root variant="lighter" color="green">
         Badge
       </Badge.Root>
-    </>
+    </BadgeDemoGrid>
   );
 }
 
 export const code = `import * as Badge from '@/components/ui/badge';
 
+import { BadgeDemoGrid } from './badge-demo-grid';
+
 export default function BadgeLighter() {
   return (
-    <>
+    <BadgeDemoGrid>
       <Badge.Root variant="lighter" color="gray">
         Badge
       </Badge.Root>
@@ -42,6 +46,6 @@ export default function BadgeLighter() {
       <Badge.Root variant="lighter" color="green">
         Badge
       </Badge.Root>
-    </>
+    </BadgeDemoGrid>
   );
 }`;

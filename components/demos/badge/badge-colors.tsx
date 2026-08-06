@@ -1,8 +1,10 @@
 import * as Badge from '@/components/ui/badge';
 
+import { BadgeDemoGrid } from './badge-demo-grid';
+
 export default function BadgeColors() {
   return (
-    <>
+    <BadgeDemoGrid>
       <Badge.Root variant="filled" color="gray">
         Badge
       </Badge.Root>
@@ -33,15 +35,17 @@ export default function BadgeColors() {
       <Badge.Root variant="filled" color="teal">
         Badge
       </Badge.Root>
-    </>
+    </BadgeDemoGrid>
   );
 }
 
 export const code = `import * as Badge from '@/components/ui/badge';
 
+import { BadgeDemoGrid } from './badge-demo-grid';
+
 export default function BadgeColors() {
   return (
-    <>
+    <BadgeDemoGrid>
       <Badge.Root variant="filled" color="gray">
         Badge
       </Badge.Root>
@@ -72,6 +76,6 @@ export default function BadgeColors() {
       <Badge.Root variant="filled" color="teal">
         Badge
       </Badge.Root>
-    </>
+    </BadgeDemoGrid>
   );
 }`;
