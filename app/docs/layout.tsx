@@ -19,10 +19,11 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
         },
       }}
     >
-      {children}
-      <DocsTooltipProvider />
-      <NotificationProvider />
-      <Toaster />
+      <DocsTooltipProvider>
+        {children}
+        <NotificationProvider />
+        <Toaster />
+      </DocsTooltipProvider>
     </DocsLayout>
   );
 }
