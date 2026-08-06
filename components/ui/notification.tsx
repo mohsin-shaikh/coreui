@@ -91,7 +91,7 @@ const Notification = React.forwardRef<
           // open
           'data-[state=open]:animate-in data-[state=open]:max-[639px]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-right-full',
           // close
-          'data-[state=closed]:animate-out data-[state=closed]:fade-out-80 data-[state=open]:max-[639px]:slide-out-to-top-full data-[state=closed]:sm:slide-out-to-right-full',
+          'data-[state=closed]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:max-[639px]:slide-out-to-top-full data-[state=closed]:sm:slide-out-to-right-full',
           // swipe
           'data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[swipe=end]:animate-out',
           className,
