@@ -4,6 +4,7 @@ import { baseOptions } from '@/lib/layout.shared';
 import { DocsSidebarFolder } from '@/components/docs-sidebar-folder';
 import { SidebarSeparator } from '@/components/sidebar-separator';
 import { NotificationProvider } from '@/components/ui/notification-provider';
+import { Toaster } from '@/components/ui/toast';
 
 export default function Layout({ children }: LayoutProps<'/docs'>) {
   return (
@@ -19,6 +20,7 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
     >
       {children}
       <NotificationProvider />
+      <Toaster />
     </DocsLayout>
   );
 }

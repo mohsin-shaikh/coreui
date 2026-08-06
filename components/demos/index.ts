@@ -312,6 +312,13 @@ import NotificationWithLink, {
 import NotificationWithSecondaryAction, {
   code as notificationWithSecondaryActionCode,
 } from './notification/notification-with-secondary-action';
+import ToastDemo, { code as toastDemoCode } from './toast/toast-demo';
+import ToastNonDismissable, {
+  code as toastNonDismissableCode,
+} from './toast/toast-non-dismissable';
+import ToastSonnerOptions, {
+  code as toastSonnerOptionsCode,
+} from './toast/toast-sonner-options';
 
 export const Index: Record<
   string,
@@ -831,5 +838,17 @@ export const Index: Record<
   'notification-with-secondary-action': {
     component: NotificationWithSecondaryAction,
     code: notificationWithSecondaryActionCode,
+  },
+  'toast-demo': {
+    component: ToastDemo,
+    code: toastDemoCode,
+  },
+  'toast-non-dismissable': {
+    component: ToastNonDismissable,
+    code: toastNonDismissableCode,
+  },
+  'toast-sonner-options': {
+    component: ToastSonnerOptions,
+    code: toastSonnerOptionsCode,
   },
 };

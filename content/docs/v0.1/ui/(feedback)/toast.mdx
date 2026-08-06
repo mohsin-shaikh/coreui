@@ -1,4 +1,82 @@
 ---
 title: Toast
-description: Toast component
+description: Multiple notifications may stack up as Toasts, delivering brief feedback in a compact size.
 ---
+
+<ComponentPreview name="toast-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### This component is intended to be used with the Alert component.
+
+    Refer to the [Alert](/docs/v0.1/ui/alert) documentation for setup instructions before using this component.
+  </Step>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install sonner
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add sonner
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add sonner
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `toast.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/toast.tsx" title="components/ui/toast.tsx" />
+  </Step>
+  <Step>
+    ### Create a `toast-alert.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/toast-alert.tsx" title="components/ui/toast-alert.tsx" />
+  </Step>
+  <Step>
+    ### Add the `Toaster` component in your root layout.
+
+    ```tsx title="app/layout.tsx"
+    import { Toaster } from '@/components/ui/toast';
+
+    export default function RootLayout({ children }) {
+      return (
+        <html lang="en">
+          <body>
+            <main>{children}</main>
+            <Toaster />
+          </body>
+        </html>
+      );
+    }
+    ```
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Non-dismissable
+
+<ComponentPreview name="toast-non-dismissable" className="w-full max-w-none" />
+
+### Sonner Options
+
+<ComponentPreview name="toast-sonner-options" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the [Sonner](https://sonner.emilkowal.ski) package. Refer to their documentation for the API reference.
