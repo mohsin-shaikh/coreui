@@ -71,13 +71,14 @@ export function ComponentPreview({
             type="button"
             onClick={onCopy}
             className="bg-bg-weak-25 text-ln-label-sm text-ln-gray-600 flex h-7 items-center gap-1 rounded-lg pr-3 pl-1.5"
+            aria-label={copied ? 'Copied' : 'Copy'}
           >
             {copied ? (
               <RiCheckLine className="size-5 text-ln-gray-400" />
             ) : (
               <Icons.Copy className="size-5 text-ln-gray-400" />
             )}
-            Copy
+            {copied ? 'Copied' : 'Copy'}
           </button>
         </div>
 
