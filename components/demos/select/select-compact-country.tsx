@@ -1,27 +1,28 @@
 'use client';
 
 import * as Select from '@/components/ui/select';
+import { assetPath } from '@/lib/shared';
 
 const countries = [
   {
     value: 'us',
     label: 'US',
-    flag: '/flags/US.svg',
+    flag: assetPath('/flags/US.svg'),
   },
   {
     value: 'tr',
     label: 'TR',
-    flag: '/flags/TR.svg',
+    flag: assetPath('/flags/TR.svg'),
   },
   {
     value: 'gb',
     label: 'GB',
-    flag: '/flags/GB.svg',
+    flag: assetPath('/flags/GB.svg'),
   },
   {
     value: 'de',
     label: 'DE',
-    flag: '/flags/DE.svg',
+    flag: assetPath('/flags/DE.svg'),
   },
 ];
 
@@ -30,7 +31,7 @@ export default function SelectCompactCountry() {
     <Select.Root variant='compact' defaultValue='us'>
       <Select.Trigger>
         <Select.TriggerIcon
-          style={{ backgroundImage: 'url(/flags/US.svg)' }}
+          style={{ backgroundImage: `url(${assetPath('/flags/US.svg')})` }}
           className='rounded-sm bg-cover bg-center'
         />
         <Select.Value />

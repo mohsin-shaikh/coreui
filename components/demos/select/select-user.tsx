@@ -2,30 +2,31 @@
 
 import * as Avatar from '@/components/ui/avatar';
 import * as Select from '@/components/ui/select';
+import { assetPath } from '@/lib/shared';
 
 const users = [
   {
     value: 'sophia',
     label: 'Sophia Williams',
-    avatar: '/images/avatar/illustration/sophia.png',
+    avatar: assetPath('/images/avatar/illustration/sophia.png'),
     color: 'yellow' as const,
   },
   {
     value: 'james',
     label: 'James Brown',
-    avatar: '/images/avatar/illustration/james.png',
+    avatar: assetPath('/images/avatar/illustration/james.png'),
     color: 'gray' as const,
   },
   {
     value: 'arthur',
     label: 'Arthur Taylor',
-    avatar: '/images/avatar/illustration/arthur.png',
+    avatar: assetPath('/images/avatar/illustration/arthur.png'),
     color: 'blue' as const,
   },
   {
     value: 'emma',
     label: 'Emma Laurent',
-    avatar: '/images/avatar/illustration/emma.png',
+    avatar: assetPath('/images/avatar/illustration/emma.png'),
     color: 'purple' as const,
   },
 ];

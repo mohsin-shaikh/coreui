@@ -2,20 +2,21 @@
 
 import * as Input from '@/components/ui/input';
 import * as Select from '@/components/ui/select';
+import { assetPath } from '@/lib/shared';
 
 const currencies = [
   {
-    icon: '/flags/EU.svg',
+    icon: assetPath('/flags/EU.svg'),
     value: 'EUR',
     label: 'EUR',
   },
   {
-    icon: '/flags/US.svg',
+    icon: assetPath('/flags/US.svg'),
     value: 'USD',
     label: 'USD',
   },
   {
-    icon: '/flags/TR.svg',
+    icon: assetPath('/flags/TR.svg'),
     value: 'TRY',
     label: 'TRY',
   },

@@ -1,37 +1,38 @@
 'use client';
 
 import * as Select from '@/components/ui/select';
+import { assetPath } from '@/lib/shared';
 import { cn } from '@/utils/cn';
 
 const paymentMethods = [
   {
-    icon: '/images/payment-methods/amex.svg',
+    icon: assetPath('/images/payment-methods/amex.svg'),
     value: 'Amex',
     label: 'Amex',
   },
   {
-    icon: '/images/payment-methods/amazon-pay.svg',
+    icon: assetPath('/images/payment-methods/amazon-pay.svg'),
     value: 'AmazonPay',
     label: 'Amazon Pay',
   },
   {
-    icon: '/images/payment-methods/apple-pay.svg',
+    icon: assetPath('/images/payment-methods/apple-pay.svg'),
     value: 'ApplePay',
     label: 'Apple Pay',
   },
   {
-    icon: '/images/payment-methods/mastercard.svg',
+    icon: assetPath('/images/payment-methods/mastercard.svg'),
     value: 'Mastercard',
     label: 'Mastercard',
     disabled: true,
   },
   {
-    icon: '/images/payment-methods/bitcoin.svg',
+    icon: assetPath('/images/payment-methods/bitcoin.svg'),
     value: 'Bitcoin',
     label: 'Bitcoin',
   },
   {
-    icon: '/images/payment-methods/citadele.svg',
+    icon: assetPath('/images/payment-methods/citadele.svg'),
     value: 'Citadele',
     label: 'Citadele',
   },
@@ -47,7 +48,7 @@ export default function SelectPaymentMethod() {
               <div className='flex items-center gap-2'>
                 <Select.TriggerIcon
                   as='img'
-                  src='/images/payment-methods/placeholder.svg'
+                  src={assetPath('/images/payment-methods/placeholder.svg')}
                 />{' '}
                 Select a payment method...
               </div>

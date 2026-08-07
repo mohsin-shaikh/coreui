@@ -3,36 +3,37 @@
 import { RiGlobalLine } from '@remixicon/react';
 
 import * as Select from '@/components/ui/select';
+import { assetPath } from '@/lib/shared';
 
 const countries = [
   {
-    icon: '/flags/US.svg',
+    icon: assetPath('/flags/US.svg'),
     value: 'us',
     label: 'United States',
   },
   {
-    icon: '/flags/DE.svg',
+    icon: assetPath('/flags/DE.svg'),
     value: 'germany',
     label: 'Germany',
   },
   {
-    icon: '/flags/FR.svg',
+    icon: assetPath('/flags/FR.svg'),
     value: 'france',
     label: 'France',
     disabled: true,
   },
   {
-    icon: '/flags/TR.svg',
+    icon: assetPath('/flags/TR.svg'),
     value: 'turkey',
     label: 'Turkey',
   },
   {
-    icon: '/flags/DK.svg',
+    icon: assetPath('/flags/DK.svg'),
     value: 'denmark',
     label: 'Denmark',
   },
   {
-    icon: '/flags/FI.svg',
+    icon: assetPath('/flags/FI.svg'),
     value: 'finland',
     label: 'Finland',
   },

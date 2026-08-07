@@ -6,6 +6,7 @@ import { usePaymentInputs } from 'react-payment-inputs';
 
 import * as Input from '@/components/ui/input';
 import * as Label from '@/components/ui/label';
+import { assetPath } from '@/lib/shared';
 
 export default function InputPayment() {
   const { getCardNumberProps, meta } = usePaymentInputs();
@@ -13,15 +14,15 @@ export default function InputPayment() {
 
   const cardIcon = React.useMemo(() => {
     if (cardType?.displayName === 'Visa') {
-      return '/images/payment-methods/visa.svg';
+      return assetPath('/images/payment-methods/visa.svg');
     }
     if (cardType?.displayName === 'Mastercard') {
-      return '/images/payment-methods/mastercard.svg';
+      return assetPath('/images/payment-methods/mastercard.svg');
     }
     if (cardType?.displayName === 'American Express') {
-      return '/images/payment-methods/amex.svg';
+      return assetPath('/images/payment-methods/amex.svg');
     }
-    return '/images/payment-methods/placeholder.svg';
+    return assetPath('/images/payment-methods/placeholder.svg');
   }, [cardType?.displayName]);
 
   return (
