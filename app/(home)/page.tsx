@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { RiArrowRightLine } from '@remixicon/react';
 
 import { DocsDashedSeparator } from '@/components/docs-page-header';
 import * as FancyButton from '@/components/ui/fancy-button';
-import { appName } from '@/lib/shared';
+import { appName, assetPath } from '@/lib/shared';
 
 const description =
   'A copy-paste component library for React. Drop the source into your project and keep full control over it - no package to depend on, nothing to eject from.';
@@ -25,7 +26,19 @@ const stack = [
 export default function HomePage() {
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center px-6 py-16 text-center">
-      <div>
+      <div className="flex justify-center">
+        <Image
+          src={assetPath('/images/logo/coreui.svg')}
+          alt=""
+          width={48}
+          height={48}
+          className="size-12"
+          unoptimized
+          priority
+        />
+      </div>
+
+      <div className="mt-5">
         <span className="bg-bg-weak-25 text-ln-label-xs text-ln-gray-600 shadow-docs-badge-gray inline-flex h-7 items-center rounded-lg px-2">
           v0.1
         </span>
