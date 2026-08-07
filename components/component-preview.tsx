@@ -82,7 +82,7 @@ export function ComponentPreview({
 
         <Tabs.Content
           value="preview"
-          className="bg-fd-card relative rounded-xl border border-fd-border"
+          className="relative rounded-xl border border-fd-border bg-white dark:bg-neutral-950"
         >
           <div
             className={cn(
