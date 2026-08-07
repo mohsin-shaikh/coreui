@@ -275,6 +275,13 @@
   height: 1.25rem;
 }
 
+/* Theme toggle SVGs include their own padding; keep the glyph ~20×20 like GitHub */
+#nd-sidebar [data-theme-toggle] svg {
+  width: 1.50rem;
+  height: 1.50rem;
+  padding: 0.25rem;
+}
+
 /* sticky line numbers for source code preview */
 .component-source code,
 .component-preview code {
