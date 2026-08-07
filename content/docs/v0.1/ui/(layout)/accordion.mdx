@@ -1,4 +1,87 @@
 ---
 title: Accordion
-description: Accordion component
+description: Allows you to display content in a collapsible manner, making it easy for users to access information while conserving screen space.
 ---
+
+<ComponentPreview name="accordion-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-accordion
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-accordion
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-accordion
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `accordion.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/accordion.tsx" title="components/ui/accordion.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Arrow Position
+
+<ComponentPreview name="accordion-arrow-position" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the [Radix UI Accordion](https://www.radix-ui.com/primitives/docs/components/accordion) primitives. Refer to their documentation for the API reference.
+
+### Accordion.Root
+
+This component is based on the Accordion.Root primitive.
+
+### Accordion.Item
+
+This component is based on the Accordion.Item primitive.
+
+### Accordion.Header
+
+This component is based on the Accordion.Header primitive.
+
+### Accordion.Trigger
+
+This component is based on the Accordion.Trigger primitive.
+
+### Accordion.Content
+
+This component is based on the Accordion.Content primitive.
+
+### Accordion.Icon
+
+This component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |
+
+### Accordion.Arrow
+
+The `Accordion.Arrow` component displays an icon that toggles between an open and closed state based on the accordion's state.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `openIcon` | `React.ElementType` | `RiAddLine` |
+| `closeIcon` | `React.ElementType` | `RiSubtractLine` |

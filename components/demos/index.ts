@@ -500,6 +500,42 @@ import TextareaSimpleHasError, {
 import TextareaSimpleDisabled, {
   code as textareaSimpleDisabledCode,
 } from './textarea/textarea-simple-disabled';
+import AccordionDemo, {
+  code as accordionDemoCode,
+} from './accordion/accordion-demo';
+import AccordionArrowPosition, {
+  code as accordionArrowPositionCode,
+} from './accordion/accordion-arrow-position';
+import BreadcrumbDemo, {
+  code as breadcrumbDemoCode,
+} from './breadcrumb/breadcrumb-demo';
+import BreadcrumbAsLink, {
+  code as breadcrumbAsLinkCode,
+} from './breadcrumb/breadcrumb-as-link';
+import BreadcrumbSlashSeparator, {
+  code as breadcrumbSlashSeparatorCode,
+} from './breadcrumb/breadcrumb-slash-separator';
+import SegmentedControlDemo, {
+  code as segmentedControlDemoCode,
+} from './segmented-control/segmented-control-demo';
+import SegmentedControlRounded, {
+  code as segmentedControlRoundedCode,
+} from './segmented-control/segmented-control-rounded';
+import TabMenuHorizontalDemo, {
+  code as tabMenuHorizontalDemoCode,
+} from './tab-menu-horizontal/tab-menu-horizontal-demo';
+import TabMenuHorizontalOverflowing, {
+  code as tabMenuHorizontalOverflowingCode,
+} from './tab-menu-horizontal/tab-menu-horizontal-overflowing';
+import TabMenuVerticalDemo, {
+  code as tabMenuVerticalDemoCode,
+} from './tab-menu-vertical/tab-menu-vertical-demo';
+import TabMenuVerticalWithHeading, {
+  code as tabMenuVerticalWithHeadingCode,
+} from './tab-menu-vertical/tab-menu-vertical-with-heading';
+import TabMenuVerticalStyledContainer, {
+  code as tabMenuVerticalStyledContainerCode,
+} from './tab-menu-vertical/tab-menu-vertical-styled-container';
 
 export const Index: Record<
   string,
@@ -1347,5 +1383,53 @@ export const Index: Record<
   'textarea-simple-disabled': {
     component: TextareaSimpleDisabled,
     code: textareaSimpleDisabledCode,
+  },
+  'accordion-demo': {
+    component: AccordionDemo,
+    code: accordionDemoCode,
+  },
+  'accordion-arrow-position': {
+    component: AccordionArrowPosition,
+    code: accordionArrowPositionCode,
+  },
+  'breadcrumb-demo': {
+    component: BreadcrumbDemo,
+    code: breadcrumbDemoCode,
+  },
+  'breadcrumb-as-link': {
+    component: BreadcrumbAsLink,
+    code: breadcrumbAsLinkCode,
+  },
+  'breadcrumb-slash-separator': {
+    component: BreadcrumbSlashSeparator,
+    code: breadcrumbSlashSeparatorCode,
+  },
+  'segmented-control-demo': {
+    component: SegmentedControlDemo,
+    code: segmentedControlDemoCode,
+  },
+  'segmented-control-rounded': {
+    component: SegmentedControlRounded,
+    code: segmentedControlRoundedCode,
+  },
+  'tab-menu-horizontal-demo': {
+    component: TabMenuHorizontalDemo,
+    code: tabMenuHorizontalDemoCode,
+  },
+  'tab-menu-horizontal-overflowing': {
+    component: TabMenuHorizontalOverflowing,
+    code: tabMenuHorizontalOverflowingCode,
+  },
+  'tab-menu-vertical-demo': {
+    component: TabMenuVerticalDemo,
+    code: tabMenuVerticalDemoCode,
+  },
+  'tab-menu-vertical-with-heading': {
+    component: TabMenuVerticalWithHeading,
+    code: tabMenuVerticalWithHeadingCode,
+  },
+  'tab-menu-vertical-styled-container': {
+    component: TabMenuVerticalStyledContainer,
+    code: tabMenuVerticalStyledContainerCode,
   },
 };

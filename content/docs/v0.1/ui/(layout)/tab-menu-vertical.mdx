@@ -1,4 +1,54 @@
 ---
 title: Tab Menu Vertical
-description: Tab Menu Vertical component
+description: Provides a stacked layout for making it easy to switch between sections or categories.
 ---
+
+<ComponentPreview name="tab-menu-vertical-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-tabs
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-tabs
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-tabs
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `tab-menu-vertical.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/tab-menu-vertical.tsx" title="components/ui/tab-menu-vertical.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### With Heading
+
+<ComponentPreview name="tab-menu-vertical-with-heading" className="w-full max-w-none" />
+
+### Styled Container
+
+<ComponentPreview name="tab-menu-vertical-styled-container" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the [Radix UI Tabs](https://www.radix-ui.com/primitives/docs/components/tabs) primitives. Refer to their documentation for the API reference.

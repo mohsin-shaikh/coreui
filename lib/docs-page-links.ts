@@ -89,6 +89,36 @@ export const docsPageLinks: Record<string, DocsPageLink[]> = {
       href: 'https://www.radix-ui.com/primitives/docs/components/switch',
     },
   ],
+  '/docs/v0.1/ui/accordion': [
+    {
+      label: '@radix-ui/react-accordion',
+      href: 'https://www.radix-ui.com/primitives/docs/components/accordion',
+    },
+  ],
+  '/docs/v0.1/ui/breadcrumb': [
+    {
+      label: '@radix-ui/react-slot',
+      href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
+    },
+  ],
+  '/docs/v0.1/ui/segmented-control': [
+    {
+      label: '@radix-ui/react-tabs',
+      href: 'https://www.radix-ui.com/primitives/docs/components/tabs',
+    },
+  ],
+  '/docs/v0.1/ui/tab-menu-horizontal': [
+    {
+      label: '@radix-ui/react-tabs',
+      href: 'https://www.radix-ui.com/primitives/docs/components/tabs',
+    },
+  ],
+  '/docs/v0.1/ui/tab-menu-vertical': [
+    {
+      label: '@radix-ui/react-tabs',
+      href: 'https://www.radix-ui.com/primitives/docs/components/tabs',
+    },
+  ],
   '/docs/v0.1/utils/cn': [
     { label: 'clsx', href: 'https://github.com/lukeed/clsx' },
     { label: 'tailwind-merge', href: 'https://github.com/dcastil/tailwind-merge' },

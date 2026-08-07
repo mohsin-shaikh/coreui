@@ -1,4 +1,55 @@
 ---
 title: Tab Menu Horizontal
-description: Tab Menu Horizontal component
+description: Provides a linear layout for making it easy to switch between sections or categories.
 ---
+
+<ComponentPreview name="tab-menu-horizontal-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-tabs @radix-ui/react-slot merge-refs
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-tabs @radix-ui/react-slot merge-refs
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-tabs @radix-ui/react-slot merge-refs
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `use-tab-observer.ts` file and paste the following code into it.
+
+    <ComponentSource src="hooks/use-tab-observer.ts" title="hooks/use-tab-observer.ts" />
+  </Step>
+  <Step>
+    ### Create a `tab-menu-horizontal.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/tab-menu-horizontal.tsx" title="components/ui/tab-menu-horizontal.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Overflowing Tabs
+
+<ComponentPreview name="tab-menu-horizontal-overflowing" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the [Radix UI Tabs](https://www.radix-ui.com/primitives/docs/components/tabs) primitives. Refer to their documentation for the API reference.

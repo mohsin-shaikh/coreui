@@ -1,4 +1,85 @@
 ---
 title: Breadcrumb
-description: Breadcrumb component
+description: Guiding users by displaying their path within an app or website.
 ---
+
+<ComponentPreview name="breadcrumb-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `breadcrumb.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/breadcrumb.tsx" title="components/ui/breadcrumb.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### As Link
+
+<ComponentPreview name="breadcrumb-as-link" className="w-full max-w-none" />
+
+### Slash Separator
+
+<ComponentPreview name="breadcrumb-slash-separator" className="w-full max-w-none" />
+
+## API Reference
+
+### Breadcrumb.Root
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |
+
+### Breadcrumb.Item
+
+Individual breadcrumb item. This component is based on the `<div>` element initially and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `active` | `boolean` | |
+| `asChild` | `boolean` | |
+
+### Breadcrumb.Icon
+
+Icon used within a breadcrumb item. The `Breadcrumb.Icon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |
+
+### Breadcrumb.ArrowIcon
+
+Icon used to separate breadcrumb items, usually an arrow. The `Breadcrumb.ArrowIcon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |

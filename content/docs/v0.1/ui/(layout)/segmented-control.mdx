@@ -1,4 +1,55 @@
 ---
 title: Segmented Control
-description: Segmented Control component
+description: Segmented control is used to pick one choice from a linear set of closely related choices, and immediately apply that selection.
 ---
+
+<ComponentPreview name="segmented-control-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-tabs @radix-ui/react-slot merge-refs
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-tabs @radix-ui/react-slot merge-refs
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-tabs @radix-ui/react-slot merge-refs
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `use-tab-observer.ts` file and paste the following code into it.
+
+    <ComponentSource src="hooks/use-tab-observer.ts" title="hooks/use-tab-observer.ts" />
+  </Step>
+  <Step>
+    ### Create a `segmented-control.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/segmented-control.tsx" title="components/ui/segmented-control.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Rounded
+
+<ComponentPreview name="segmented-control-rounded" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the [Radix UI Tabs](https://www.radix-ui.com/primitives/docs/components/tabs) primitives. Refer to their documentation for the API reference.
