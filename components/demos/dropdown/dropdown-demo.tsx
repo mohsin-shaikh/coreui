@@ -16,6 +16,7 @@ import * as Button from '@/components/ui/button';
 import * as Divider from '@/components/ui/divider';
 import * as Dropdown from '@/components/ui/dropdown';
 import * as Switch from '@/components/ui/switch';
+import { assetPath } from '@/lib/shared';
 
 function CustomVerifiedIconSVG(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -54,7 +55,7 @@ export default function DropdownDemo() {
       <Dropdown.Content align='start'>
         <div className='flex items-center gap-3 p-2'>
           <Avatar.Root size='40'>
-            <Avatar.Image src='/images/avatar/illustration/sophia.png' />
+            <Avatar.Image src={assetPath('/images/avatar/photo/wei.jpg')} />
             <Avatar.Indicator position='top'>
               <CustomVerifiedIconSVG />
             </Avatar.Indicator>
@@ -170,7 +171,7 @@ export function DropdownDemo() {
       <Dropdown.Content align='start'>
         <div className='flex items-center gap-3 p-2'>
           <Avatar.Root size='40'>
-            <Avatar.Image src='/images/avatar/illustration/sophia.png' />
+            <Avatar.Image src='/images/avatar/photo/wei.jpg' />
             <Avatar.Indicator position='top'>
               <CustomVerifiedIconSVG />
             </Avatar.Indicator>

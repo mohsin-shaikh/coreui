@@ -4,11 +4,11 @@ import * as React from 'react';
 import { RiChatSettingsLine } from '@remixicon/react';
 
 import * as Avatar from '@/components/ui/avatar';
-import { BRAND_LOGO } from '@/components/demos/shared/avatar-images';
 import * as Button from '@/components/ui/button';
 import * as Modal from '@/components/ui/modal';
 import * as SegmentedControl from '@/components/ui/segmented-control';
 import * as Switch from '@/components/ui/switch';
+import { assetPath } from '@/lib/shared';
 
 export default function ModalWithHeader() {
   const [open, setOpen] = React.useState(false);
@@ -48,7 +48,7 @@ export default function ModalWithHeader() {
           <div className='mt-5 space-y-5'>
             <div className='flex items-center gap-3.5'>
               <Avatar.Root size='40'>
-                <Avatar.Image src={BRAND_LOGO} />
+                <Avatar.Image src={assetPath('/images/logo/apex.svg')} />
               </Avatar.Root>
               <div className='flex-1 space-y-1'>
                 <div className='text-label-sm text-text-strong-950'>Apex</div>
@@ -60,7 +60,7 @@ export default function ModalWithHeader() {
             </div>
             <div className='flex items-center gap-3.5'>
               <Avatar.Root size='40'>
-                <Avatar.Image src={BRAND_LOGO} />
+                <Avatar.Image src={assetPath('/images/logo/aurora.svg')} />
               </Avatar.Root>
               <div className='flex-1 space-y-1'>
                 <div className='text-label-sm text-text-strong-950'>Aurora</div>
@@ -72,7 +72,7 @@ export default function ModalWithHeader() {
             </div>
             <div className='flex items-center gap-3.5'>
               <Avatar.Root size='40'>
-                <Avatar.Image src={BRAND_LOGO} />
+                <Avatar.Image src={assetPath('/images/logo/solaris.svg')} />
               </Avatar.Root>
               <div className='flex-1 space-y-1'>
                 <div className='text-label-sm text-text-strong-950'>
@@ -112,7 +112,6 @@ import * as React from 'react';
 import { RiChatSettingsLine } from '@remixicon/react';
 
 import * as Avatar from '@/components/ui/avatar';
-import { BRAND_LOGO } from '@/components/demos/shared/avatar-images';
 import * as Button from '@/components/ui/button';
 import * as Modal from '@/components/ui/modal';
 import * as SegmentedControl from '@/components/ui/segmented-control';
@@ -156,7 +155,7 @@ export function ModalWithHeader() {
           <div className='mt-5 space-y-5'>
             <div className='flex items-center gap-3.5'>
               <Avatar.Root size='40'>
-                <Avatar.Image src={BRAND_LOGO} />
+                <Avatar.Image src='/images/logo/apex.svg' />
               </Avatar.Root>
               <div className='flex-1 space-y-1'>
                 <div className='text-label-sm text-text-strong-950'>Apex</div>
@@ -168,7 +167,7 @@ export function ModalWithHeader() {
             </div>
             <div className='flex items-center gap-3.5'>
               <Avatar.Root size='40'>
-                <Avatar.Image src={BRAND_LOGO} />
+                <Avatar.Image src='/images/logo/aurora.svg' />
               </Avatar.Root>
               <div className='flex-1 space-y-1'>
                 <div className='text-label-sm text-text-strong-950'>Aurora</div>
@@ -180,7 +179,7 @@ export function ModalWithHeader() {
             </div>
             <div className='flex items-center gap-3.5'>
               <Avatar.Root size='40'>
-                <Avatar.Image src={BRAND_LOGO} />
+                <Avatar.Image src='/images/logo/solaris.svg' />
               </Avatar.Root>
               <div className='flex-1 space-y-1'>
                 <div className='text-label-sm text-text-strong-950'>

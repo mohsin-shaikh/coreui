@@ -6,7 +6,6 @@ import {
   RiHistoryLine,
   RiHomeSmileFill,
   RiLightbulbFlashFill,
-  RiNetflixFill,
   RiPieChartLine,
   RiShoppingCartLine,
 } from '@remixicon/react';
@@ -16,6 +15,7 @@ import * as Button from '@/components/ui/button';
 import * as CompactButton from '@/components/ui/compact-button';
 import * as Divider from '@/components/ui/divider';
 import * as Drawer from '@/components/ui/drawer';
+import { assetPath } from '@/lib/shared';
 
 const TransactionItem = React.forwardRef<
   HTMLButtonElement,
@@ -78,7 +78,7 @@ export default function DrawerDemo() {
 
           <div className='flex flex-col items-center gap-4 px-5 py-6'>
             <Avatar.Root color='purple' size='64'>
-              <Avatar.Image src='/images/avatar/illustration/james.png' />
+              <Avatar.Image src={assetPath('/images/avatar/illustration/matthew.png')} />
               <Avatar.Indicator position='top'>
                 <CustomVerifiedIconSVG />
               </Avatar.Indicator>
@@ -120,7 +120,11 @@ export default function DrawerDemo() {
           <div className='space-y-2.5 px-5 py-3.5'>
             <TransactionItem>
               <div className='bg-bg-white-0 shadow-regular-xs ring-stroke-soft-200 flex size-10 shrink-0 items-center justify-center rounded-full ring-1 ring-inset'>
-                <RiNetflixFill className='text-text-sub-600 size-5' />
+                <img
+                  src={assetPath('/images/major-brands/netflix.svg')}
+                  alt=''
+                  className='size-6'
+                />
               </div>
               <div className='min-w-0 flex-1 space-y-1'>
                 <div className='text-label-sm text-text-strong-950'>
@@ -248,7 +252,6 @@ import {
   RiHistoryLine,
   RiHomeSmileFill,
   RiLightbulbFlashFill,
-  RiNetflixFill,
   RiPieChartLine,
   RiShoppingCartLine,
 } from '@remixicon/react';
@@ -320,7 +323,7 @@ export function DrawerDemo() {
 
           <div className='flex flex-col items-center gap-4 px-5 py-6'>
             <Avatar.Root color='purple' size='64'>
-              <Avatar.Image src='/images/avatar/illustration/james.png' />
+              <Avatar.Image src='/images/avatar/illustration/matthew.png' />
               <Avatar.Indicator position='top'>
                 <CustomVerifiedIconSVG />
               </Avatar.Indicator>
@@ -362,7 +365,11 @@ export function DrawerDemo() {
           <div className='space-y-2.5 px-5 py-3.5'>
             <TransactionItem>
               <div className='bg-bg-white-0 shadow-regular-xs ring-stroke-soft-200 flex size-10 shrink-0 items-center justify-center rounded-full ring-1 ring-inset'>
-                <RiNetflixFill className='text-text-sub-600 size-5' />
+                <img
+                  src='/images/major-brands/netflix.svg'
+                  alt=''
+                  className='size-6'
+                />
               </div>
               <div className='min-w-0 flex-1 space-y-1'>
                 <div className='text-label-sm text-text-strong-950'>
