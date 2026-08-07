@@ -53,6 +53,7 @@ function LevelBar({
 }
 
 function LevelBarItem({
+  // oxlint-disable-next-line no-unused-vars
   active,
   levels,
   level,

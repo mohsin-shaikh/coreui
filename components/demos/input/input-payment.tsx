@@ -7,6 +7,7 @@ import { usePaymentInputs } from 'react-payment-inputs';
 import * as Input from '@/components/ui/input';
 import * as Label from '@/components/ui/label';
 import { assetPath } from '@/lib/shared';
+import Image from 'next/image';
 
 export default function InputPayment() {
   const { getCardNumberProps, meta } = usePaymentInputs();
@@ -26,7 +27,7 @@ export default function InputPayment() {
   }, [cardType?.displayName]);
 
   return (
-    <div className='w-full max-w-[300px]'>
+    <div className='w-full max-w-75'>
       <div className='flex flex-col gap-1'>
         <Label.Root htmlFor='card-number'>
           Card Number <Label.Asterisk />
@@ -40,7 +41,7 @@ export default function InputPayment() {
               id='card-number'
               placeholder='0000 0000 0000 0000'
             />
-            <img src={cardIcon} alt='' className='h-6 w-8 shrink-0' />
+            <Image src={cardIcon} alt='' className='h-6 w-8 shrink-0' />
           </Input.Wrapper>
         </Input.Root>
       </div>
