@@ -29,8 +29,10 @@ const TransactionItem = React.forwardRef<
       {...rest}
     >
       {children}
-      <CompactButton.Root size='medium' variant='ghost'>
-        <CompactButton.Icon as={RiArrowRightSLine} />
+      <CompactButton.Root size='medium' variant='ghost' asChild>
+        <span>
+          <CompactButton.Icon as={RiArrowRightSLine} />
+        </span>
       </CompactButton.Root>
     </button>
   );
@@ -274,8 +276,10 @@ const TransactionItem = React.forwardRef<
       {...rest}
     >
       {children}
-      <CompactButton.Root size='medium' variant='ghost'>
-        <CompactButton.Icon as={RiArrowRightSLine} />
+      <CompactButton.Root size='medium' variant='ghost' asChild>
+        <span>
+          <CompactButton.Icon as={RiArrowRightSLine} />
+        </span>
       </CompactButton.Root>
     </button>
   );
