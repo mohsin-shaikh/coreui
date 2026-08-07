@@ -1,8 +1,14 @@
+import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import { Provider } from '@/components/provider';
 import { cn } from '@/lib/cn';
+import { siteUrl } from '@/lib/shared';
 import './global.css';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+};
 
 const inter = Inter({
   subsets: ['latin'],

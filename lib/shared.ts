@@ -1,5 +1,10 @@
 export const appName = 'CoreUI';
 
+// Origin used to resolve relative OG/Twitter image URLs in metadata.
+// Locally defaults to the Next.js dev server; set in CI for production.
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+
 // Mirrors `basePath` in next.config.mjs. Next rewrites <Link> and asset URLs
 // on its own; this is for the URLs we hand to fetch() ourselves.
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';

@@ -52,8 +52,10 @@ jobs:
         env:
           # Project sites are served from https://<user>.github.io/<repo>.
           # Derived from the repo name so renaming it can't silently break the
-          # deployed asset URLs.
+          # deployed asset URLs. metadataBase uses the origin; Next prefixes
+          # basePath onto relative OG/Twitter image paths.
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+          NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
