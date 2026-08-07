@@ -34,11 +34,59 @@ export const docsPageLinks: Record<string, DocsPageLink[]> = {
       label: 'react-day-picker',
       href: 'https://react-day-picker.js.org',
     },
+    {
+      label: 'date-fns',
+      href: 'https://date-fns.org',
+    },
   ],
   '/docs/v0.1/ui/digit-input': [
     {
       label: 'react-otp-input',
       href: 'https://github.com/devfolioco/react-otp-input',
+    },
+  ],
+  '/docs/v0.1/ui/file-upload': [
+    {
+      label: '@radix-ui/react-slot',
+      href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
+    },
+  ],
+  '/docs/v0.1/ui/label': [
+    {
+      label: '@radix-ui/react-label',
+      href: 'https://www.radix-ui.com/primitives/docs/components/label',
+    },
+  ],
+  '/docs/v0.1/ui/radio': [
+    {
+      label: '@radix-ui/react-radio-group',
+      href: 'https://www.radix-ui.com/primitives/docs/components/radio-group',
+    },
+  ],
+  '/docs/v0.1/ui/select': [
+    {
+      label: '@radix-ui/react-select',
+      href: 'https://www.radix-ui.com/primitives/docs/components/select',
+    },
+    {
+      label: '@radix-ui/react-scroll-area',
+      href: 'https://www.radix-ui.com/primitives/docs/components/scroll-area',
+    },
+    {
+      label: '@radix-ui/react-slot',
+      href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
+    },
+  ],
+  '/docs/v0.1/ui/slider': [
+    {
+      label: '@radix-ui/react-slider',
+      href: 'https://www.radix-ui.com/primitives/docs/components/slider',
+    },
+  ],
+  '/docs/v0.1/ui/switch': [
+    {
+      label: '@radix-ui/react-switch',
+      href: 'https://www.radix-ui.com/primitives/docs/components/switch',
     },
   ],
   '/docs/v0.1/utils/cn': [

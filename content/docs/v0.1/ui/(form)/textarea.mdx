@@ -1,4 +1,87 @@
 ---
 title: Textarea
-description: Textarea component
+description: Renders a textarea with custom resize handle and character length display.
 ---
+
+<ComponentPreview name="textarea-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Create a `textarea.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/textarea.tsx" title="components/ui/textarea.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Interactive Char Counter
+
+<ComponentPreview name="textarea-interactive-counter" className="w-full max-w-none" />
+
+### Has Error
+
+<ComponentPreview name="textarea-has-error" className="w-full max-w-none" />
+
+### With Label and Hint
+
+<ComponentPreview name="textarea-with-label-and-hint" className="w-full max-w-none" />
+
+### Disabled
+
+<ComponentPreview name="textarea-disabled" className="w-full max-w-none" />
+
+### Simple
+
+A single textarea element without a custom resize handle or character counter.
+
+<ComponentPreview name="textarea-simple" className="w-full max-w-none" />
+
+#### Simple: Resizable
+
+Simple textarea with built-in resize handle.
+
+<ComponentPreview name="textarea-simple-resize" className="w-full max-w-none" />
+
+#### Simple: hasError
+
+Simple textarea with error styles.
+
+<ComponentPreview name="textarea-simple-has-error" className="w-full max-w-none" />
+
+#### Simple: Disabled
+
+Simple textarea with disabled styles.
+
+<ComponentPreview name="textarea-simple-disabled" className="w-full max-w-none" />
+
+## API Reference
+
+### Textarea.Root
+
+This component is based on the `<textarea>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `simple` | `boolean` | |
+| `hasError` | `boolean` | |
+| `containerClassName` | `string` | |
+| `children` | `React.ReactNode` | |
+
+When `simple` is `true`, `children` and `containerClassName` are not allowed.
+
+### Textarea.CharCounter
+
+Displays the current and maximum number of characters in a textarea.
+
+This component is based on the `<span>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `current` | `number` | |
+| `max` | `number` | |

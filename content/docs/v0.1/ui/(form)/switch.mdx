@@ -1,4 +1,58 @@
 ---
 title: Switch
-description: Switch component
+description: Switch is used to immediately toggle a setting on or off.
 ---
+
+<ComponentPreview name="switch-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-switch
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-switch
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-switch
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `switch.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/switch.tsx" title="components/ui/switch.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Disabled
+
+<ComponentPreview name="switch-disabled" className="w-full max-w-none" />
+
+### With Label
+
+<ComponentPreview name="switch-with-label" className="w-full max-w-none" />
+
+### With Advanced Label
+
+<ComponentPreview name="switch-with-advanced-label" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the Radix UI Switch primitives. Refer to their [documentation](https://www.radix-ui.com/primitives/docs/components/switch) for the API reference.

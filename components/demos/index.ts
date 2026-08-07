@@ -460,6 +460,46 @@ import SelectCompactForInputWithInput, {
 import SelectCompactForInputSize, {
   code as selectCompactForInputSizeCode,
 } from './select/select-compact-for-input-size';
+import SliderDemo, { code as sliderDemoCode } from './slider/slider-demo';
+import SliderRange, { code as sliderRangeCode } from './slider/slider-range';
+import SliderWithTooltip, {
+  code as sliderWithTooltipCode,
+} from './slider/slider-with-tooltip';
+import SwitchDemo, { code as switchDemoCode } from './switch/switch-demo';
+import SwitchDisabled, {
+  code as switchDisabledCode,
+} from './switch/switch-disabled';
+import SwitchWithLabel, {
+  code as switchWithLabelCode,
+} from './switch/switch-with-label';
+import SwitchWithAdvancedLabel, {
+  code as switchWithAdvancedLabelCode,
+} from './switch/switch-with-advanced-label';
+import TextareaDemo, { code as textareaDemoCode } from './textarea/textarea-demo';
+import TextareaInteractiveCounter, {
+  code as textareaInteractiveCounterCode,
+} from './textarea/textarea-interactive-counter';
+import TextareaHasError, {
+  code as textareaHasErrorCode,
+} from './textarea/textarea-has-error';
+import TextareaWithLabelAndHint, {
+  code as textareaWithLabelAndHintCode,
+} from './textarea/textarea-with-label-and-hint';
+import TextareaDisabled, {
+  code as textareaDisabledCode,
+} from './textarea/textarea-disabled';
+import TextareaSimple, {
+  code as textareaSimpleCode,
+} from './textarea/textarea-simple';
+import TextareaSimpleResize, {
+  code as textareaSimpleResizeCode,
+} from './textarea/textarea-simple-resize';
+import TextareaSimpleHasError, {
+  code as textareaSimpleHasErrorCode,
+} from './textarea/textarea-simple-has-error';
+import TextareaSimpleDisabled, {
+  code as textareaSimpleDisabledCode,
+} from './textarea/textarea-simple-disabled';
 
 export const Index: Record<
   string,
@@ -1243,5 +1283,69 @@ export const Index: Record<
   'select-compact-for-input-size': {
     component: SelectCompactForInputSize,
     code: selectCompactForInputSizeCode,
+  },
+  'slider-demo': {
+    component: SliderDemo,
+    code: sliderDemoCode,
+  },
+  'slider-range': {
+    component: SliderRange,
+    code: sliderRangeCode,
+  },
+  'slider-with-tooltip': {
+    component: SliderWithTooltip,
+    code: sliderWithTooltipCode,
+  },
+  'switch-demo': {
+    component: SwitchDemo,
+    code: switchDemoCode,
+  },
+  'switch-disabled': {
+    component: SwitchDisabled,
+    code: switchDisabledCode,
+  },
+  'switch-with-label': {
+    component: SwitchWithLabel,
+    code: switchWithLabelCode,
+  },
+  'switch-with-advanced-label': {
+    component: SwitchWithAdvancedLabel,
+    code: switchWithAdvancedLabelCode,
+  },
+  'textarea-demo': {
+    component: TextareaDemo,
+    code: textareaDemoCode,
+  },
+  'textarea-interactive-counter': {
+    component: TextareaInteractiveCounter,
+    code: textareaInteractiveCounterCode,
+  },
+  'textarea-has-error': {
+    component: TextareaHasError,
+    code: textareaHasErrorCode,
+  },
+  'textarea-with-label-and-hint': {
+    component: TextareaWithLabelAndHint,
+    code: textareaWithLabelAndHintCode,
+  },
+  'textarea-disabled': {
+    component: TextareaDisabled,
+    code: textareaDisabledCode,
+  },
+  'textarea-simple': {
+    component: TextareaSimple,
+    code: textareaSimpleCode,
+  },
+  'textarea-simple-resize': {
+    component: TextareaSimpleResize,
+    code: textareaSimpleResizeCode,
+  },
+  'textarea-simple-has-error': {
+    component: TextareaSimpleHasError,
+    code: textareaSimpleHasErrorCode,
+  },
+  'textarea-simple-disabled': {
+    component: TextareaSimpleDisabled,
+    code: textareaSimpleDisabledCode,
   },
 };
