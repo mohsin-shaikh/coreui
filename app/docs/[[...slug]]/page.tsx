@@ -1,16 +1,13 @@
 import { getPageImageUrl, source } from '@/lib/source';
 import {
   DocsBody,
+  DocsDescription,
   DocsPage,
+  DocsTitle,
 } from 'fumadocs-ui/layouts/docs/page';
 import { notFound, redirect } from 'next/navigation';
 import { getMDXComponents } from '@/components/mdx';
-import { DocsBreadcrumb } from '@/components/docs-breadcrumb';
-import {
-  DocsDashedSeparator,
-  DocsPageLinks,
-} from '@/components/docs-page-header';
-import { DocsLink } from '@/components/docs-prose';
+import { DocsPageLinks } from '@/components/docs-page-header';
 import { docsPageLinks } from '@/lib/docs-page-links';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
@@ -28,29 +25,18 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   const links = docsPageLinks[page.url] ?? [];
 
   return (
-    <DocsPage
-      toc={page.data.toc}
-      full={page.data.full}
-      // Fumadocs defaults to gap-4 between every child.
-      className="text-ln-docs-sm gap-0"
-      slots={{ breadcrumb: DocsBreadcrumb }}
-      footer={{ className: 'mt-10 md:mt-12' }}
-    >
-      <h1 className="text-ln-title-h4 mb-2 text-ln-gray-900">
-        {page.data.title}
-      </h1>
+    <DocsPage toc={page.data.toc} full={page.data.full}>
+      <DocsTitle>{page.data.title}</DocsTitle>
       {page.data.description ? (
-        <p className="text-ln-paragraph-md md:text-ln-paragraph-lg mb-0 text-ln-gray-600">
-          {page.data.description}
-        </p>
+        <DocsDescription>{page.data.description}</DocsDescription>
       ) : null}
       <DocsPageLinks links={links} />
-      <DocsDashedSeparator />
-      <DocsBody className="pt-0 md:pt-5">
+      <hr className="border-fd-border" />
+      <DocsBody>
         <MDX
           components={getMDXComponents({
             // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page, DocsLink),
+            a: createRelativeLink(source, page),
           })}
         />
       </DocsBody>

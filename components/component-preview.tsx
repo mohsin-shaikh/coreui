@@ -10,14 +10,12 @@ import {
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 
 import { Index } from '@/components/demos';
-import { docsSourceSurfaceClassName } from '@/components/docs-code-frame';
 import { cn } from '@/lib/cn';
-import { cssVariablesThemeForShiki } from '@/lib/shiki-theme';
 import { Icons } from './icons';
 
 const tabTriggerClassName = cn(
-  'text-ln-label-sm text-ln-gray-500 flex h-7 items-center gap-1.5 rounded-lg pr-2.5 pl-2 transition',
-  'data-[state=active]:bg-ln-gray-0 data-[state=active]:text-ln-gray-800 data-[state=active]:shadow-docs-button-white',
+  'text-fd-muted-foreground flex h-7 items-center gap-1.5 rounded-lg px-2.5 text-sm font-medium transition',
+  'data-[state=active]:bg-fd-background data-[state=active]:text-fd-foreground data-[state=active]:shadow-sm',
 );
 
 export function ComponentPreview({
@@ -34,7 +32,7 @@ export function ComponentPreview({
 
   if (!demo) {
     return (
-      <div className="text-text-sub-600 rounded-xl border border-dashed border-stroke-soft-200 p-6 text-sm">
+      <div className="text-fd-muted-foreground rounded-xl border border-dashed border-fd-border p-6 text-sm">
         Demo <code className="font-mono">{name}</code> not found.
       </div>
     );
@@ -56,13 +54,13 @@ export function ComponentPreview({
     <div className="component-preview not-prose mt-5">
       <Tabs.Root defaultValue="preview">
         <div className="flex items-center justify-between gap-3 pb-4">
-          <Tabs.List className="flex gap-2">
+          <Tabs.List className="bg-fd-secondary flex gap-1 rounded-lg p-1">
             <Tabs.Trigger value="preview" className={tabTriggerClassName}>
-              <RiEyeLine className="size-4.5 text-ln-gray-500" />
+              <RiEyeLine className="size-4" />
               Preview
             </Tabs.Trigger>
             <Tabs.Trigger value="code" className={tabTriggerClassName}>
-              <RiCodeSSlashLine className="size-4.5 text-ln-gray-500" />
+              <RiCodeSSlashLine className="size-4" />
               Code
             </Tabs.Trigger>
           </Tabs.List>
@@ -70,13 +68,13 @@ export function ComponentPreview({
           <button
             type="button"
             onClick={onCopy}
-            className="bg-bg-weak-25 text-ln-label-sm text-ln-gray-600 flex h-7 items-center gap-1 rounded-lg pr-3 pl-1.5"
+            className="bg-fd-secondary text-fd-muted-foreground hover:text-fd-foreground flex h-7 items-center gap-1 rounded-lg border border-fd-border px-2.5 text-sm font-medium"
             aria-label={copied ? 'Copied' : 'Copy'}
           >
             {copied ? (
-              <RiCheckLine className="size-5 text-ln-gray-400" />
+              <RiCheckLine className="size-4" />
             ) : (
-              <Icons.Copy className="size-5 text-ln-gray-400" />
+              <Icons.Copy className="size-4" />
             )}
             {copied ? 'Copied' : 'Copy'}
           </button>
@@ -84,7 +82,7 @@ export function ComponentPreview({
 
         <Tabs.Content
           value="preview"
-          className="relative rounded-20 ring-1 ring-ln-gray-100 bg-ln-gray-0"
+          className="bg-fd-card relative rounded-xl border border-fd-border"
         >
           <div
             className={cn(
@@ -99,19 +97,16 @@ export function ComponentPreview({
           </div>
         </Tabs.Content>
 
-        <Tabs.Content value="code" className="rounded-20 bg-ln-gray-25 p-3">
-          <div className={docsSourceSurfaceClassName}>
-            <div className="no-scrollbar h-full w-full overflow-auto overscroll-contain [&_code]:py-4 [&_code]:pr-4">
-              <DynamicCodeBlock
-                lang="tsx"
-                code={demo.code}
-                options={{ theme: cssVariablesThemeForShiki }}
-                codeblock={{
-                  allowCopy: false,
-                }}
-              />
-            </div>
-          </div>
+        <Tabs.Content value="code">
+          <DynamicCodeBlock
+            lang="tsx"
+            code={demo.code}
+            codeblock={{
+              allowCopy: false,
+              className: 'my-0',
+              'data-line-numbers': true,
+            }}
+          />
         </Tabs.Content>
       </Tabs.Root>
     </div>

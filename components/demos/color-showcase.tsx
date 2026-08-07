@@ -110,7 +110,7 @@ function HexBadge({
 
   if (!hex) {
     return (
-      <div className="bg-ln-gray-25 text-ln-label-xs text-ln-gray-500 shadow-docs-badge-gray h-[22px] w-16 rounded-md" />
+      <div className="bg-fd-secondary text-fd-muted-foreground h-[22px] w-16 rounded-md border border-fd-border" />
     );
   }
 
@@ -118,7 +118,7 @@ function HexBadge({
     alphaPercent !== undefined ? (
       <>
         <span>{hex}</span>
-        <span className="text-ln-gray-300">·</span>
+        <span className="text-fd-muted-foreground">·</span>
         <span>{alphaPercent}%</span>
       </>
     ) : (
@@ -142,7 +142,7 @@ function HexBadge({
     <button
       type="button"
       onClick={onCopy}
-      className="bg-ln-gray-25 text-ln-label-xs text-ln-gray-500 shadow-docs-badge-gray flex items-center gap-1 rounded-md px-[7px] py-[3px] font-mono uppercase transition hover:text-ln-gray-800"
+      className="bg-fd-secondary text-fd-muted-foreground hover:text-fd-foreground flex items-center gap-1 rounded-md border border-fd-border px-[7px] py-[3px] font-mono text-xs uppercase transition"
       aria-label={`Copy ${copyValue}`}
     >
       {copied ? 'copied' : label}
@@ -154,8 +154,8 @@ function ColorSwatch({ name, token, alias, alpha }: ColorToken) {
   const { swatchRef, hex, alphaPercent } = useResolvedColor(token, alpha);
 
   return (
-    <div className="w-full overflow-hidden rounded-[11px] ring-1 ring-ln-gray-100">
-      <div className="flex h-20 w-full border-b border-ln-gray-100">
+    <div className="w-full overflow-hidden rounded-xl border border-fd-border">
+      <div className="flex h-20 w-full border-b border-fd-border">
         <div
           ref={swatchRef}
           className="flex-1"
@@ -163,12 +163,12 @@ function ColorSwatch({ name, token, alias, alpha }: ColorToken) {
         />
       </div>
       <div className="flex flex-col items-start px-3.5 pt-2.5 pb-3.5">
-        <div className="text-ln-label-sm text-ln-gray-800">{name}</div>
-        <div className="text-ln-paragraph-xs mt-1 text-ln-gray-500">
+        <div className="text-fd-foreground text-sm font-medium">{name}</div>
+        <div className="text-fd-muted-foreground mt-1 text-xs">
           var(--{token})
         </div>
         {alias ? (
-          <div className="text-ln-paragraph-xs mt-0.5 text-ln-gray-400">
+          <div className="text-fd-muted-foreground mt-0.5 text-xs">
             {alias}
           </div>
         ) : null}
@@ -192,7 +192,7 @@ export function ColorScale({
   if (variant === 'alpha') {
     return (
       <div>
-        <div className="text-ln-label-sm border-l-2 border-ln-gray-100 pl-3 capitalize text-ln-gray-600">
+        <div className="text-fd-muted-foreground border-l-2 border-fd-border pl-3 text-sm font-medium capitalize">
           {title}
         </div>
         <div className="mt-6 grid gap-4 min-[400px]:grid-cols-2 sm:grid-cols-3">
@@ -206,7 +206,9 @@ export function ColorScale({
 
   return (
     <div>
-      <div className="text-ln-title-h5 capitalize text-ln-gray-900">{title}</div>
+      <div className="text-fd-foreground text-xl font-semibold capitalize tracking-tight">
+        {title}
+      </div>
       <div className="mt-6 grid grid-cols-[repeat(auto-fill,minmax(174px,1fr))] gap-x-4 gap-y-[22px]">
         {tokens.map((token) => (
           <ColorSwatch key={token.name} {...token} />

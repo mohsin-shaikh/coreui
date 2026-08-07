@@ -1,13 +1,12 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/ocean.css';
 @import 'fumadocs-ui/css/preset.css';
 
 /* Design system consumed by `components/ui/*` */
 @import '../styles/coreui.css';
 
-/* Documentation site chrome — safe to drop if the docs move out of this repo.
-   Imported last so its fumadocs overrides win over the presets above. */
+/* Documentation site chrome — safe to drop if the docs move out of this repo. */
 @import '../styles/docs.css';
 
 /* App shell */
