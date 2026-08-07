@@ -9,6 +9,7 @@ import {
   RiPieChartLine,
   RiShoppingCartLine,
 } from '@remixicon/react';
+import Image from 'next/image';
 
 import * as Avatar from '@/components/ui/avatar';
 import * as Button from '@/components/ui/button';
@@ -29,8 +30,10 @@ const TransactionItem = React.forwardRef<
       {...rest}
     >
       {children}
-      <CompactButton.Root size='medium' variant='ghost'>
-        <CompactButton.Icon as={RiArrowRightSLine} />
+      <CompactButton.Root size='medium' variant='ghost' asChild>
+        <span>
+          <CompactButton.Icon as={RiArrowRightSLine} />
+        </span>
       </CompactButton.Root>
     </button>
   );
@@ -120,7 +123,7 @@ export default function DrawerDemo() {
           <div className='space-y-2.5 px-5 py-3.5'>
             <TransactionItem>
               <div className='bg-bg-white-0 shadow-regular-xs ring-stroke-soft-200 flex size-10 shrink-0 items-center justify-center rounded-full ring-1 ring-inset'>
-                <img
+                <Image
                   src={assetPath('/images/major-brands/netflix.svg')}
                   alt=''
                   className='size-6'
@@ -274,8 +277,10 @@ const TransactionItem = React.forwardRef<
       {...rest}
     >
       {children}
-      <CompactButton.Root size='medium' variant='ghost'>
-        <CompactButton.Icon as={RiArrowRightSLine} />
+      <CompactButton.Root size='medium' variant='ghost' asChild>
+        <span>
+          <CompactButton.Icon as={RiArrowRightSLine} />
+        </span>
       </CompactButton.Root>
     </button>
   );

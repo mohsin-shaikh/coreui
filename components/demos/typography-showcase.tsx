@@ -11,9 +11,9 @@ type TypographyMeta = {
 
 function MetaBadge({ label, value }: { label: string; value: string }) {
   return (
-    <div className="bg-bg-weak-25 text-ln-label-xs shadow-docs-badge-gray rounded-[7px] px-3 py-1">
-      <span className="text-text-soft-400">{label}: </span>
-      <span className="text-text-sub-600">{value}</span>
+    <div className="bg-fd-secondary rounded-md border border-fd-border px-3 py-1 text-xs">
+      <span className="text-fd-muted-foreground">{label}: </span>
+      <span className="text-fd-foreground">{value}</span>
     </div>
   );
 }
@@ -31,7 +31,7 @@ export function TypographySample({
 }) {
   return (
     <div className="flex flex-col gap-6">
-      <div className="text-ln-label-md text-text-strong-950">{name}</div>
+      <div className="text-fd-foreground text-base font-medium">{name}</div>
       <div className={cn('text-text-strong-950', className)}>{children}</div>
       <div className="flex flex-wrap gap-3">
         <MetaBadge label="Weight" value={meta.weight} />

@@ -1,39 +1,21 @@
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import type { MDXComponents } from 'mdx/types';
 
 import { ComponentPreview } from '@/components/component-preview';
 import { ComponentSource } from '@/components/component-source';
-import { ColorPalette } from '@/components/color-showcase';
-import { DocsFigure, DocsPre } from '@/components/docs-code-frame';
-import {
-  FrameworkCard,
-  FrameworkCards,
-} from '@/components/docs-framework-card';
-import { DocsH2, DocsH3 } from '@/components/docs-heading';
-import { DocsLink, DocsOl, DocsP, DocsUl } from '@/components/docs-prose';
-import { ContentTabs, Tab, Tabs } from '@/components/docs-tabs';
+import { ColorPalette } from '@/components/demos/color-showcase';
 import {
   TypographySample,
   TypographySection,
-} from '@/components/typography-showcase';
+} from '@/components/demos/typography-showcase';
 
 export function getMDXComponents(components?: MDXComponents) {
   return {
     ...defaultMdxComponents,
-    pre: DocsPre,
-    figure: DocsFigure,
-    h2: DocsH2,
-    h3: DocsH3,
-    p: DocsP,
-    ul: DocsUl,
-    ol: DocsOl,
-    a: DocsLink,
     Tabs,
     Tab,
-    ContentTabs,
-    FrameworkCard,
-    FrameworkCards,
     Step,
     Steps,
     ComponentPreview,

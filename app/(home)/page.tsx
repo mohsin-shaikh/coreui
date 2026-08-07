@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import { RiArrowRightLine } from '@remixicon/react';
 
-import { DocsDashedSeparator } from '@/components/docs-page-header';
 import * as FancyButton from '@/components/ui/fancy-button';
 import { appName, assetPath } from '@/lib/shared';
 
@@ -39,16 +38,16 @@ export default function HomePage() {
       </div>
 
       <div className="mt-5">
-        <span className="bg-bg-weak-25 text-ln-label-xs text-ln-gray-600 shadow-docs-badge-gray inline-flex h-7 items-center rounded-lg px-2">
+        <span className="bg-fd-secondary text-fd-muted-foreground inline-flex h-7 items-center rounded-lg border border-fd-border px-2 text-xs font-medium">
           v0.1
         </span>
       </div>
 
-      <h1 className="text-ln-title-h4 text-ln-gray-900 md:text-ln-title-h3 mt-5">
+      <h1 className="text-fd-foreground mt-5 text-3xl font-semibold tracking-tight md:text-4xl">
         {appName}
       </h1>
 
-      <p className="text-ln-paragraph-md text-ln-gray-600 md:text-ln-paragraph-lg mt-4">
+      <p className="text-fd-muted-foreground mt-4 text-base md:text-lg">
         {description}
       </p>
 
@@ -61,9 +60,9 @@ export default function HomePage() {
         </FancyButton.Root>
       </div>
 
-      <DocsDashedSeparator className="mt-12" />
+      <hr className="border-fd-border mt-12" />
 
-      <ul className="text-ln-paragraph-sm text-ln-gray-500 mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2">
+      <ul className="text-fd-muted-foreground mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
         {stack.map((item) => (
           <li key={item}>{item}</li>
         ))}

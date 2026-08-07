@@ -24,13 +24,13 @@ Follow [these instructions](https://tailwindcss.com/docs/installation/framework-
 
 ## Add the CoreUI styles
 
-<ContentTabs items={['CLI', 'Manual']} defaultValue="manual">
-<Tab value="cli">
+<Tabs items={['CLI', 'Manual']} defaultIndex={1}>
+<Tab value="CLI">
 
 **Coming soon.** A CLI that writes the stylesheet into your project for you is on the way. Until then, use the manual steps.
 
 </Tab>
-<Tab value="manual">
+<Tab value="Manual">
 
 Copy `coreui.css` into your project and import it after Tailwind, so its `@theme` block can extend the defaults:
 
@@ -46,7 +46,7 @@ Copy `coreui.css` into your project and import it after Tailwind, so its `@theme
 That's all! Now you have all CoreUI tokens — `bg-bg-weak-50`, `text-text-sub-600`, `shadow-regular-xs`, `text-label-sm` and the rest.
 
 </Tab>
-</ContentTabs>
+</Tabs>
 
 ## Add the required utils
 
