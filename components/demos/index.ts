@@ -536,6 +536,58 @@ import TabMenuVerticalWithHeading, {
 import TabMenuVerticalStyledContainer, {
   code as tabMenuVerticalStyledContainerCode,
 } from './tab-menu-vertical/tab-menu-vertical-styled-container';
+import DotStepperDemo, {
+  code as dotStepperDemoCode,
+} from './dot-stepper/dot-stepper-demo';
+import DotStepperSize, {
+  code as dotStepperSizeCode,
+} from './dot-stepper/dot-stepper-size';
+import DotStepperWithRadixTabs, {
+  code as dotStepperWithRadixTabsCode,
+} from './dot-stepper/dot-stepper-with-radix-tabs';
+import HorizontalStepperDemo, {
+  code as horizontalStepperDemoCode,
+} from './horizontal-stepper/horizontal-stepper-demo';
+import HorizontalStepperWithRadixTabs, {
+  code as horizontalStepperWithRadixTabsCode,
+} from './horizontal-stepper/horizontal-stepper-with-radix-tabs';
+import PaginationDemo, {
+  code as paginationDemoCode,
+} from './pagination/pagination-demo';
+import PaginationRounded, {
+  code as paginationRoundedCode,
+} from './pagination/pagination-rounded';
+import PaginationGroup, {
+  code as paginationGroupCode,
+} from './pagination/pagination-group';
+import PaginationAsLink, {
+  code as paginationAsLinkCode,
+} from './pagination/pagination-as-link';
+import VerticalStepperDemo, {
+  code as verticalStepperDemoCode,
+} from './vertical-stepper/vertical-stepper-demo';
+import VerticalStepperWithRadixTabs, {
+  code as verticalStepperWithRadixTabsCode,
+} from './vertical-stepper/vertical-stepper-with-radix-tabs';
+import CommandMenuDemo, {
+  code as commandMenuDemoCode,
+} from './command-menu/command-menu-demo';
+import DrawerDemo, { code as drawerDemoCode } from './drawer/drawer-demo';
+import DrawerBasic, { code as drawerBasicCode } from './drawer/drawer-basic';
+import DropdownDemo, {
+  code as dropdownDemoCode,
+} from './dropdown/dropdown-demo';
+import DropdownSubMenu, {
+  code as dropdownSubMenuCode,
+} from './dropdown/dropdown-sub-menu';
+import ModalDemo, { code as modalDemoCode } from './modal/modal-demo';
+import ModalWithHeader, {
+  code as modalWithHeaderCode,
+} from './modal/modal-with-header';
+import PopoverDemo, { code as popoverDemoCode } from './popover/popover-demo';
+import PopoverPosition, {
+  code as popoverPositionCode,
+} from './popover/popover-position';
 
 export const Index: Record<
   string,
@@ -1431,5 +1483,85 @@ export const Index: Record<
   'tab-menu-vertical-styled-container': {
     component: TabMenuVerticalStyledContainer,
     code: tabMenuVerticalStyledContainerCode,
+  },
+  'dot-stepper-demo': {
+    component: DotStepperDemo,
+    code: dotStepperDemoCode,
+  },
+  'dot-stepper-size': {
+    component: DotStepperSize,
+    code: dotStepperSizeCode,
+  },
+  'dot-stepper-with-radix-tabs': {
+    component: DotStepperWithRadixTabs,
+    code: dotStepperWithRadixTabsCode,
+  },
+  'horizontal-stepper-demo': {
+    component: HorizontalStepperDemo,
+    code: horizontalStepperDemoCode,
+  },
+  'horizontal-stepper-with-radix-tabs': {
+    component: HorizontalStepperWithRadixTabs,
+    code: horizontalStepperWithRadixTabsCode,
+  },
+  'pagination-demo': {
+    component: PaginationDemo,
+    code: paginationDemoCode,
+  },
+  'pagination-rounded': {
+    component: PaginationRounded,
+    code: paginationRoundedCode,
+  },
+  'pagination-group': {
+    component: PaginationGroup,
+    code: paginationGroupCode,
+  },
+  'pagination-as-link': {
+    component: PaginationAsLink,
+    code: paginationAsLinkCode,
+  },
+  'vertical-stepper-demo': {
+    component: VerticalStepperDemo,
+    code: verticalStepperDemoCode,
+  },
+  'vertical-stepper-with-radix-tabs': {
+    component: VerticalStepperWithRadixTabs,
+    code: verticalStepperWithRadixTabsCode,
+  },
+  'command-menu-demo': {
+    component: CommandMenuDemo,
+    code: commandMenuDemoCode,
+  },
+  'drawer-demo': {
+    component: DrawerDemo,
+    code: drawerDemoCode,
+  },
+  'drawer-basic': {
+    component: DrawerBasic,
+    code: drawerBasicCode,
+  },
+  'dropdown-demo': {
+    component: DropdownDemo,
+    code: dropdownDemoCode,
+  },
+  'dropdown-sub-menu': {
+    component: DropdownSubMenu,
+    code: dropdownSubMenuCode,
+  },
+  'modal-demo': {
+    component: ModalDemo,
+    code: modalDemoCode,
+  },
+  'modal-with-header': {
+    component: ModalWithHeader,
+    code: modalWithHeaderCode,
+  },
+  'popover-demo': {
+    component: PopoverDemo,
+    code: popoverDemoCode,
+  },
+  'popover-position': {
+    component: PopoverPosition,
+    code: popoverPositionCode,
   },
 };

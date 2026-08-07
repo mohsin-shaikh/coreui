@@ -119,6 +119,65 @@ export const docsPageLinks: Record<string, DocsPageLink[]> = {
       href: 'https://www.radix-ui.com/primitives/docs/components/tabs',
     },
   ],
+  '/docs/v0.1/ui/dot-stepper': [
+    {
+      label: '@radix-ui/react-slot',
+      href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
+    },
+  ],
+  '/docs/v0.1/ui/horizontal-stepper': [
+    {
+      label: '@radix-ui/react-slot',
+      href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
+    },
+  ],
+  '/docs/v0.1/ui/pagination': [
+    {
+      label: '@radix-ui/react-slot',
+      href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
+    },
+  ],
+  '/docs/v0.1/ui/vertical-stepper': [
+    {
+      label: '@radix-ui/react-slot',
+      href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
+    },
+  ],
+  '/docs/v0.1/ui/command-menu': [
+    { label: 'cmdk', href: 'https://cmdk.paco.me' },
+    {
+      label: '@radix-ui/react-dialog',
+      href: 'https://www.radix-ui.com/primitives/docs/components/dialog',
+    },
+  ],
+  '/docs/v0.1/ui/drawer': [
+    {
+      label: '@radix-ui/react-dialog',
+      href: 'https://www.radix-ui.com/primitives/docs/components/dialog',
+    },
+  ],
+  '/docs/v0.1/ui/dropdown': [
+    {
+      label: '@radix-ui/react-dropdown-menu',
+      href: 'https://www.radix-ui.com/primitives/docs/components/dropdown-menu',
+    },
+  ],
+  '/docs/v0.1/ui/modal': [
+    {
+      label: '@radix-ui/react-dialog',
+      href: 'https://www.radix-ui.com/primitives/docs/components/dialog',
+    },
+  ],
+  '/docs/v0.1/ui/popover': [
+    {
+      label: '@radix-ui/react-popover',
+      href: 'https://www.radix-ui.com/primitives/docs/components/popover',
+    },
+    {
+      label: '@radix-ui/react-slot',
+      href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
+    },
+  ],
   '/docs/v0.1/utils/cn': [
     { label: 'clsx', href: 'https://github.com/lukeed/clsx' },
     { label: 'tailwind-merge', href: 'https://github.com/dcastil/tailwind-merge' },

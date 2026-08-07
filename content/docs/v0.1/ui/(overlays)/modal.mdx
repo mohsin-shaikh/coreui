@@ -1,4 +1,116 @@
 ---
 title: Modal
-description: Modal component
+description: Modal is a floating surface used to display transient content such as confirmation actions, selection options, and more.
 ---
+
+<ComponentPreview name="modal-demo" className="w-full max-w-none" />
+
+## Coming from Figma
+
+In the Figma library, Modal is configured with variants: **Type** (Error / Warning / Information / Success), **Alignment**, and a **Footer** style (Basic / Checkbox / Information / Toggle). In code these are not separate props; you compose them from the Modal parts (`Modal.Root`, `Trigger`, `Content`, `Header`, `Body`, `Footer`):
+
+- **Type (Error / Warning / Information / Success)**: pass the matching icon (and color) to `Modal.Header` via its `icon` prop, or render a fully custom header through `children`.
+- **Footer (Basic / Checkbox / Information / Toggle)**: place whatever the variant needs inside `Modal.Footer`: action buttons, a `Checkbox`, a `Switch`, or helper text.
+- **Alignment**: handled with layout classes on `Modal.Body` / `Modal.Footer`.
+
+The `Header` `icon` / `title` / `description` props are only a shortcut for the common case; anything beyond that is done by composition, so every Figma variant is achievable.
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-dialog
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-dialog
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-dialog
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `modal.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/modal.tsx" title="components/ui/modal.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### With Header
+
+<ComponentPreview name="modal-with-header" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the [Radix UI Dialog](https://www.radix-ui.com/primitives/docs/components/dialog) primitives. Refer to their documentation for the API reference.
+
+### Modal.Root
+
+This component is based on the Dialog.Root primitive.
+
+### Modal.Trigger
+
+This component is based on the Dialog.Trigger primitive.
+
+### Modal.Close
+
+This component is based on the Dialog.Close primitive.
+
+### Modal.Portal
+
+This component is based on the Dialog.Portal primitive.
+
+### Modal.Overlay
+
+This component is based on the Dialog.Overlay primitive.
+
+### Modal.Content
+
+This component is based on the Dialog.Content primitive. Wrapped by `Portal` and `Overlay`.
+
+### Modal.Header
+
+Used to display the header section of a modal dialog. It accepts `icon`, `title`, `description` if `children` is not provided.
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `icon` | `RemixiconComponentType` | |
+| `title` | `string` | |
+| `description` | `string` | |
+
+### Modal.Title
+
+This component is based on the Dialog.Title primitive.
+
+### Modal.Description
+
+This component is based on the Dialog.Description primitive.
+
+### Modal.Body
+
+Used for the main content area of a modal dialog.
+
+This component is based on the `<div>` element and supports all of its props.
+
+### Modal.Footer
+
+Used for the footer section of a modal dialog. It typically contains action buttons like "Save" or "Cancel."
+
+This component is based on the `<div>` element and supports all of its props.

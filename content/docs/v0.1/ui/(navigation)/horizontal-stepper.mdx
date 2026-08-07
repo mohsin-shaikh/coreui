@@ -1,4 +1,77 @@
 ---
 title: Horizontal Stepper
-description: Horizontal Stepper component
+description: A versatile horizontal step indicator providing a clear visual guide through sequential processes.
 ---
+
+<ComponentPreview name="horizontal-stepper-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `horizontal-stepper.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/horizontal-stepper.tsx" title="components/ui/horizontal-stepper.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### With Radix Tabs
+
+<ComponentPreview name="horizontal-stepper-with-radix-tabs" className="w-full max-w-none" />
+
+## API Reference
+
+### HorizontalStepper.Root
+
+Outer container that holds the stepper items and separator icons. This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |
+
+### HorizontalStepper.SeparatorIcon
+
+Icon used as a separator between stepper items. A polymorphic component, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `RiArrowRightSLine` |
+
+### HorizontalStepper.Item
+
+Individual stepper item which can indicate the state of the step. This component is based on the `<button>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |
+| `state` | `"default"` \| `"active"` \| `"completed"` | `"default"` |
+
+### HorizontalStepper.ItemIndicator
+
+This component is based on the `<div>` element and supports all of its props.

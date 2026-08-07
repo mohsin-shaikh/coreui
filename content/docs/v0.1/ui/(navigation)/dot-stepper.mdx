@@ -1,4 +1,70 @@
 ---
 title: Dot Stepper
-description: Dot Stepper component
+description: Very minimal stepper. Often used as carousel dots.
 ---
+
+<ComponentPreview name="dot-stepper-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `dot-stepper.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/dot-stepper.tsx" title="components/ui/dot-stepper.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Size
+
+<ComponentPreview name="dot-stepper-size" className="w-full max-w-none" />
+
+### With Radix Tabs
+
+<ComponentPreview name="dot-stepper-with-radix-tabs" className="w-full max-w-none" />
+
+## API Reference
+
+### DotStepper.Root
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `size` | `"small"` \| `"xsmall"` | `"small"` |
+| `asChild` | `boolean` | |
+
+### DotStepper.Item
+
+This component is based on the `<button>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `active` | `boolean` | |
+| `asChild` | `boolean` | |

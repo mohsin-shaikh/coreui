@@ -1,4 +1,50 @@
 ---
 title: Popover
-description: Popover component
+description: Popover is used to bring attention to specific user interface elements.
 ---
+
+<ComponentPreview name="popover-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-popover @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-popover @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-popover @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `popover.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/popover.tsx" title="components/ui/popover.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Position
+
+<ComponentPreview name="popover-position" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the [Radix UI Popover](https://www.radix-ui.com/primitives/docs/components/popover) primitives. Refer to their documentation for the API reference.

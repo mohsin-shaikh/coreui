@@ -1,4 +1,86 @@
 ---
 title: Drawer
-description: Drawer component
+description: A panel which slides out from the edge of the screen.
 ---
+
+<ComponentPreview name="drawer-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-dialog
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-dialog
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-dialog
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `drawer.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/drawer.tsx" title="components/ui/drawer.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="drawer-basic" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the [Radix UI Dialog](https://www.radix-ui.com/primitives/docs/components/dialog) primitives. Refer to their documentation for the API reference.
+
+### Drawer.Root
+
+This component is based on the Dialog.Root primitive.
+
+### Drawer.Trigger
+
+This component is based on the Dialog.Trigger primitive.
+
+### Drawer.Close
+
+This component is based on the Dialog.Close primitive.
+
+### Drawer.Content
+
+This component is based on the Dialog.Content primitive. Wrapped by `Portal` and `Overlay`.
+
+### Drawer.Header
+
+This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `showCloseButton` | `boolean` | `true` |
+
+### Drawer.Title
+
+This component is based on the Dialog.Title primitive.
+
+### Drawer.Body
+
+This component is based on the `<div>` element and supports all of its props.
+
+### Drawer.Footer
+
+This component is based on the `<div>` element and supports all of its props.

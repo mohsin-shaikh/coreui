@@ -1,4 +1,76 @@
 ---
 title: Dropdown
-description: Dropdown component
+description: Displays a menu to the user—such as a set of actions or functions—triggered by a button.
 ---
+
+<ComponentPreview name="dropdown-demo" className="w-full max-w-none" />
+
+## Coming from Figma
+
+In Figma the Dropdown lists many **Type** variants (Basic / Country / Avatar / Provider / Brand / Company) plus **Checkbox**, **Sublabel**, **Badge**, **Shortcut**, **Toggle**, **Button**, and icon toggles. In code there is no `type` prop; you build each item by composing the menu parts:
+
+- **Type (Country / Avatar / Badge / …)**: put the relevant content (a flag, an Avatar, a Badge, a kbd shortcut) inside `Dropdown.Item`, alongside `Dropdown.ItemIcon`.
+- **Checkbox / Toggle / Radio**: use `Dropdown.CheckboxItem`, `Dropdown.RadioGroup` / `RadioItem`, or embed a Switch.
+- **Sublabel / Shortcut**: extra elements inside the item; the `inset` prop aligns items that have no leading icon.
+
+The full Radix menu surface is available (`Root`, `Trigger`, `Content`, `Item`, `Group`, `Label`, `MenuSub…`, `Separator`, `Arrow`).
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-dropdown-menu
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-dropdown-menu
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-dropdown-menu
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `dropdown.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/dropdown.tsx" title="components/ui/dropdown.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### Sub Menu
+
+<ComponentPreview name="dropdown-sub-menu" className="w-full max-w-none" />
+
+## API Reference
+
+This component is based on the [Radix UI Dropdown Menu](https://www.radix-ui.com/primitives/docs/components/dropdown-menu) primitives. Refer to their documentation for the API reference.
+
+### Dropdown.Item
+
+This component is based on the Dropdown.Item primitive. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `inset` | `boolean` | |
+
+### Dropdown.ItemIcon
+
+The `Dropdown.ItemIcon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |

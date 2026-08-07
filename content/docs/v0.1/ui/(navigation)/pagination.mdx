@@ -1,4 +1,98 @@
 ---
 title: Pagination
-description: Pagination component
+description: Pagination is a horizontal set of links to navigate paginated content.
 ---
+
+<ComponentPreview name="pagination-demo" className="w-full max-w-none" />
+
+## Coming from Figma
+
+In Figma the Pagination uses **Type** (Basic / Group / Full Radius) plus **First / Last** and **Next / Previous** controls. In code:
+
+- **Type**: the `variant` prop on `Pagination.Root`: `basic`, `group`, and `rounded` (Figma's "Full Radius").
+- **First / Last, Next / Previous**: add `Pagination.NavButton` with the appropriate `Pagination.NavIcon` (e.g. a double-arrow icon for first/last).
+- **Current page**: the `current` prop on `Pagination.Item`.
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @radix-ui/react-slot
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @radix-ui/react-slot
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Create a `pagination.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/pagination.tsx" title="components/ui/pagination.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## Examples
+
+### variant="rounded"
+
+<ComponentPreview name="pagination-rounded" className="w-full max-w-none" />
+
+### variant="group"
+
+<ComponentPreview name="pagination-group" className="w-full max-w-none" />
+
+### As Link
+
+<ComponentPreview name="pagination-as-link" className="w-full max-w-none" />
+
+## API Reference
+
+### Pagination.Root
+
+The root component for pagination. Wraps around pagination items and navigation buttons. This component is based on the `<div>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"basic"` \| `"rounded"` \| `"group"` | `"basic"` |
+| `asChild` | `boolean` | |
+
+### Pagination.Item
+
+An individual pagination item, typically a link. This component is based on the `<button>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `current` | `boolean` | |
+| `asChild` | `boolean` | |
+
+### Pagination.NavButton
+
+A navigation button for pagination, such as "previous" or "next". This component is based on the `<button>` element and supports all of its props. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | |
+
+### Pagination.NavIcon
+
+An icon used inside navigation buttons for pagination. This component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |

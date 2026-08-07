@@ -1,4 +1,89 @@
 ---
 title: Command Menu
-description: Command Menu component
+description: Command Menu empowers users to swiftly execute searches on any page, thereby streamlining their workflow.
 ---
+
+<ComponentPreview name="command-menu-demo" className="w-full max-w-none" />
+
+## Installation
+
+<Steps>
+  <Step>
+    ### Install the following dependencies:
+
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install cmdk @radix-ui/react-dialog
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add cmdk @radix-ui/react-dialog
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add cmdk @radix-ui/react-dialog
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### This component is used with the Modal component.
+
+    Refer to the [Modal](/docs/v0.1/ui/modal) documentation for setup instructions before using this component.
+  </Step>
+  <Step>
+    ### Create a `command-menu.tsx` file and paste the following code into it.
+
+    <ComponentSource src="components/ui/command-menu.tsx" title="components/ui/command-menu.tsx" />
+  </Step>
+  <Step>
+    ### Check the import paths to ensure they match your project setup.
+  </Step>
+</Steps>
+
+## API Reference
+
+This component is based on the [cmdk](https://cmdk.paco.me) package. Refer to their documentation for the API reference.
+
+### CommandMenu.Dialog
+
+The `CommandMenu.Dialog` component is based on cmdk Command primitive. Wrapped by Modal Content.
+
+### CommandMenu.Input
+
+The `CommandMenu.Input` component is based on cmdk Input primitive.
+
+### CommandMenu.Group
+
+The `CommandMenu.Group` component is based on cmdk Group primitive.
+
+### CommandMenu.List
+
+The `CommandMenu.List` component is based on cmdk List primitive.
+
+### CommandMenu.Item
+
+The `CommandMenu.Item` component is based on cmdk Item primitive. And adds:
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `size` | `"small"` \| `"medium"` | `"small"` |
+
+### CommandMenu.ItemIcon
+
+The `CommandMenu.ItemIcon` component is polymorphic, allowing you to change the underlying HTML element using the `as` prop.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `as` | `React.ElementType` | `div` |
+
+### CommandMenu.Footer
+
+A footer section for the command dialog. This component is based on the `<div>` element and supports all of its props.
+
+### CommandMenu.FooterKeyBox
+
+Used within the `CommandMenu.Footer` to display key information or buttons. This component is based on the `<div>` element and supports all of its props.
