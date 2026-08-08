@@ -5,117 +5,136 @@ description: Step-by-step configuration for Next.js.
 
 <Callout title="Kickstart with the Next.js starter 🚀">
   [coreui-nextjs-typescript-starter](https://github.com/mohsin-shaikh/coreui-nextjs-typescript-starter)
-  is a template repository with everything on this page already done — the
-  tokens, the utils, every component, Remix Icon and dark mode. Press **Use this
+  Everything is setup to use CoreUI. Press **Use this
   template** on GitHub and start building.
 </Callout>
 
-To add CoreUI to a project you already have, work through the steps below once.
-
 <Steps>
+  <Step>
+    ### Initialize a NextJS Project
 
-## Initialize a NextJS Project
+    If you don't already have a Next.js project set up, you can follow the official [Next.js setup guide](https://nextjs.org/docs/app/getting-started/installation) to create a new project quickly.
+  </Step>
+  <Step>
+    ### Make sure you have Tailwind CSS v4 installed
 
-If you don't already have a Next.js project set up, you can follow the official [Next.js setup guide](https://nextjs.org/docs/app/getting-started/installation) to create a new project quickly.
+    Follow [these instructions](https://tailwindcss.com/docs/installation/framework-guides/nextjs) if you don't have Tailwind CSS v4 installed in your project. You just need to have a `globals.css` file. **Note:** Tailwind CSS v4 doesn't require a config file by default.
+  </Step>
+  <Step>
+    ### Add the CoreUI styles
 
-## Make sure you have Tailwind CSS v4 installed
+    <Tabs items={['CLI', 'Manual']} defaultIndex={1}>
+    <Tab value="CLI">
 
-Follow [these instructions](https://tailwindcss.com/docs/installation/framework-guides/nextjs) if you don't have Tailwind CSS v4 installed in your project. You just need to have a `globals.css` file. **Note:** Tailwind CSS v4 doesn't require a config file by default.
+    **Coming soon.** A CLI that writes the stylesheet into your project for you is on the way. Until then, use the manual steps.
 
-## Add the CoreUI styles
+    </Tab>
+    <Tab value="Manual">
 
-<Tabs items={['CLI', 'Manual']} defaultIndex={1}>
-<Tab value="CLI">
+    Include these styles in your main CSS file where Tailwind is imported:
 
-**Coming soon.** A CLI that writes the stylesheet into your project for you is on the way. Until then, use the manual steps.
+    <ComponentSource
+      src="styles/coreui.css"
+      title="app/globals.css"
+      prepend={"@import 'tailwindcss';\n\n"}
+      append={`\n/* CoreUI Body Styles */
+  body {
+    background: var(--color-bg-white-0);
+    color: var(--color-text-strong-950);
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+  }\n`}
+    />
 
-</Tab>
-<Tab value="Manual">
+    **Note:** The above code includes the complete CoreUI design system with colors, typography, shadows, animations, and dark mode support. You can also get this CSS content by running the CLI command.
 
-Copy `coreui.css` into your project and import it after Tailwind, so its `@theme` block can extend the defaults:
+    That's all! Now you have all CoreUI tokens.
 
-```css title="app/globals.css"
-@import 'tailwindcss';
-@import './coreui.css';
-```
+    </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Add the required utils
 
-<ComponentSource src="styles/coreui.css" title="app/coreui.css" />
+    1. Go to [cn](/docs/v0.1/utils/cn) page and setup the utility in your project.
+    2. Go to [tv](/docs/v0.1/utils/tv) page and setup the utility in your project.
+    3. Go to [recursiveCloneChildren](/docs/v0.1/utils/recursive-clone-children) page and setup the utility in your project.
+    4. Go to [Polymorphic](/docs/v0.1/utils/polymorphic) page and setup the utility in your project.
+  </Step>
+  <Step>
+    ### Add the icon library
 
-**Note:** The above code is the complete CoreUI design system — colors, typography, shadows, radii, animations and dark mode support. Nothing in it is specific to this documentation site.
+    CoreUI uses [Remix Icon](https://remixicon.com).
 
-That's all! Now you have all CoreUI tokens — `bg-bg-weak-50`, `text-text-sub-600`, `shadow-regular-xs`, `text-label-sm` and the rest.
+    <Tabs items={['npm', 'pnpm', 'yarn']}>
+      <Tab value="npm">
+        ```bash
+        npm install @remixicon/react
+        ```
+      </Tab>
+      <Tab value="pnpm">
+        ```bash
+        pnpm add @remixicon/react
+        ```
+      </Tab>
+      <Tab value="yarn">
+        ```bash
+        yarn add @remixicon/react
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Set up the Inter font
+    Include Inter font from 'next/font/google':
 
-</Tab>
-</Tabs>
+    ```tsx title="app/layout.tsx" lineNumbers
+    import { Inter as FontSans } from 'next/font/google'; // [!code ++]
+    import './globals.css';
+    import { cn } from '@/utils/cn';
 
-## Add the required utils
+    const inter = FontSans({ // [!code ++]
+      subsets: ['latin'], // [!code ++]
+      variable: '--font-sans', // [!code ++]
+    }); // [!code ++]
 
-1. Go to [cn](/docs/v0.1/utils/cn) page and setup the utility in your project.
-2. Go to [tv](/docs/v0.1/utils/tv) page and setup the utility in your project.
-3. Go to [recursiveCloneChildren](/docs/v0.1/utils/recursive-clone-children) page and setup the utility in your project.
-4. Go to [Polymorphic](/docs/v0.1/utils/polymorphic) page and setup the utility in your project.
-
-## Add the icon library
-
-CoreUI uses [Remix Icon](https://remixicon.com).
-
-<Tabs items={['npm', 'pnpm', 'yarn']}>
-  <Tab value="npm">
-    ```bash
-    npm install @remixicon/react
+    export default function RootLayout({ children }) {
+      return (
+        // [!code ++]
+        <html lang="en" className={cn(inter.variable, 'antialiased')}>
+          <body>{/* ... */}</body>
+        </html>
+      );
+    }
     ```
-  </Tab>
-  <Tab value="pnpm">
-    ```bash
-    pnpm add @remixicon/react
+
+    **Note for Tailwind CSS v4:** Font configuration is handled via CSS variables in the `@theme` block, so no additional config file setup is needed.
+  </Step>
+  <Step>
+    ### Add dark mode (optional)
+
+    All you need to do to enable dark mode in your app is add the `dark` class to your root element.
+
+    ```tsx title="app/layout.tsx" lineNumbers
+    export default function RootLayout({ children }) {
+      return (
+        // [!code ++]
+        <html lang='en' className='dark'> 
+          <body>{/* ... */}</body>
+        </html>
+      );
+    }
     ```
-  </Tab>
-  <Tab value="yarn">
-    ```bash
-    yarn add @remixicon/react
-    ```
-  </Tab>
-</Tabs>
 
-## Set up the Inter font
+    **Note:** With Tailwind CSS v4, dark mode classes are automatically included when using our `@theme` configuration.
 
-The `--font-sans` token resolves to `--font-inter-var`, so expose your Inter instance under that name:
+    I recommend [next-themes](https://github.com/pacocoursey/next-themes) package for an easy dark mode toggle in your app.
 
-```tsx title="app/layout.tsx"
-import { Inter } from 'next/font/google';
-import './global.css';
+  </Step>
+  <Step>
+    ### That's all
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter-var',
-  display: 'swap',
-});
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
-      <body>{children}</body>
-    </html>
-  );
-}
-```
-
-## Add dark mode (optional)
-
-Every semantic token has a dark counterpart. Add the `dark` class to your root element to switch:
-
-```tsx title="app/layout.tsx"
-<html lang="en" className="dark">
-```
-
-For a toggle, [next-themes](https://github.com/pacocoursey/next-themes) pairs well with the class-based setup.
-
-## That's all
-
-Start adding components — [Button](/docs/v0.1/ui/button) is a good first one.
-
+    Now you can start adding components to your app. You can begin by adding a [Button](/docs/v0.1/ui/button) first.
+  </Step>
 </Steps>

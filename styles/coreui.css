@@ -1,17 +1,4 @@
-/* ============================================================================
- * CoreUI design system
- *
- * Everything `components/ui/*` depends on, and nothing else. This file is
- * self-contained on purpose: it is the stylesheet a consumer copies into their
- * own project alongside the components. Documentation-site chrome belongs in
- * `styles/docs.css`.
- * ========================================================================= */
-
-/* static: keep all design tokens available for JS (e.g. var(--color-${token})) */
-@theme static {
-  --font-sans: var(--font-inter-var), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-
+@theme {
   /* CoreUI Raw Colors */
   --color-gray-950: #171717;
   --color-gray-900: #1c1c1c;
@@ -228,13 +215,6 @@
   --color-overlay-gray: #3333333d;
   --color-overlay-slate: #2b303b3d;
   --color-overlay: var(--color-overlay-gray);
-
-  /* CoreUI Illustration Colors */
-  --color-illustration-white-0: var(--color-neutral-0);
-  --color-illustration-weak-100: var(--color-neutral-100);
-  --color-illustration-soft-200: var(--color-neutral-200);
-  --color-illustration-sub-300: var(--color-neutral-300);
-  --color-illustration-strong-400: var(--color-neutral-400);
 
   /* CoreUI Semantic Colors */
   --color-static-black: var(--color-neutral-950);
@@ -682,12 +662,6 @@
   --color-social-amazon: #fff;
   --color-social-zendesk: #fff;
 
-  --color-illustration-white-0: var(--color-neutral-950);
-  --color-illustration-weak-100: var(--color-neutral-900);
-  --color-illustration-soft-200: var(--color-neutral-800);
-  --color-illustration-sub-300: var(--color-neutral-700);
-  --color-illustration-strong-400: var(--color-neutral-600);
-
   --shadow-complex-12: 0 80px 80px -40px rgba(23, 23, 23, 0),
     0 48px 48px -24px rgba(23, 23, 23, 0);
 
@@ -820,14 +794,7 @@
   }
 }
 
-/* Radix/react-remove-scroll compensates for a scrollbar we never remove,
-   because `html` reserves the gutter permanently. */
-html > body[data-scroll-locked] {
-  margin-right: 0px !important;
-  --removed-body-scroll-bar-size: 0px !important;
-}
-
-/* Remix Icon optical scale (CoreUI starter) */
+/* Custom styles */
 .remixicon path {
   transform: scale(0.8996);
   transform-origin: center;

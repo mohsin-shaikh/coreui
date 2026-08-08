@@ -41,7 +41,7 @@ export default function InputPayment() {
               id='card-number'
               placeholder='0000 0000 0000 0000'
             />
-            <Image src={cardIcon} alt='' className='h-6 w-8 shrink-0' />
+            <Image src={cardIcon} alt='' className='h-6 w-8 shrink-0' width={24} height={32} />
           </Input.Wrapper>
         </Input.Root>
       </div>
