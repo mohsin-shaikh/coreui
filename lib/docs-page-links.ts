@@ -89,6 +89,18 @@ export const docsPageLinks: Record<string, DocsPageLink[]> = {
       href: 'https://www.radix-ui.com/primitives/docs/components/switch',
     },
   ],
+  '/docs/v0.1/ui/status-badge': [
+    {
+      label: '@radix-ui/react-slot',
+      href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
+    },
+  ],
+  '/docs/v0.1/ui/tag': [
+    {
+      label: '@radix-ui/react-slot',
+      href: 'https://www.radix-ui.com/primitives/docs/utilities/slot',
+    },
+  ],
   '/docs/v0.1/ui/accordion': [
     {
       label: '@radix-ui/react-accordion',
