@@ -1,41 +1,72 @@
-import { RiPriceTag3Line, RiUserLine } from '@remixicon/react';
+'use client';
+
+import { RiPushpinFill } from '@remixicon/react';
 
 import * as Tag from '@/components/ui/tag';
 
 export default function TagDismissable() {
   return (
-    <div className="flex flex-col items-center gap-6">
-      <Tag.Root>
-        <Tag.Icon as={RiPriceTag3Line} />
-        Tag
-        <Tag.DismissButton aria-label="Remove tag" />
-      </Tag.Root>
-      <Tag.Root variant="gray">
-        <Tag.Icon as={RiUserLine} />
-        Customer
-        <Tag.DismissButton aria-label="Remove tag" />
-      </Tag.Root>
+    <div className='flex flex-col items-center gap-6'>
+      <div className='flex gap-6'>
+        <Tag.Root>
+          Tag
+          <Tag.DismissButton onClick={() => alert('dismiss clicked!')} />
+        </Tag.Root>
+        <Tag.Root>
+          <Tag.Icon as={RiPushpinFill} />
+          Customer
+          <Tag.DismissButton onClick={() => alert('dismiss clicked!')} />
+        </Tag.Root>
+      </div>
+
+      <div className='flex gap-6'>
+        <Tag.Root variant='gray'>
+          Tag
+          <Tag.DismissButton onClick={() => alert('dismiss clicked!')} />
+        </Tag.Root>
+        <Tag.Root variant='gray'>
+          <Tag.Icon as={RiPushpinFill} />
+          Customer
+          <Tag.DismissButton onClick={() => alert('dismiss clicked!')} />
+        </Tag.Root>
+      </div>
     </div>
   );
 }
 
-export const code = `import { RiPriceTag3Line, RiUserLine } from '@remixicon/react';
+export const code = `'use client';
+
+import { RiPushpinFill } from '@remixicon/react';
 
 import * as Tag from '@/components/ui/tag';
 
-export default function TagDismissable() {
+export function TagDismissable() {
   return (
-    <div className="flex flex-col items-center gap-6">
-      <Tag.Root>
-        <Tag.Icon as={RiPriceTag3Line} />
-        Tag
-        <Tag.DismissButton aria-label="Remove tag" />
-      </Tag.Root>
-      <Tag.Root variant="gray">
-        <Tag.Icon as={RiUserLine} />
-        Customer
-        <Tag.DismissButton aria-label="Remove tag" />
-      </Tag.Root>
+    <div className='flex flex-col items-center gap-6'>
+      <div className='flex gap-6'>
+        <Tag.Root>
+          Tag
+          <Tag.DismissButton onClick={() => alert('dismiss clicked!')} />
+        </Tag.Root>
+        <Tag.Root>
+          <Tag.Icon as={RiPushpinFill} />
+          Customer
+          <Tag.DismissButton onClick={() => alert('dismiss clicked!')} />
+        </Tag.Root>
+      </div>
+
+      <div className='flex gap-6'>
+        <Tag.Root variant='gray'>
+          Tag
+          <Tag.DismissButton onClick={() => alert('dismiss clicked!')} />
+        </Tag.Root>
+        <Tag.Root variant='gray'>
+          <Tag.Icon as={RiPushpinFill} />
+          Customer
+          <Tag.DismissButton onClick={() => alert('dismiss clicked!')} />
+        </Tag.Root>
+      </div>
     </div>
   );
-}`;
+}
+`;

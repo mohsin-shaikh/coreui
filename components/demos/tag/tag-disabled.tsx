@@ -1,37 +1,60 @@
-import { RiPriceTag3Line, RiUserLine } from '@remixicon/react';
+import { RiPushpinFill } from '@remixicon/react';
 
 import * as Tag from '@/components/ui/tag';
 
 export default function TagDisabled() {
   return (
-    <div className="flex flex-col items-center gap-6">
-      <Tag.Root disabled>
-        <Tag.Icon as={RiPriceTag3Line} />
-        Tag
-      </Tag.Root>
-      <Tag.Root disabled variant="gray">
-        <Tag.Icon as={RiUserLine} />
-        Customer
-      </Tag.Root>
+    <div className='flex flex-col items-center gap-6'>
+      <div className='flex gap-6'>
+        <Tag.Root variant='stroke' disabled>
+          Tag
+        </Tag.Root>
+        <Tag.Root variant='stroke' disabled>
+          <Tag.Icon as={RiPushpinFill} />
+          Customer
+        </Tag.Root>
+      </div>
+
+      <div className='flex gap-6'>
+        <Tag.Root variant='gray' disabled>
+          Tag
+        </Tag.Root>
+        <Tag.Root variant='gray' disabled>
+          <Tag.Icon as={RiPushpinFill} />
+          Customer
+        </Tag.Root>
+      </div>
     </div>
   );
 }
 
-export const code = `import { RiPriceTag3Line, RiUserLine } from '@remixicon/react';
+export const code = `import { RiPushpinFill } from '@remixicon/react';
 
 import * as Tag from '@/components/ui/tag';
 
-export default function TagDisabled() {
+export function TagDisabled() {
   return (
-    <div className="flex flex-col items-center gap-6">
-      <Tag.Root disabled>
-        <Tag.Icon as={RiPriceTag3Line} />
-        Tag
-      </Tag.Root>
-      <Tag.Root disabled variant="gray">
-        <Tag.Icon as={RiUserLine} />
-        Customer
-      </Tag.Root>
+    <div className='flex flex-col items-center gap-6'>
+      <div className='flex gap-6'>
+        <Tag.Root variant='stroke' disabled>
+          Tag
+        </Tag.Root>
+        <Tag.Root variant='stroke' disabled>
+          <Tag.Icon as={RiPushpinFill} />
+          Customer
+        </Tag.Root>
+      </div>
+
+      <div className='flex gap-6'>
+        <Tag.Root variant='gray' disabled>
+          Tag
+        </Tag.Root>
+        <Tag.Root variant='gray' disabled>
+          <Tag.Icon as={RiPushpinFill} />
+          Customer
+        </Tag.Root>
+      </div>
     </div>
   );
-}`;
+}
+`;
