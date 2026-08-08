@@ -1,15 +1,62 @@
-import { RiCloseCircleFill } from '@remixicon/react';
+import { RiErrorWarningFill } from '@remixicon/react';
 
-import { StatusBadgeExamples } from './status-badge-example';
+import * as StatusBadge from '@/components/ui/status-badge';
 
 export default function StatusBadgeFailed() {
-  return <StatusBadgeExamples status="failed" icon={RiCloseCircleFill} />;
+  return (
+    <div className='flex items-center gap-6'>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='failed'>
+          <StatusBadge.Icon as={RiErrorWarningFill} />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='failed' variant='light'>
+          <StatusBadge.Icon as={RiErrorWarningFill} />
+          Badge
+        </StatusBadge.Root>
+      </div>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='failed'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='failed' variant='light'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+      </div>
+    </div>
+  );
 }
 
-export const code = `import { RiCloseCircleFill } from '@remixicon/react';
+export const code = `import { RiErrorWarningFill } from '@remixicon/react';
 
-import { StatusBadgeExamples } from '@/components/demos/status-badge/status-badge-example';
+import * as StatusBadge from '@/components/ui/status-badge';
 
-export default function StatusBadgeFailed() {
-  return <StatusBadgeExamples status="failed" icon={RiCloseCircleFill} />;
-}`;
+export function StatusBadgeFailed() {
+  return (
+    <div className='flex items-center gap-6'>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='failed'>
+          <StatusBadge.Icon as={RiErrorWarningFill} />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='failed' variant='light'>
+          <StatusBadge.Icon as={RiErrorWarningFill} />
+          Badge
+        </StatusBadge.Root>
+      </div>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='failed'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='failed' variant='light'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+      </div>
+    </div>
+  );
+}
+`;

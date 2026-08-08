@@ -1,19 +1,62 @@
-import { RiProhibitedLine } from '@remixicon/react';
+import { RiForbidFill } from '@remixicon/react';
 
-import { StatusBadgeExamples } from './status-badge-example';
+import * as StatusBadge from '@/components/ui/status-badge';
 
 export default function StatusBadgeDisabled() {
   return (
-    <StatusBadgeExamples status="disabled" icon={RiProhibitedLine} />
+    <div className='flex items-center gap-6'>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='disabled'>
+          <StatusBadge.Icon as={RiForbidFill} />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='disabled' variant='light'>
+          <StatusBadge.Icon as={RiForbidFill} />
+          Badge
+        </StatusBadge.Root>
+      </div>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='disabled'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='disabled' variant='light'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+      </div>
+    </div>
   );
 }
 
-export const code = `import { RiProhibitedLine } from '@remixicon/react';
+export const code = `import { RiForbidFill } from '@remixicon/react';
 
-import { StatusBadgeExamples } from '@/components/demos/status-badge/status-badge-example';
+import * as StatusBadge from '@/components/ui/status-badge';
 
-export default function StatusBadgeDisabled() {
+export function StatusBadgeDisabled() {
   return (
-    <StatusBadgeExamples status="disabled" icon={RiProhibitedLine} />
+    <div className='flex items-center gap-6'>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='disabled'>
+          <StatusBadge.Icon as={RiForbidFill} />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='disabled' variant='light'>
+          <StatusBadge.Icon as={RiForbidFill} />
+          Badge
+        </StatusBadge.Root>
+      </div>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='disabled'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='disabled' variant='light'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+      </div>
+    </div>
   );
-}`;
+}
+`;

@@ -1,19 +1,30 @@
+import { RiForbidFill } from '@remixicon/react';
+
 import * as StatusBadge from '@/components/ui/status-badge';
 
 export default function StatusBadgeAsChild() {
   return (
-    <StatusBadge.Root asChild status="completed">
-      <span>Badge</span>
+    <StatusBadge.Root asChild>
+      <button type='button'>
+        <StatusBadge.Icon as={RiForbidFill} />
+        Badge
+      </button>
     </StatusBadge.Root>
   );
 }
 
-export const code = `import * as StatusBadge from '@/components/ui/status-badge';
+export const code = `import { RiForbidFill } from '@remixicon/react';
 
-export default function StatusBadgeAsChild() {
+import * as StatusBadge from '@/components/ui/status-badge';
+
+export function StatusBadgeAsChild() {
   return (
-    <StatusBadge.Root asChild status="completed">
-      <span>Badge</span>
+    <StatusBadge.Root asChild>
+      <button type='button'>
+        <StatusBadge.Icon as={RiForbidFill} />
+        Badge
+      </button>
     </StatusBadge.Root>
   );
-}`;
+}
+`;

@@ -1,19 +1,62 @@
 import { RiCheckboxCircleFill } from '@remixicon/react';
 
-import { StatusBadgeExamples } from './status-badge-example';
+import * as StatusBadge from '@/components/ui/status-badge';
 
 export default function StatusBadgeCompleted() {
   return (
-    <StatusBadgeExamples status="completed" icon={RiCheckboxCircleFill} />
+    <div className='flex items-center gap-6'>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='completed'>
+          <StatusBadge.Icon as={RiCheckboxCircleFill} />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='completed' variant='light'>
+          <StatusBadge.Icon as={RiCheckboxCircleFill} />
+          Badge
+        </StatusBadge.Root>
+      </div>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='completed'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='completed' variant='light'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+      </div>
+    </div>
   );
 }
 
 export const code = `import { RiCheckboxCircleFill } from '@remixicon/react';
 
-import { StatusBadgeExamples } from '@/components/demos/status-badge/status-badge-example';
+import * as StatusBadge from '@/components/ui/status-badge';
 
-export default function StatusBadgeCompleted() {
+export function StatusBadgeCompleted() {
   return (
-    <StatusBadgeExamples status="completed" icon={RiCheckboxCircleFill} />
+    <div className='flex items-center gap-6'>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='completed'>
+          <StatusBadge.Icon as={RiCheckboxCircleFill} />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='completed' variant='light'>
+          <StatusBadge.Icon as={RiCheckboxCircleFill} />
+          Badge
+        </StatusBadge.Root>
+      </div>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='completed'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='completed' variant='light'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+      </div>
+    </div>
   );
-}`;
+}
+`;

@@ -1,15 +1,62 @@
-import { RiTimeFill } from '@remixicon/react';
+import { RiAlertFill } from '@remixicon/react';
 
-import { StatusBadgeExamples } from './status-badge-example';
+import * as StatusBadge from '@/components/ui/status-badge';
 
 export default function StatusBadgePending() {
-  return <StatusBadgeExamples status="pending" icon={RiTimeFill} />;
+  return (
+    <div className='flex items-center gap-6'>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='pending'>
+          <StatusBadge.Icon as={RiAlertFill} />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='pending' variant='light'>
+          <StatusBadge.Icon as={RiAlertFill} />
+          Badge
+        </StatusBadge.Root>
+      </div>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='pending'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='pending' variant='light'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+      </div>
+    </div>
+  );
 }
 
-export const code = `import { RiTimeFill } from '@remixicon/react';
+export const code = `import { RiAlertFill } from '@remixicon/react';
 
-import { StatusBadgeExamples } from '@/components/demos/status-badge/status-badge-example';
+import * as StatusBadge from '@/components/ui/status-badge';
 
-export default function StatusBadgePending() {
-  return <StatusBadgeExamples status="pending" icon={RiTimeFill} />;
-}`;
+export function StatusBadgePending() {
+  return (
+    <div className='flex items-center gap-6'>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='pending'>
+          <StatusBadge.Icon as={RiAlertFill} />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='pending' variant='light'>
+          <StatusBadge.Icon as={RiAlertFill} />
+          Badge
+        </StatusBadge.Root>
+      </div>
+      <div className='flex flex-col gap-6'>
+        <StatusBadge.Root status='pending'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+        <StatusBadge.Root status='pending' variant='light'>
+          <StatusBadge.Dot />
+          Badge
+        </StatusBadge.Root>
+      </div>
+    </div>
+  );
+}
+`;
