@@ -1,6 +1,4 @@
 {
-  "title": "Form",
-  "collapsible": false,
   "pages": [
     "checkbox",
     "color-picker",
