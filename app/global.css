@@ -7,7 +7,6 @@
 @import '../styles/coreui.css';
 
 /* Documentation site chrome — safe to drop if the docs move out of this repo. */
-@import '../styles/fonts.css';
 @import '../styles/docs.css';
 
 /* App shell */
