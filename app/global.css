@@ -21,6 +21,15 @@ html > body[data-scroll-locked] {
   --removed-body-scroll-bar-size: 0px !important;
 }
 
+/* Restore pointer cursor on actionable controls.
+   Tailwind v4 removed this from preflight. */
+@layer base {
+  button:not(:disabled),
+  [role='button']:not(:disabled):not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+}
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
