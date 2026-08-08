@@ -14,6 +14,13 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* Radix/react-remove-scroll compensates for a scrollbar we never remove,
+   because `html` reserves the gutter permanently. */
+html > body[data-scroll-locked] {
+  margin-right: 0px !important;
+  --removed-body-scroll-bar-size: 0px !important;
+}
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
