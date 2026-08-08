@@ -1,19 +1,16 @@
-/* ============================================================================
- * Documentation site
- *
- * Minimal chrome for site-specific docs helpers.
- * Fumadocs ocean theme + preset provide the shell tokens and layout styles.
- * Nothing under `components/ui/*` references anything in this file.
- * ========================================================================= */
-
-/* Sidebar icons - 20×20 */
-#nd-sidebar svg {
-  width: 1.25rem;
-  height: 1.25rem;
+@theme {
+  --font-sans: var(--font-inter-var), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-#nd-sidebar [data-theme-toggle] svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  padding: 0.25rem;
+html {
+  font-family: var(--font-inter-var), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: 'calt';
+  font-variation-settings: normal;
+  font-optical-sizing: none;
+}
+
+.font-inter {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: 'calt';
 }

@@ -1,5 +1,3 @@
 {
-  "title": "Feedback",
-  "collapsible": false,
   "pages": ["alert", "notification", "toast", "tooltip"]
 }

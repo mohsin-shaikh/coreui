@@ -127,6 +127,8 @@ export default function DrawerDemo() {
                   src={assetPath('/images/major-brands/netflix.svg')}
                   alt=''
                   className='size-6'
+                  width={24}
+                  height={24}
                 />
               </div>
               <div className='min-w-0 flex-1 space-y-1'>

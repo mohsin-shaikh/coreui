@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
+import { Banner } from 'fumadocs-ui/components/banner';
 import { Provider } from '@/components/provider';
 import { cn } from '@/lib/cn';
 import { siteUrl } from '@/lib/shared';
@@ -43,6 +44,9 @@ export default function Layout({ children }: LayoutProps<'/'>) {
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col">
+        <Banner id="beta" variant="rainbow">
+          CoreUI is in beta - APIs and components may change.
+        </Banner>
         <Provider>{children}</Provider>
       </body>
     </html>

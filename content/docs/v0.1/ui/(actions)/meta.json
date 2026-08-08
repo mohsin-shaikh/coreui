@@ -1,6 +1,4 @@
 {
-  "title": "Actions",
-  "collapsible": false,
   "pages": [
     "button",
     "button-group",

@@ -1,13 +1,20 @@
 {
-  "title": "All Components",
+  "title": "Base Components",
   "defaultOpen": true,
   "pages": [
-    "(actions)",
-    "(displaying-data)",
-    "(feedback)",
-    "(form)",
-    "(layout)",
-    "(navigation)",
-    "(overlays)"
+    "---Actions---",
+    "...(actions)",
+    "---Displaying Data---",
+    "...(displaying-data)",
+    "---Feedback---",
+    "...(feedback)",
+    "---Form---",
+    "...(form)",
+    "---Layout---",
+    "...(layout)",
+    "---Navigation---",
+    "...(navigation)",
+    "---Overlays---",
+    "...(overlays)"
   ]
 }
